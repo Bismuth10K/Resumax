@@ -1,16 +1,28 @@
-# This is a sample Python script.
+import fitz
 
-# Press Ctrl+F5 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+doc = fitz.open("../ressources/Das_Martins.pdf")
 
+for page in doc:
+    texte = page.get_text("blocks")
+    print(texte)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
+print("\n\n")
 
+doc2 = fitz.open("../ressources/Gonzalez_2018_Wisebe.pdf")
+for page in doc2:
+    texte = page.get_text("blocks")
+    print(texte)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+print("\n\n")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+doc3 = fitz.open("../ressources/Mikolov.pdf")
+for page in doc3:
+    texte = page.get_text("blocks")
+    print(texte)
+
+print("\n\n")
+
+doc4 = fitz.open("../ressources/Nasr.pdf")
+for page in doc4:
+    texte = page.get_text("blocks")
+    print(texte)
