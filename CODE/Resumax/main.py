@@ -1,28 +1,14 @@
+import os
+
 import fitz
 
-doc = fitz.open("../ressources/Das_Martins.pdf")
-
-for page in doc:
-    texte = page.get_text("blocks")
-    print(texte)
-
-print("\n\n")
-
-doc2 = fitz.open("../ressources/Gonzalez_2018_Wisebe.pdf")
-for page in doc2:
-    texte = page.get_text("blocks")
-    print(texte)
-
-print("\n\n")
-
-doc3 = fitz.open("../ressources/Mikolov.pdf")
-for page in doc3:
-    texte = page.get_text("blocks")
-    print(texte)
-
-print("\n\n")
-
-doc4 = fitz.open("../ressources/Nasr.pdf")
-for page in doc4:
-    texte = page.get_text("blocks")
-    print(texte)
+directory = '../ressources/'
+for file in os.listdir(directory):
+	if not file.endswith(".pdf"):
+		continue
+	with open(os.path.join(directory, file), 'rb') as pdfFileObj:  # Changes here
+		doc = fitz.open(pdfFileObj)
+		content = doc[0].get_text("blocks")
+		with open(doc.name + '.txt', 'w') as f:
+			for i in content:
+				f.write(str(i) + "\n")
