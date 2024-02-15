@@ -1,0 +1,4 @@
+kesslerMETICS-ICDIM2019.pdf
+
+
+Abstract—In order to better adapt to society, an association has developed a web chat application that allows anyone to express and share their concerns and anguishes. Several thousand anonymous conversations have been gathered and form a new corpus of stories about human distress and social violence. We present a method of corpus analysis combining unsupervised learning and word embedding in order to bring out the themes of this particular collection. We compare this approach with a standard algorithm of the literature on a labeled corpus and obtain very good results. An interpretation of the obtained clusters collection conﬁrms the interest of the method. Keywords—word2vec, unsupervised learning, word embedding. 

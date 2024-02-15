@@ -1,0 +1,4 @@
+jing-cutepaste.pdf
+Cut and Paste Based Text Summarization
+Hongyan Jing; Kathleen R. McKeown
+We present a cut and paste based text summa-  rizer, which uses operations derived from an anal-  ysis of human written abstracts.  The summarizer  
