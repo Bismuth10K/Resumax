@@ -1,0 +1,10 @@
+Nom fichier : kesslerMETICS-ICDIM2019.pdf
+
+Titre : A word embedding approach to explore a collection of discussions of people in psychological distress 
+
+Auteurs : 1st R´emy Kessler Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France remy.kessler@univ-ubs.fr 
+2nd Nicolas B´echet Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France nicolas.bechet@irisa.fr 
+3rd Gudrun Ledegen Universit´e Rennes II PREFics, EA 4246 5043 Rennes, France gudrun.ledegen@univ-rennes2.fr 
+4rd Frederic Pugni`ere-Saavedra Universit´e Bretagne Sud PREFics, EA 4246 56017 Vannes, France frederic.pugniere-saavedra@univ-ubs.fr 
+
+Abstract : Abstract—In order to better adapt to society, an association has developed a web chat application that allows anyone to express and share their concerns and anguishes. Several thousand anonymous conversations have been gathered and form a new corpus of stories about human distress and social violence. We present a method of corpus analysis combining unsupervised learning and word embedding in order to bring out the themes of this particular collection. We compare this approach with a standard algorithm of the literature on a labeled corpus and obtain very good results. An interpretation of the obtained clusters collection conﬁrms the interest of the method. Keywords—word2vec, unsupervised learning, word embedding. 
