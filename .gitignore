@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 
 CODE/Resumax/.idea/workspace.xml
+
+CODE/Resumax/.idea/misc.xml
