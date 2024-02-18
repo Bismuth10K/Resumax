@@ -1,6 +1,7 @@
 import os
 import re
 import fitz
+from dateutil.parser import parse
 
 directory = '../ressources/'
 
@@ -25,7 +26,7 @@ def test_txt_reco_patterns():
 
 			print(doc.metadata)
 			print(doc.name.split('/')[-1])
-			content = doc[0].get_text("blocks")
+			content = doc[0].get_text("blocks", sort=True)
 
 			with open(doc.name + '.txt', 'w') as f:
 				for i in content:
@@ -52,10 +53,12 @@ def check_if_toc(bloc: str, toc: list):
 def find_title(cur_bloc: list, next_bloc: list):
 	if cur_bloc[1] > next_bloc[1]:
 		titre = next_bloc[4]
+		bloc = next_bloc[5]
 	else:
 		titre = cur_bloc[4]
+		bloc = cur_bloc[5]
 	titre = titre.replace("\n", " ")
-	return titre
+	return titre, bloc
 
 
 def find_abstract(cur_bloc: str, next_bloc: str, toc=None):
@@ -80,13 +83,21 @@ def find_abstract(cur_bloc: str, next_bloc: str, toc=None):
 	return abstract
 
 
+def is_date(string: str):
+	try:
+		parse(string, fuzzy=True)
+		return True
+	except ValueError:
+		return False
+
+
 def sprint_2():
 	for file in os.listdir(directory):
 		if file.endswith(".pdf"):
 			with (open(os.path.join(directory, file), 'rb') as pdfFileObj):
 				doc = fitz.open(pdfFileObj)
 
-				content = doc[0].get_text("blocks", sort=True)
+				content = doc[0].get_text("blocks")
 
 				print(file)
 				print(doc.get_toc())
@@ -94,40 +105,42 @@ def sprint_2():
 				# récupération titre
 				if doc.metadata.get('title'):
 					titre = doc.metadata.get('title')
+					pos_bloc_titre = 0
 				if len(titre) == 0 or re.match(r'/', titre) is not None:
 					print("current titre : " + titre)
-					titre = find_title(content[0], content[1])
+					titre, pos_bloc_titre = find_title(content[0], content[1])
 					print("new titre : " + titre)
 				print(titre)
 
 				# récupération auteurs
 				if doc.metadata.get('author'):
-					auteur = doc.metadata.get('author')
-				else:
-					pass  # TODO parse author
+					auteur = doc.metadata.get('author') + "\n"
 
 				# récupération abstract
 				for i in range(len(content)):
 					tmp_txt = content[i][4]
+					print(content[i])
 					try:
 						tmp_next_txt = content[i + 1][4]
 					except IndexError:
 						tmp_next_txt = None
 					abstract = find_abstract(tmp_txt, tmp_next_txt, doc.get_toc())
+					if i > pos_bloc_titre and abstract == "" and not doc.metadata.get('author'):
+						if not is_date(tmp_txt):
+							auteur += tmp_txt.replace("\n", " ") + "\n"
+						print(auteur)
 					if len(abstract) > 0:
 						break
 				if len(abstract) == 0:
 					print("Abstract not found")
-				else:
-					print(abstract)
 				print()
 
 				# output
 				with open("../output/Sprint2_" + file + '.txt', 'w') as f:
-					f.write(file + "\n")
-					f.write(titre + "\n")
-					f.write(auteur + "\n")
-					f.write(abstract.replace("\n", " "))
+					f.write("Nom fichier : " + file + "\n\n")
+					f.write("Titre : " + titre + "\n\n")
+					f.write("Auteurs : " + auteur + "\n")
+					f.write("Abstract : " + abstract.replace("\n", " "))
 				titre = ""
 				auteur = ""
 				abstract = ""
