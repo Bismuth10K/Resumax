@@ -1,4 +1,7 @@
-Boudin-Torres-2006.pdf
-A Scalable MMR Approach to Sentence Scoring for Multi-Document Update Summarization
-Florian Boudin ; Marc El-Beze ; Juan-Manuel Torres-Moreno
-We present SMMR, a scalable sentence scoring method for query-oriented update summarization. Sentences are scored thanks to a criterion combining query relevance and dissimilarity with already read documents (history). As the amount of data in history increases, non-redundancy is prioritized over query-relevance. We show that SMMR achieves promising results on the DUC 2007 update corpus. 
+Nom fichier : Boudin-Torres-2006.pdf
+
+Titre : A Scalable MMR Approach to Sentence Scoring for Multi-Document Update Summarization
+
+Auteurs : Florian Boudin ; Marc El-Beze ; Juan-Manuel Torres-Moreno
+
+Abstract : We present SMMR, a scalable sentence scoring method for query-oriented update summarization. Sentences are scored thanks to a criterion combining query relevance and dissimilarity with already read documents (history). As the amount of data in history increases, non-redundancy is prioritized over query-relevance. We show that SMMR achieves promising results on the DUC 2007 update corpus. 
