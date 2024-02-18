@@ -141,6 +141,8 @@ def sprint_2():
 	Le code devra être simplifié lors des futurs sprints.
 	:return: Un txt pour chaque pdf contenant le nom du fichier, le titre de l'article, les auteurs, l'abstract.
 	"""
+	if not os.path.exists("../output/"):
+		os.makedirs("../output/")
 	for file in os.listdir(directory):
 		if file.endswith(".pdf"):  # On parse tous les pdf dans directory.
 			with (open(os.path.join(directory, file), 'rb') as pdfFileObj):
@@ -201,5 +203,5 @@ def sprint_2():
 				abstract = ""
 
 
-# test_txt_reco_patterns()
+txt_reco_patterns()
 sprint_2()
