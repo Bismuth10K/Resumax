@@ -58,7 +58,7 @@ def find_title(cur_bloc: list, next_bloc: list):
 	:param next_bloc: Un bloc de pyMuPDF.
 	:return: titre (str) le vrai titre d'après la position, bloc (int) le numéro du bloc du titre.
 	"""
-	if cur_bloc[1] > next_bloc[1]:  # si la position de cur_bloc sur l'axe y (descendant) est > next_block,
+	if cur_bloc[1] > next_bloc[1]:  # si la position de cur_bloc sur l'axe y (descendant) est supérieur next_block,
 		# c'est probablement un footer. PyMuPDF affiche les footers en premier.
 		titre = next_bloc[4]
 		bloc = next_bloc[5]
@@ -71,11 +71,11 @@ def find_title(cur_bloc: list, next_bloc: list):
 
 def check_if_abstract(bloc: str):
 	"""
-	Détermine si un texte contient le terme abstract (et donc en est un) ou pas.
+	Détermine si un texte contient le terme "abstract" (et donc en est un) ou pas.
 	:param bloc: Un texte.
-	:return: Int → 1 : "abstract" + texte abstract dans le même bloc.
-					0 : "abstract" seul.
-					-1 : pas de "abstract".
+	:return: Int → 	1 : "abstract" + texte abstract dans le même bloc.
+				   	0 : "abstract" seul.
+				   -1 : pas de "abstract".
 	"""
 	if "abstract" in bloc.lower():
 		if len(bloc) > len("abstract") * 2:
