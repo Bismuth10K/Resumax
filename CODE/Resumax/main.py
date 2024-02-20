@@ -6,9 +6,10 @@ Il est recommandé de générer une venv avec les bibliothèques pyMuPDF et pyth
 import os  # Pour manipuler des dossiers.
 import re  # Pour utiliser du regex.
 import sys  # Commandes système
+from xml.etree.ElementTree import Element, SubElement, ElementTree  # Pour générer des xml
+
 import fitz  # Pour lire les pdf, ---pip install PyMuPDF---
 from dateutil.parser import parse  # Pour détecter une date, ---pip install python-dateutil---
-from xml.etree.ElementTree import Element, SubElement, tostring, ElementTree
 
 # Le dossier contenant les corpus de textes et le texte sous forme de bloc.
 directory = '../ressources/'
@@ -75,9 +76,9 @@ def check_if_abstract(bloc: str):
 	"""
 	Détermine si un texte contient le terme "abstract" (et donc en est un) ou pas.
 	:param bloc: Un texte.
-	:return: Int → 	1 : "abstract" + texte abstract dans le même bloc.
-				   	0 : "abstract" seul.
-				   -1 : pas de "abstract".
+	:return: Int → 	+1 : "abstract" + texte abstract dans le même bloc.
+					+0 : "abstract" seul.
+					-1 : pas de "abstract".
 	"""
 	if "abstract" in bloc.lower():
 		if len(bloc) > len("abstract") * 2:
@@ -103,22 +104,18 @@ def find_abstract(cur_bloc: str, next_bloc: str, toc=None):
 
 	if checker == 1:  # Si abstract + texte -> renvoie cur_bloc.
 		abstract = cur_bloc
-		# print("Abstract found by checker 1").
-
+		print("Abstract found by checker 1")
 	elif checker == 0:  # Si abstract seul -> renvoie next_bloc.
 		abstract = next_bloc
-		# print("Abstract found by checker 0").
-
+		print("Abstract found by checker 0")
 	elif next_bloc is not None and re.search(r"\A(?:[0-9]|I|)(?:.|-|)(?: |)[Ii]ntroduction(?: |)(?:\n|)", next_bloc):
 		# Si next_bloc est l'introduction, alors cur_bloc est l'abstract. L'abstract se trouve avant l'introduction.
 		abstract = cur_bloc
-		# print("Abstract found by regex").
-
+		print("Abstract found by regex")
 	elif next_bloc is not None and check_if_toc(next_bloc, toc):
 		# si next_bloc fait partie du sommaire, cur_bloc est l'abstract.
 		abstract = cur_bloc
-		# print("Abstract found by TOC").
-
+		print("Abstract found by TOC")
 	abstract = abstract.replace("-\n", "")  # mot coupé en deux dans un paragraphe, donc on remplace par "".
 	abstract = abstract.replace("\n", " ")  # retour à la ligne dans un paragraphe, donc on remplace par " ".
 	return abstract
@@ -138,6 +135,11 @@ def is_date(string: str):
 
 
 def parser(pdf):
+	"""
+	Parser du paramètre pdf. Il y récupère plusieurs informations.
+	:param pdf: Un document pdf à parser.
+	:return: Dictionnaire comportant différentes sections du PDF (auteurs, titre, abstract, biblio...)
+	"""
 	doc = fitz.open(pdf)  # On ouvre le pdf avec pyMuPDF (fitz).
 	auteur = ""
 	titre = ""
@@ -185,28 +187,34 @@ def parser(pdf):
 	print(auteur)
 	print()
 
-	parsed_results = {
-		"titre": titre,
-		"auteur": auteur,
-		"abstract": abstract.replace("\n", " "),
-		"biblio": None
-	}
+	parsed_results = {"titre": titre, "auteur": auteur, "abstract": abstract.replace("\n", " "), "biblio": None}
 
 	return parsed_results
 
 
-def output_txt(file, dict_results: dict):
-	with open("../output/Sprint2_" + file + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
-		f.write("Nom fichier : " + file + "\n\n")
+def output_txt(pdf, dict_results: dict):
+	"""
+	Récupère les outputs et les inscrit dans un txt.
+	:param pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
+	:param dict_results: Le dictionnaire des informations parsées.
+	"""
+	with open("../output/Sprint2_" + pdf + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
+		f.write("Nom fichier : " + pdf + "\n\n")
 		f.write("Titre : " + dict_results.get("titre") + "\n\n")
 		f.write("Auteurs : " + dict_results.get("auteur") + "\n")
-		f.write("Abstract : " + dict_results.get("abstract"))
+		f.write("Abstract : " + dict_results.get(
+			"abstract") + "\n")  # f.write("Biblio : " + dict_results.get("biblio") + "\n")
 
 
-def output_xml(file, dict_results: dict):
+def output_xml(pdf, dict_results: dict):
+	"""
+	Récupère les outputs et les inscrit dans un xml.
+	:param pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
+	:param dict_results: Le dictionnaire des informations parsées.
+	"""
 	article = Element('article')
 	preamble = SubElement(article, 'preamble')
-	preamble.text = file
+	preamble.text = pdf
 
 	titre = SubElement(article, 'titre')
 	titre.text = dict_results.get("titre")
@@ -219,10 +227,11 @@ def output_xml(file, dict_results: dict):
 	abstract.text = dict_results.get("abstract")
 
 	biblio = SubElement(article, 'biblio')
+	# biblio.text = dict_results.get("biblio")
 
 	tree = ElementTree(article)
 
-	with open("../output/Sprint2_" + file + '.xml', 'w') as f:
+	with open("../output/Sprint2_" + pdf + '.xml', 'w') as f:
 		tree.write(f, encoding='unicode')
 
 
@@ -236,8 +245,8 @@ def parse_all_pdf(func_output, func_output_all=None):
 		os.makedirs("../output/")
 	for file in os.listdir(directory):
 		if file.endswith(".pdf"):  # On parse tous les pdf dans directory.
-			with (open(os.path.join(directory, file), 'rb') as pdfFileObj):
-				dict_res = parser(pdfFileObj)
+			with (open(os.path.join(directory, file), 'rb') as pdf):
+				dict_res = parser(pdf)
 				func_output(file, dict_res)
 				func_output_all(file, dict_res)
 
@@ -245,13 +254,13 @@ def parse_all_pdf(func_output, func_output_all=None):
 if __name__ == '__main__':
 	if len(sys.argv) >= 2:
 		param = sys.argv[1]
-		if '-t' in param:
+		if '-t' in param:  # Paramètre pour générer des txt.
 			parse_all_pdf(output_txt)
-		elif '-x' in param:
+		elif '-x' in param:  # Paramètre pour générer des xml.
 			parse_all_pdf(output_xml)
-		elif '-a' in param:
+		elif '-a' in param:  # Paramètre pour générer des txt et des xml.
 			parse_all_pdf(output_txt, output_xml)
-		elif '-r':  # pour reconnaissance pattern
+		elif '-r':  # Paramètre pour générer les fichiers de reconnaissance des patterns.
 			txt_reco_patterns()
-	else:
+	else:  # Parce qu'il n'y a jamais assez de tests !
 		txt_reco_patterns()
