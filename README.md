@@ -14,5 +14,10 @@ Voici un récapitulatif de nos sprints jusqu'à là :
 
     Le but de ce sprint va être de tester si notre librairie (pyMuPDF à ce jour) marche correctement.
     Nous devons réussir à extraire le nom du fichier d'origine, le titre du papier, le(s) auteur(s) et le résumé (abstract).
+    
+- <u>Sprint 3 - Gérer le XML :</u> (19/02/2024 - 23/02/2024)
 
+	Permettre au logiciel de générer des fichiers xml en plus des txt. Le choix doit etre laissé à l'utilisateur par le biais d'arguments de commandes : -x pour un xml, -t pour un txt, -a pour les deux.
+	Améliorer la détection des auteurs.
+	 
 À chaque nouveau sprint, une nouvelle branche sera créée selon le numéro de sprint. À chaque fin de sprint, on merge la branche de main et on créé un release. Ce release contiendra l'exécutable de fin de sprint et le code source à l'heure de la fin.
