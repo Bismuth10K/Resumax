@@ -2,6 +2,7 @@ Nom fichier : mikheev J02-3002.pdf
 
 Titre : Periods, Capitalized Words, etc. 
 
-Auteurs : joe@diskserver.castanet.com Joe Pickert
+Auteurs : Andrei Mikheev∗ 
+University of Edinburgh 
 
 Abstract : In this article we present an approach for tackling three important aspects of text normalization: sentence boundary disambiguation, disambiguation of capitalized words in positions where capitalization is expected, and identiﬁcation of abbreviations. As opposed to the two dominant techniques of computing statistics or writing specialized grammars, our document-centered approach works by considering suggestive local contexts and repetitions of individual words within a document. This approach proved to be robust to domain shifts and new lexica and produced performance on the level with the highest reported results. When incorporated into a part-of-speech tagger, it helped reduce the error rate signiﬁcantly on capitalized words and sentence boundaries. We also investigated the portability to other languages and obtained encouraging results. 

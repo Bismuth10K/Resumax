@@ -2,6 +2,8 @@ Nom fichier : Iria_Juan-Manuel_Gerardo.pdf
 
 Titre : On the Development of the RST Spanish Treebank
 
-Auteurs : Iria da Cunha ; Juan-Manuel Torres-Moreno ; Gerardo Sierra
+Auteurs : Iria da Cunha  Juan-Manuel Torres-Moreno  Gerardo Sierra  Institute for Applied  Linguistics (UPF), Spain  Laboratoire Informatique  d’Avignon (UAPV), France  Instituto de Ingeniería (UNAM),  Mexico  Instituto de Ingeniería  (UNAM), Mexico  Instituto de Ingeniería (UNAM),  Mexico  gsierram@iingen.unam. mx  Laboratoire Informatique  d’Avignon (UAPV), France  École Polytechnique de Montréal,  Canada    
+iria.dacunha@upf.edu juan-manuel.torres@univ- avignon.fr    
+    
 
 Abstract : In this article we present the RST Spanish  Treebank, the first corpus annotated with  rhetorical relations for this language. We  describe the characteristics of the corpus,  the annotation criteria, the annotation  procedure, the inter-annotator agreement,  and other related aspects. Moreover, we  show the interface that we have developed  to carry out searches over the corpus’  annotated texts.  

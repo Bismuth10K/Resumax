@@ -2,6 +2,11 @@ Nom fichier : Boudin-Torres-2006.pdf
 
 Titre : A Scalable MMR Approach to Sentence Scoring for Multi-Document Update Summarization
 
-Auteurs : Florian Boudin ; Marc El-Beze ; Juan-Manuel Torres-Moreno
+Auteurs : Florian Boudin ♮ and Marc El-B`eze ♮ 
+♮ Laboratoire Informatique d’Avignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France. 
+florian.boudin@univ-avignon.fr 
+marc.elbeze@univ-avignon.fr 
+Juan-Manuel Torres-Moreno ♮,♭ 
+juan-manuel.torres@univ-avignon.fr 
 
 Abstract : We present SMMR, a scalable sentence scoring method for query-oriented update summarization. Sentences are scored thanks to a criterion combining query relevance and dissimilarity with already read documents (history). As the amount of data in history increases, non-redundancy is prioritized over query-relevance. We show that SMMR achieves promising results on the DUC 2007 update corpus. 

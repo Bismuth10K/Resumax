@@ -2,6 +2,10 @@ Nom fichier : jing-cutepaste.pdf
 
 Titre : Cut and Paste Based Text Summarization
 
-Auteurs : Hongyan Jing; Kathleen R. McKeown
+Auteurs : Hongyan  Jing and Kathleen  R. McKeown  
+Department  of Computer Science  
+Columbia University  
+New York, NY 10027, USA  
+hjing, kathyQcs.columbia.edu  
 
 Abstract : We present a cut and paste based text summa-  rizer, which uses operations derived from an anal-  ysis of human written abstracts.  The summarizer  
