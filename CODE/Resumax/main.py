@@ -185,41 +185,48 @@ def parser(pdf):
 	print(auteur)
 	print()
 
-	return titre, auteur, abstract.replace("\n", " ")
+	parsed_results = {
+		"titre": titre,
+		"auteur": auteur,
+		"abstract": abstract.replace("\n", " "),
+		"biblio": None
+	}
+
+	return parsed_results
 
 
-def output_txt(file, titre, auteur, abstract):
+def output_txt(file, dict_results: dict):
 	with open("../output/Sprint2_" + file + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
 		f.write("Nom fichier : " + file + "\n\n")
-		f.write("Titre : " + titre + "\n\n")
-		f.write("Auteurs : " + auteur + "\n")
-		f.write("Abstract : " + abstract)
+		f.write("Titre : " + dict_results.get("titre") + "\n\n")
+		f.write("Auteurs : " + dict_results.get("auteur") + "\n")
+		f.write("Abstract : " + dict_results.get("abstract"))
 
 
-def output_xml(parsed_file, parsed_titre, parsed_auteur, parsed_abstract):
+def output_xml(file, dict_results: dict):
 	article = Element('article')
 	preamble = SubElement(article, 'preamble')
-	preamble.text = parsed_file
+	preamble.text = file
 
 	titre = SubElement(article, 'titre')
-	titre.text = parsed_titre
+	titre.text = dict_results.get("titre")
 
 	auteurs = SubElement(article, 'auteurs')
 	auteur = SubElement(auteurs, 'auteur')
-	auteur.text = parsed_auteur  # rajouter enfants name et mail
+	auteur.text = dict_results.get("auteur")  # rajouter enfants name et mail
 
 	abstract = SubElement(article, 'abstract')
-	abstract.text = parsed_abstract
+	abstract.text = dict_results.get("abstract")
 
 	biblio = SubElement(article, 'biblio')
 
 	tree = ElementTree(article)
 
-	with open("../output/Sprint2_" + parsed_file + '.xml', 'w') as f:
+	with open("../output/Sprint2_" + file + '.xml', 'w') as f:
 		tree.write(f, encoding='unicode')
 
 
-def parse_all_pdf(func_output):
+def parse_all_pdf(func_output, func_output_all=None):
 	"""
 	Code du sprint 2, récupère : le nom du fichier, le titre de l'article, les auteurs, l'abstract.
 	Le code devra être simplifié lors des futurs sprints.
@@ -230,21 +237,21 @@ def parse_all_pdf(func_output):
 	for file in os.listdir(directory):
 		if file.endswith(".pdf"):  # On parse tous les pdf dans directory.
 			with (open(os.path.join(directory, file), 'rb') as pdfFileObj):
-				titre, auteur, abstract = parser(pdfFileObj)
-				func_output(file, titre, auteur, abstract)
+				dict_res = parser(pdfFileObj)
+				func_output(file, dict_res)
+				func_output_all(file, dict_res)
 
 
 if __name__ == '__main__':
-	print('argument list', sys.argv)
-	param = sys.argv[1]
-	if '-t' in param:
-		parse_all_pdf(output_txt)
-	elif '-x' in param:
-		parse_all_pdf(output_xml)
-	elif '-a' in param:
-		pass
-	elif '-r':  # pour reconnaissance pattern
-		txt_reco_patterns()
+	if len(sys.argv) >= 2:
+		param = sys.argv[1]
+		if '-t' in param:
+			parse_all_pdf(output_txt)
+		elif '-x' in param:
+			parse_all_pdf(output_xml)
+		elif '-a' in param:
+			parse_all_pdf(output_txt, output_xml)
+		elif '-r':  # pour reconnaissance pattern
+			txt_reco_patterns()
 	else:
-		print("Pas un paramètre valide.")
-		exit()
+		txt_reco_patterns()
