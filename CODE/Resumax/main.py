@@ -1,12 +1,14 @@
 """
-Code source du Sprint 2 de resumax.
+Code source du Sprint 3 de resumax.
 Il est recommandé de générer une venv avec les bibliothèques pyMuPDF et python-dateutil.
 """
 
 import os  # Pour manipuler des dossiers.
 import re  # Pour utiliser du regex.
+import sys  # Commandes système
 import fitz  # Pour lire les pdf, ---pip install PyMuPDF---
 from dateutil.parser import parse  # Pour détecter une date, ---pip install python-dateutil---
+from xml.etree.ElementTree import Element, SubElement, tostring, ElementTree
 
 # Le dossier contenant les corpus de textes et le texte sous forme de bloc.
 directory = '../ressources/'
@@ -135,7 +137,89 @@ def is_date(string: str):
 		return False
 
 
-def sprint_2():
+def parser(pdf):
+	doc = fitz.open(pdf)  # On ouvre le pdf avec pyMuPDF (fitz).
+	auteur = ""
+	titre = ""
+
+	content = doc[0].get_text("blocks")  # Récupération des texts sous forme de blocs.
+	# Un block = (x0, y0, x1, y1, "texte", block_no, block_type).
+	# (x0, y0) position du bloc en haut à gauche, (x1, y1) position du bloc en bas à droite.
+	# block_no le numéro de block lors de la lecture, block_type = 0 si texte, 1 si image.
+
+	# Récupération titre.
+	if doc.metadata.get('title'):
+		titre = doc.metadata.get('title')
+		pos_bloc_titre = 0
+	# Si le titre contient un / ou si on l'a pas trouvé dans les metadata,
+	# on cherche un nouveau titre dans le document.
+	if len(titre) == 0 or re.match(r'/', titre) is not None:
+		print("current titre : " + titre)
+		titre, pos_bloc_titre = find_title(content[0], content[1])
+		print("new titre : " + titre)
+	print(titre)
+
+	# Récupération auteurs.
+	# if doc.metadata.get('author'):
+	#	auteur = doc.metadata.get('author') + "\n"
+
+	# Récupération abstract et auteurs si absents des metadata.
+	for i in range(len(content)):
+		tmp_txt = content[i][4]  # On stocke le texte du bloc actuel.
+		try:
+			tmp_next_txt = content[i + 1][4]  # On stocke le texte du bloc suivant s'il existe.
+		except IndexError:
+			tmp_next_txt = None
+
+		abstract = find_abstract(tmp_txt, tmp_next_txt, doc.get_toc())  # Récupération abstract.
+
+		# Récupération auteurs sur plusieurs lignes tant que ce n'est pas un abstract.
+		if i > pos_bloc_titre and abstract == "" and tmp_txt.split() != titre.split():  # and not doc.metadata.get('author')
+			if not is_date(tmp_txt):  # Permet de filtrer les dates.
+				auteur += tmp_txt.replace("\n", " ") + "\n"
+		if len(abstract) > 0:  # Sachant que l'abstract se trouve après les auteurs,
+			break  # si on le trouve, on sort de la boucle.
+	if len(abstract) == 0:  # Si on ne trouve pas l'abstract, on le dit.
+		print("Abstract not found")
+	print()
+	print(auteur)
+	print()
+
+	return titre, auteur, abstract.replace("\n", " ")
+
+
+def output_txt(file, titre, auteur, abstract):
+	with open("../output/Sprint2_" + file + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
+		f.write("Nom fichier : " + file + "\n\n")
+		f.write("Titre : " + titre + "\n\n")
+		f.write("Auteurs : " + auteur + "\n")
+		f.write("Abstract : " + abstract)
+
+
+def output_xml(parsed_file, parsed_titre, parsed_auteur, parsed_abstract):
+	article = Element('article')
+	preamble = SubElement(article, 'preamble')
+	preamble.text = parsed_file
+
+	titre = SubElement(article, 'titre')
+	titre.text = parsed_titre
+
+	auteurs = SubElement(article, 'auteurs')
+	auteur = SubElement(auteurs, 'auteur')
+	auteur.text = parsed_auteur  # rajouter enfants name et mail
+
+	abstract = SubElement(article, 'abstract')
+	abstract.text = parsed_abstract
+
+	biblio = SubElement(article, 'biblio')
+
+	tree = ElementTree(article)
+
+	with open("../output/Sprint2_" + parsed_file + '.xml', 'w') as f:
+		tree.write(f, encoding='unicode')
+
+
+def parse_all_pdf(func_output):
 	"""
 	Code du sprint 2, récupère : le nom du fichier, le titre de l'article, les auteurs, l'abstract.
 	Le code devra être simplifié lors des futurs sprints.
@@ -146,62 +230,21 @@ def sprint_2():
 	for file in os.listdir(directory):
 		if file.endswith(".pdf"):  # On parse tous les pdf dans directory.
 			with (open(os.path.join(directory, file), 'rb') as pdfFileObj):
-				doc = fitz.open(pdfFileObj)  # On ouvre le pdf avec pyMuPDF (fitz).
-
-				content = doc[0].get_text("blocks")  # Récupération des texts sous forme de blocs.
-				# Un block = (x0, y0, x1, y1, "texte", block_no, block_type).
-				# (x0, y0) position du bloc en haut à gauche, (x1, y1) position du bloc en bas à droite.
-				# block_no le numéro de block lors de la lecture, block_type = 0 si texte, 1 si image.
-
-				print(file)  # nom document en cours de traitement.
-				# print(doc.get_toc())  # pour récupérer la TOC.
-
-				# Récupération titre.
-				if doc.metadata.get('title'):
-					titre = doc.metadata.get('title')
-					pos_bloc_titre = 0
-				# Si le titre contient un / ou si on l'a pas trouvé dans les metadata,
-				# on cherche un nouveau titre dans le document.
-				if len(titre) == 0 or re.match(r'/', titre) is not None:
-					print("current titre : " + titre)
-					titre, pos_bloc_titre = find_title(content[0], content[1])
-					print("new titre : " + titre)
-				print(titre)
-
-				# Récupération auteurs.
-				if doc.metadata.get('author'):
-					auteur = doc.metadata.get('author') + "\n"
-
-				# Récupération abstract et auteurs si absents des metadata.
-				for i in range(len(content)):
-					tmp_txt = content[i][4]  # On stocke le texte du bloc actuel.
-					try:
-						tmp_next_txt = content[i + 1][4]  # On stocke le texte du bloc suivant s'il existe.
-					except IndexError:
-						tmp_next_txt = None
-
-					abstract = find_abstract(tmp_txt, tmp_next_txt, doc.get_toc())  # Récupération abstract.
-
-					# Récupération auteurs sur plusieurs lignes tant que ce n'est pas un abstract.
-					if i > pos_bloc_titre and abstract == "" and not doc.metadata.get('author'):
-						if not is_date(tmp_txt):  # Permet de filtrer les dates.
-							auteur += tmp_txt.replace("\n", " ") + "\n"
-					if len(abstract) > 0:  # Sachant que l'abstract se trouve après les auteurs,
-						break  # si on le trouve, on sort de la boucle.
-				if len(abstract) == 0:  # Si on ne trouve pas l'abstract, on le dit.
-					print("Abstract not found")
-				print()
-
-				# Génération des txt avec les informations parsées.
-				with open("../output/Sprint2_" + file + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
-					f.write("Nom fichier : " + file + "\n\n")
-					f.write("Titre : " + titre + "\n\n")
-					f.write("Auteurs : " + auteur + "\n")
-					f.write("Abstract : " + abstract.replace("\n", " "))
-				titre = ""  # On vide les strings pour éviter les soucis lors des prochaines itérations.
-				auteur = ""
-				abstract = ""
+				titre, auteur, abstract = parser(pdfFileObj)
+				func_output(file, titre, auteur, abstract)
 
 
-txt_reco_patterns()
-sprint_2()
+if __name__ == '__main__':
+	print('argument list', sys.argv)
+	param = sys.argv[1]
+	if '-t' in param:
+		parse_all_pdf(output_txt)
+	elif '-x' in param:
+		parse_all_pdf(output_xml)
+	elif '-a' in param:
+		pass
+	elif '-r':  # pour reconnaissance pattern
+		txt_reco_patterns()
+	else:
+		print("Pas un paramètre valide.")
+		exit()
