@@ -6,4 +6,287 @@ Auteurs : Iria da Cunha  Juan-Manuel Torres-Moreno  Gerardo Sierra  Institute fo
 iria.dacunha@upf.edu juan-manuel.torres@univ- avignon.fr    
     
 
-Abstract : In this article we present the RST Spanish  Treebank, the first corpus annotated with  rhetorical relations for this language. We  describe the characteristics of the corpus,  the annotation criteria, the annotation  procedure, the inter-annotator agreement,  and other related aspects. Moreover, we  show the interface that we have developed  to carry out searches over the corpus’  annotated texts.  
+Abstract : 
+In this article we present the RST Spanish  Treebank, the first corpus annotated with  rhetorical relations for this language. We  describe the characteristics of the corpus,  the annotation criteria, the annotation  procedure, the inter-annotator agreement,  and other related aspects. Moreover, we  show the interface that we have developed  to carry out searches over the corpus’  annotated texts.  
+
+Bibliographie : 
+Ron Artstein, and Massimo Poesio. 2008. Survey 
+Article: Inter-Coder Agreement for Computational 
+Linguistics. Computational Linguistics, 34(4):555-
+596. 
+
+
+Nadjet Bouayad-Agha, Leo Wanner, and Daniel 
+Nicklass. 2006. Discourse structuring of dynamic 
+content. Procesamiento del lenguaje natural, 37:207-
+213. 
+
+
+M. 
+Teresa 
+Cabré 
+(1999). 
+La 
+terminología: 
+representación y comunicación. Barcelona: IULA-
+UPF. 
+
+
+Lynn Carlson and Daniel Marcu. 2001. Discourse 
+Tagging Reference Manual. ISI Technical Report 
+ISITR-545. Los Ángeles: University of Southern 
+California. 
+
+
+Lynn Carlson, Daniel Marcu, and Mary Ellen 
+Okurowski. 
+2002a. 
+RST 
+Discourse 
+Treebank. 
+Pennsylvania: Linguistic Data Consortium. 
+
+
+Lynn Carlson, Daniel Marcu, and Mary Ellen 
+Okurowski. 2002b. Building a Discourse-Tagged 
+Corpus in the Framework of Rhetorical Structure 
+Theory. In Proceedings of the 2nd SIGDIAL 
+Workshop on Discourse and Dialogue, Eurospeech 
+2001. 
+
+
+Jacob Cohen. 1960. A coefficient of agreement for 
+nominal scales. Educational and Psychological 
+Measurement, 20(1):37-46 
+
+
+Iria da Cunha, Eric SanJuan, Juan-Manuel Torres-
+Moreno, Marina Lloberes, and Irene Castellón. 2010. 
+Discourse Segmentation for Spanish based on 
+Shallow Parsing. Lecture Notes in Computer 
+Science, 6437:13-23.  
+
+
+Iria da Cunha, and Mikel Iruskieta. 2010. Comparing 
+rhetorical structures of different languages: The 
+influence of translation strategies. Discourse Studies, 
+12(5):563-598.  
+
+
+Iria da Cunha, Leo Wanner, and M. Teresa Cabré. 2007. 
+Summarization of specialized discourse: The case of 
+medical articles in Spanish. Terminology, 13(2):249-
+286.  
+
+
+Dmitriy Dligach, Rodney D. Nielsen, and Martha 
+Palmer. 2010. To Annotate More Accurately or to 
+Annotate More. In Proceedings of the 4th Linguistic 
+Annotation Workshop (LAW-IV). 48th Annual 
+Meeting of the Association for Computational 
+Linguistics. 
+
+
+Joseph L. Fleis. 1971. Measuring nominal scale 
+agreement 
+among 
+many 
+raters. 
+Psychological 
+Bulletin, 76(5):378-382. 
+
+
+Eduard Hovy. 2010. Annotation. A Tutorial. Presented 
+at the 48th Annual Meeting of the Association for 
+Computational Linguistics. 
+
+
+Nancy Ide and Pustejovsky, J. (2010). What Does 
+Interoperability 
+Mean, 
+anyway? 
+Toward 
+an 
+Operational 
+Definition 
+of 
+Interoperability. 
+In 
+Proceedings of the Second International Conference 
+on Global Interoperability for Language Resources 
+(ICGL 2010).  
+
+
+William C. Mann, and Sandra A. Thompson. 1988. 
+Rhetorical structure theory: Toward a functional 
+theory of text organization. Text, 8(3):243-281. 
+
+
+Daniel Marcu. 2000. The Theory and Practice of 
+Discourse Parsing Summarization. Massachusetts: 
+Institute of Technology. 
+
+
+Mitchell P. Marcus, Beatrice Santorini, Mary A. 
+Marcinkiewicz. 1993. Building a large annotated 
+corpus 
+of 
+English: 
+the 
+Penn 
+Treenbank. 
+Computational Linguistics, 19(2):313-330. 
+
+
+Michael O’Donnell. 2000. RSTTOOL 2.4 – A markup 
+tool for rhetorical structure theory. In Proceedings of 
+the International Natural Language Generation 
+Conference. 253-256. 
+
+
+Martha Palmer, and Nianwen Xue. 2010. Linguistic 
+Annotation. Handbook of Computational Linguistics 
+and Natural Language Processing.  
+
+
+Martha Palmer, Randee Tangi, Stephanie Strassel, 
+Christiane Fellbaum, and Eduard Hovy (on-line). 
+Historical Development and Future Directions in 
+Data 
+Resource 
+Development. 
+MINDS 
+report. 
+http://www-nlpir.nist.gov/MINDS/FINAL/data.web.pdf 
+
+
+Sameer Pradhan, Eduard Hovy, Mitch Marcus, Martha 
+Palmer, Lance Ramshaw, Ralph Weischedel. 2007. 
+OntoNotes: 
+A 
+Unified 
+Relational 
+Semantic 
+Representation. In Proceedings of the First IEEE 
+International Conference on Semantic Computing 
+(ICSC-07). 
+
+
+Rashmi Prasad, Nikhil Dinesh, Alan Lee, Eleni 
+Miltsakaki, Livio Robaldo, Aravind Joshi, and 
+Bonnie Webber. 2008. The Penn Discourse Treebank 
+2.0. In Proceedings of the 6th International 
+Conference on Language Resources and Evaluation 
+(LREC 2008). 
+
+
+David Reitter, and Mandred Stede. 2003. Step by step: 
+underspecified markup in incremental rhetorical 
+analysis. In Proceedings of the 4th International 
+
+
+9
+
+
+Workshop on Linguistically Interpreted Corpora 
+(LINC-03). 
+
+
+Magdalena Romera. 2004. Discourse Functional Units: 
+The Expression of Coherence Relations in Spoken 
+Spanish. Munich: LINCOM. 
+
+
+Thiago Alexandre Salgueiro Pardo, and Lucia Helena 
+Machado Rino. 2001. A summary planner based on a 
+three-level discourse model. In Proceedings of 
+Natural 
+Language 
+Processing 
+Pacific 
+Rim 
+Symposium. 533-538. 
+
+
+Thiago Alexandre Salgueiro Pardo, Maria das Graças 
+Volpe Nunes, and Lucia Helena Machado Rino. 
+2008. DiZer: An Automatic Discourse Analyzer for 
+Brazilian Portuguese. Lecture Notes in Artificial 
+Intelligence, 3171:224-234.  
+
+
+Thiago Alexandre Salgueiro Pardo, and Eloize Rossi 
+Marques Seno. 2005. Rhetalho: um corpus de 
+referência anotado retoricamente. In Anais do V 
+Encontro de Corpora. São Carlos-SP, Brasil. 
+
+
+Gerardo Sierra. 2008. Diseño de corpus textuales para 
+fines lingüísticos. In Proceedings of the IX Encuentro 
+Internacional de Lingüística en el Noroeste 2. 445-
+462. 
+
+
+Manfred Stede. 2004. The Potsdam commentary corpus. 
+In Proceedings of the Workshop on Discourse 
+Annotation, 42nd Meeting of the Association for 
+Computational Linguistics. 
+
+
+Maite 
+Taboada. 
+2004. 
+Building 
+Coherence 
+and 
+Cohesion: Task-Oriented Dialogue in English and 
+Spanish. Amsterdam/Philadelphia: John Benjamins. 
+
+
+Maite Taboada, and Jan Renkema. 2008. Discourse 
+Relations Reference Corpus [Corpus]. Simon Fraser 
+University 
+and 
+Tilburg 
+University. 
+http://www.sfu.ca/rst/06tools/discourse_relations_cor
+pus.html. 
+
+
+Maite Taboada, and William C. Mann. 2006a. 
+Rhetorical Structure Theory: Looking Back and 
+Moving Ahead. Discourse Studies, 8(3):423-459.  
+
+
+Maite Taboada, and William C. Mann. 2006b. 
+Applications 
+of 
+Rhetorical 
+Structure 
+Theory. 
+Discourse Studies, 8(4):567-588.  
+
+
+Milan Tofiloski, Julian Brooke, and Maite Taboada. 
+2009. A Syntactic and Lexical-Based Discourse 
+Segmenter. In Proceedings of the 47th Annual 
+Meeting of the Association for Computational 
+Linguistics.  
+
+
+Hai Zhao, Yan Song, and Chunyu Kit. 2010. How Large 
+a Corpus Do We Need: Statistical Method Versus 
+Rule-based Method. In Proceedings of the Seventh 
+
+
+conference on International Language Resources and 
+Evaluation (LREC'10). 
+
+
+ 
+
+
+10
+
+
+

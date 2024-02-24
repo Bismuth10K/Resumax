@@ -7,4 +7,151 @@ Kai Chen Google Inc., Mountain View, CA kaichen@google.com
 Greg Corrado Google Inc., Mountain View, CA gcorrado@google.com 
 Jeffrey Dean Google Inc., Mountain View, CA jeff@google.com 
 
-Abstract : We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks. We observe large improvements in accuracy at much lower computational cost, i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. Furthermore, we show that these vectors provide state-of-the-art performance on our test set for measuring syntactic and semantic word similarities. 
+Abstract : 
+We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks. We observe large improvements in accuracy at much lower computational cost, i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. Furthermore, we show that these vectors provide state-of-the-art performance on our test set for measuring syntactic and semantic word similarities. 
+
+Bibliographie : 
+[1] Y. Bengio, R. Ducharme, P. Vincent. A neural probabilistic language model. Journal of Ma-
+chine Learning Research, 3:1137-1155, 2003.
+
+
+[2] Y. Bengio, Y. LeCun. Scaling learning algorithms towards AI. In: Large-Scale Kernel Ma-
+chines, MIT Press, 2007.
+
+
+[3] T. Brants, A. C. Popat, P. Xu, F. J. Och, and J. Dean. Large language models in machine
+translation. In Proceedings of the Joint Conference on Empirical Methods in Natural Language
+Processing and Computational Language Learning, 2007.
+
+
+[4] R. Collobert and J. Weston. A Uniﬁed Architecture for Natural Language Processing: Deep
+Neural Networks with Multitask Learning. In International Conference on Machine Learning,
+ICML, 2008.
+
+
+[5] R. Collobert, J. Weston, L. Bottou, M. Karlen, K. Kavukcuoglu and P. Kuksa. Natural Lan-
+guage Processing (Almost) from Scratch. Journal of Machine Learning Research, 12:2493-
+2537, 2011.
+
+
+[6] J. Dean, G.S. Corrado, R. Monga, K. Chen, M. Devin, Q.V. Le, M.Z. Mao, M.A. Ranzato, A.
+Senior, P. Tucker, K. Yang, A. Y. Ng., Large Scale Distributed Deep Networks, NIPS, 2012.
+
+
+[7] J.C. Duchi, E. Hazan, and Y. Singer. Adaptive subgradient methods for online learning and
+stochastic optimization. Journal of Machine Learning Research, 2011.
+
+
+[8] J. Elman. Finding Structure in Time. Cognitive Science, 14, 179-211, 1990.
+
+
+[9] Eric H. Huang, R. Socher, C. D. Manning and Andrew Y. Ng. Improving Word Representations
+via Global Context and Multiple Word Prototypes. In: Proc. Association for Computational
+Linguistics, 2012.
+
+
+[10] G.E. Hinton, J.L. McClelland, D.E. Rumelhart. Distributed representations. In: Parallel dis-
+tributed processing: Explorations in the microstructure of cognition. Volume 1: Foundations,
+MIT Press, 1986.
+
+
+[11] D.A. Jurgens, S.M. Mohammad, P.D. Turney, K.J. Holyoak. Semeval-2012 task 2: Measuring
+degrees of relational similarity. In: Proceedings of the 6th International Workshop on Semantic
+Evaluation (SemEval 2012), 2012.
+
+
+[12] A.L. Maas, R.E. Daly, P.T. Pham, D. Huang, A.Y. Ng, and C. Potts. Learning word vectors for
+sentiment analysis. In Proceedings of ACL, 2011.
+
+
+[13] T. Mikolov. Language Modeling for Speech Recognition in Czech, Masters thesis, Brno Uni-
+versity of Technology, 2007.
+
+
+[14] T. Mikolov, J. Kopeck´y, L. Burget, O. Glembek and J. ˇCernock´y. Neural network based lan-
+guage models for higly inﬂective languages, In: Proc. ICASSP 2009.
+
+
+[15] T. Mikolov, M. Karaﬁ´at, L. Burget, J. ˇCernock´y, S. Khudanpur. Recurrent neural network
+based language model, In: Proceedings of Interspeech, 2010.
+
+
+[16] T. Mikolov, S. Kombrink, L. Burget, J. ˇCernock´y, S. Khudanpur. Extensions of recurrent neural
+network language model, In: Proceedings of ICASSP 2011.
+
+
+[17] T. Mikolov, A. Deoras, S. Kombrink, L. Burget, J. ˇCernock´y. Empirical Evaluation and Com-
+bination of Advanced Language Modeling Techniques, In: Proceedings of Interspeech, 2011.
+
+
+4The code is available at https://code.google.com/p/word2vec/
+
+
+11
+
+
+[18] T. Mikolov, A. Deoras, D. Povey, L. Burget, J. ˇCernock´y. Strategies for Training Large Scale
+Neural Network Language Models, In: Proc. Automatic Speech Recognition and Understand-
+ing, 2011.
+
+
+[19] T. Mikolov. Statistical Language Models based on Neural Networks. PhD thesis, Brno Univer-
+sity of Technology, 2012.
+
+
+[20] T. Mikolov, W.T. Yih, G. Zweig. Linguistic Regularities in Continuous Space Word Represen-
+tations. NAACL HLT 2013.
+
+
+[21] T. Mikolov, I. Sutskever, K. Chen, G. Corrado, and J. Dean. Distributed Representations of
+Words and Phrases and their Compositionality. Accepted to NIPS 2013.
+
+
+[22] A. Mnih, G. Hinton. Three new graphical models for statistical language modelling. ICML,
+2007.
+
+
+[23] A. Mnih, G. Hinton. A Scalable Hierarchical Distributed Language Model. Advances in Neural
+Information Processing Systems 21, MIT Press, 2009.
+
+
+[24] A. Mnih, Y.W. Teh. A fast and simple algorithm for training neural probabilistic language
+models. ICML, 2012.
+
+
+[25] F. Morin, Y. Bengio. Hierarchical Probabilistic Neural Network Language Model. AISTATS,
+2005.
+
+
+[26] D. E. Rumelhart, G. E. Hinton, R. J. Williams. Learning internal representations by back-
+propagating errors. Nature, 323:533.536, 1986.
+
+
+[27] H. Schwenk. Continuous space language models. Computer Speech and Language, vol. 21,
+2007.
+
+
+[28] R. Socher, E.H. Huang, J. Pennington, A.Y. Ng, and C.D. Manning. Dynamic Pooling and
+Unfolding Recursive Autoencoders for Paraphrase Detection. In NIPS, 2011.
+
+
+[29] J. Turian, L. Ratinov, Y. Bengio. Word Representations: A Simple and General Method for
+Semi-Supervised Learning. In: Proc. Association for Computational Linguistics, 2010.
+
+
+[30] P. D. Turney. Measuring Semantic Similarity by Latent Relational Analysis. In: Proc. Interna-
+tional Joint Conference on Artiﬁcial Intelligence, 2005.
+
+
+[31] A. Zhila, W.T. Yih, C. Meek, G. Zweig, T. Mikolov. Combining Heterogeneous Models for
+Measuring Relational Similarity. NAACL HLT 2013.
+
+
+[32] G. Zweig, C.J.C. Burges. The Microsoft Research Sentence Completion Challenge, Microsoft
+Research Technical Report MSR-TR-2011-129, 2011.
+
+
+12
+
+
+

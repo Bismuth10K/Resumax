@@ -1,3 +1,119 @@
 <article><preamble>Gonzalez_2018_Wisebe.pdf</preamble><titre>WiSeBE: Window-Based Sentence Boundary Evaluation</titre><auteurs><auteur>Carlos-Emiliano Gonz´alez-Gallardo1,2(B) and Juan-Manuel Torres-Moreno1,2 
 1 LIA - Universit´e d’Avignon et des Pays de Vaucluse, 339 chemin des Meinajaries, 84140 Avignon, France carlos-emiliano.gonzalez-gallardo@alumni.univ-avignon.fr, juan-manuel.torres@univ-avignon.fr 2 D´epartement de GIGL, ´Ecole Polytechnique de Montr´eal, C.P. 6079, succ. Centre-ville, Montr´eal, Qu´ebec H3C 3A7, Canada 
-</auteur></auteurs><abstract>Abstract. Sentence Boundary Detection (SBD) has been a major research topic since Automatic Speech Recognition transcripts have been used for further Natural Language Processing tasks like Part of Speech Tagging, Question Answering or Automatic Summarization. But what about evaluation? Do standard evaluation metrics like precision, recall, F-score or classiﬁcation error; and more important, evaluating an automatic system against a unique reference is enough to conclude how well a SBD system is performing given the ﬁnal application of the transcript? In this paper we propose Window-based Sentence Boundary Evaluation (WiSeBE), a semi-supervised metric for evaluating Sentence Boundary Detection systems based on multi-reference (dis)agreement. We evaluate and compare the performance of diﬀerent SBD systems over a set of Youtube transcripts using WiSeBE and standard metrics. This double evaluation gives an understanding of how WiSeBE is a more reliable metric for the SBD task. </abstract><biblio /></article>
+</auteur></auteurs><abstract>Abstract. Sentence Boundary Detection (SBD) has been a major research topic since Automatic Speech Recognition transcripts have been used for further Natural Language Processing tasks like Part of Speech Tagging, Question Answering or Automatic Summarization. But what about evaluation? Do standard evaluation metrics like precision, recall, F-score or classiﬁcation error; and more important, evaluating an automatic system against a unique reference is enough to conclude how well a SBD system is performing given the ﬁnal application of the transcript? In this paper we propose Window-based Sentence Boundary Evaluation (WiSeBE), a semi-supervised metric for evaluating Sentence Boundary Detection systems based on multi-reference (dis)agreement. We evaluate and compare the performance of diﬀerent SBD systems over a set of Youtube transcripts using WiSeBE and standard metrics. This double evaluation gives an understanding of how WiSeBE is a more reliable metric for the SBD task. </abstract><biblio>1. Bohac, M., Blavka, K., Kucharova, M., Skodova, S.: Post-processing of the recog-
+nized speech for web presentation of large audio archive. In: 2012 35th International
+Conference on Telecommunications and Signal Processing (TSP), pp. 441–445.
+IEEE (2012)
+2. Brum, H., Araujo, F., Kepler, F.: Sentiment analysis for Brazilian portuguese over
+a skewed class corpora. In: Silva, J., Ribeiro, R., Quaresma, P., Adami, A., Branco,
+A. (eds.) PROPOR 2016. LNCS (LNAI), vol. 9727, pp. 134–138. Springer, Cham
+(2016). https://doi.org/10.1007/978-3-319-41552-9 14
+
+
+3. Che, X., Wang, C., Yang, H., Meinel, C.: Punctuation prediction for unsegmented
+transcript based on word vector. In: LREC (2016)
+4. Fleiss, J.L.: Measuring nominal scale agreement among many raters. Psychol. Bull.
+76(5), 378 (1971)
+5. Fohr, D., Mella, O., Illina, I.: New paradigm in speech recognition: deep neural net-
+works. In: IEEE International Conference on Information Systems and Economic
+Intelligence (2017)
+6. Gonz´alez-Gallardo, C.E., Hajjem, M., SanJuan, E., Torres-Moreno, J.M.: Tran-
+scripts informativeness study: an approach based on automatic summarization. In:
+Conf´erence en Recherche d’Information et Applications (CORIA), Rennes, France,
+May (2018)
+7. Gonz´alez-Gallardo, C.E., Torres-Moreno, J.M.: Sentence boundary detection for
+French with subword-level information vectors and convolutional neural networks.
+arXiv preprint arXiv:1802.04559 (2018)
+8. Gotoh, Y., Renals, S.: Sentence boundary detection in broadcast speech transcripts.
+In: ASR2000-Automatic Speech Recognition: Challenges for the new Millenium
+ISCA Tutorial and Research Workshop (ITRW) (2000)
+
+
+130
+C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+
+
+9. Hinton, G., et al.: Deep neural networks for acoustic modeling in speech recogni-
+tion: the shared views of four research groups. IEEE Signal Process. Mag. 29(6),
+82–97 (2012)
+10. Jamil, N., Ramli, M.I., Seman, N.: Sentence boundary detection without speech
+recognition: a case of an under-resourced language. J. Electr. Syst. 11(3), 308–318
+(2015)
+11. Kiss, T., Strunk, J.: Unsupervised multilingual sentence boundary detection. Com-
+put. Linguist. 32(4), 485–525 (2006)
+12. Klejch, O., Bell, P., Renals, S.: Punctuated transcription of multi-genre broadcasts
+using acoustic and lexical approaches. In: 2016 IEEE Spoken Language Technology
+Workshop (SLT), pp. 433–440. IEEE (2016)
+13. Kol´aˇr, J., Lamel, L.: Development and evaluation of automatic punctuation for
+French and english speech-to-text. In: Thirteenth Annual Conference of the Inter-
+national Speech Communication Association (2012)
+14. Kol´aˇr, J., ˇSvec, J., Psutka, J.: Automatic punctuation annotation in Czech broad-
+cast news speech. In: SPECOM 2004 (2004)
+15. Liu, Y., Chawla, N.V., Harper, M.P., Shriberg, E., Stolcke, A.: A study in machine
+learning from imbalanced data for sentence boundary detection in speech. Comput.
+Speech Lang. 20(4), 468–494 (2006)
+16. Lu, W., Ng, H.T.: Better punctuation prediction with dynamic conditional ran-
+dom ﬁelds. In: Proceedings of the 2010 Conference on Empirical Methods in Natu-
+ral Language Processing. pp. 177–186. Association for Computational Linguistics
+(2010)
+17. Meteer, M., Iyer, R.: Modeling conversational speech for speech recognition. In:
+Conference on Empirical Methods in Natural Language Processing (1996)
+18. Mrozinski, J., Whittaker, E.W., Chatain, P., Furui, S.: Automatic sentence seg-
+mentation of speech for automatic summarization. In: 2006 IEEE International
+Conference on Acoustics Speech and Signal Processing Proceedings, vol. 1, p. I.
+IEEE (2006)
+19. Palmer, D.D., Hearst, M.A.: Adaptive sentence boundary disambiguation. In: Pro-
+ceedings of the Fourth Conference on Applied Natural Language Processing, pp.
+78–83. ANLC 1994. Association for Computational Linguistics, Stroudsburg, PA,
+USA (1994)
+20. Palmer, D.D., Hearst, M.A.: Adaptive multilingual sentence boundary disambigua-
+tion. Comput. Linguist. 23(2), 241–267 (1997)
+21. Pearson, K.: Note on regression and inheritance in the case of two parents. Proc.
+R. Soc. Lond. 58, 240–242 (1895)
+22. Peitz, S., Freitag, M., Ney, H.: Better punctuation prediction with hierarchical
+phrase-based translation. In: Proceedings of the International Workshop on Spoken
+Language Translation (IWSLT), South Lake Tahoe, CA, USA (2014)
+23. Rott, M., ˇCerva, P.: Speech-to-text summarization using automatic phrase extrac-
+tion from recognized text. In: Sojka, P., Hor´ak, A., Kopeˇcek, I., Pala, K. (eds.) TSD
+2016. LNCS (LNAI), vol. 9924, pp. 101–108. Springer, Cham (2016). https://doi.
+org/10.1007/978-3-319-45510-5 12
+
+
+24. Shriberg, E., Stolcke, A.: Word predictability after hesitations: a corpus-based
+study. In: Proceedings of the Fourth International Conference on Spoken Language,
+1996. ICSLP 1996, vol. 3, pp. 1868–1871. IEEE (1996)
+25. Stevenson, M., Gaizauskas, R.: Experiments on sentence boundary detection. In:
+Proceedings of the sixth conference on Applied natural language processing, pp.
+84–89. Association for Computational Linguistics (2000)
+
+
+WiSeBE: Window-Based Sentence Boundary Evaluation
+131
+
+
+26. Stolcke, A., Shriberg, E.: Automatic linguistic segmentation of conversational
+speech. In: Proceedings of the Fourth International Conference on Spoken Lan-
+guage, 1996. ICSLP 1996, vol. 2, pp. 1005–1008. IEEE (1996)
+27. Strassel, S.: Simple metadata annotation speciﬁcation v5. 0, linguistic data consor-
+tium (2003). http://www.ldc.upenn.edu/projects/MDE/Guidelines/SimpleMDE
+V5.0.pdf
+
+
+28. Tilk, O., Alum¨ae, T.: Bidirectional recurrent neural network with attention mech-
+anism for punctuation restoration. In: Interspeech 2016 (2016)
+29. Treviso, M.V., Shulby, C.D., Aluisio, S.M.: Evaluating word embeddings for sen-
+tence boundary detection in speech transcripts. arXiv preprint arXiv:1708.04704
+(2017)
+30. Ueﬃng, N., Bisani, M., Vozila, P.: Improved models for automatic punctuation
+prediction for spoken and written text. In: Interspeech, pp. 3097–3101 (2013)
+31. Wang, W., Tur, G., Zheng, J., Ayan, N.F.: Automatic disﬂuency removal for
+improving spoken language translation. In: 2010 IEEE International Conference on
+Acoustics Speech and Signal Processing (ICASSP), pp. 5214–5217. IEEE (2010)
+32. Xu, C., Xie, L., Huang, G., Xiao, X., Chng, E.S., Li, H.: A deep neural network
+approach for sentence boundary detection in broadcast news. In: Fifteenth Annual
+Conference of the International Speech Communication Association (2014)
+33. Yu, D., Deng, L.: Automatic Speech Recognition. Springer, London (2015). https://
+doi.org/10.1007/978-1-4471-5779-3
+
+
+</biblio></article>
