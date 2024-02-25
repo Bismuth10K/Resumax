@@ -1,13 +1,13 @@
-Nom fichier : Nasr.pdf
-
-Titre : MACAON An NLP Tool Suite for Processing Word Lattices
-
-Auteurs : Alexis Nasr Fr´ed´eric B´echet Jean-Franc¸ois Rey Benoˆıt Favre Joseph Le Roux∗
-
-Abstract : 
-MACAON is a tool suite for standard NLP tasks developed for French. MACAON has been designed to process both human-produced text and highly ambiguous word-lattices produced by NLP tools. MACAON is made of several native modules for common tasks such as a tokenization, a part-of-speech tagging or syntactic parsing, all communicating with each other through XML ﬁles . In addition, exchange protocols with external tools are easily deﬁnable. MACAON is a fast, modular and open tool, distributed under GNU Public License. 
-
-Bibliographie : 
-Anne Abeill´e, Lionel Cl´ement, and Franc¸ois Toussenel. 2003. Building a treebank for french. In Anne Abeill´e, editor, Treebanks. Kluwer, Dordrecht. Steven Abney. 1996. Partial parsing via ﬁnite-state cascades. In Workshop on Robust Parsing, 8th European Summer School in Logic, Language and Information, Prague, Czech Republic, pages 8–15. M. Attia, J. Foster, D. Hogan, J. Le Roux, L. Tounsi, and J. van Genabith. 2010. Handling Unknown Words in Statistical Latent-Variable Parsing Models for Arabic, English and French. In Proceedings of SPMRL. Lucie Barque, Alexis Nasr, and Alain Polgu`ere. 2010. From the deﬁnitions of the tr´esor de la langue franc¸aise to a semantic database of the french language. In EURALEX 2010, Leeuwarden, Pays Bas. 
+<article>
+	<preamble>Nasr.pdf</preamble>
+	<titre>MACAON An NLP Tool Suite for Processing Word Lattices</titre>
+	<auteurs>
+		<auteur>
+			<name>Alexis Nasr Fr´ed´eric B´echet Jean-Franc¸ois Rey Benoˆıt Favre Joseph Le Roux∗</name>
+		</auteur>
+	</auteurs>
+	<abstract>MACAON is a tool suite for standard NLP tasks developed for French. MACAON has been designed to process both human-produced text and highly ambiguous word-lattices produced by NLP tools. MACAON is made of several native modules for common tasks such as a tokenization, a part-of-speech tagging or syntactic parsing, all communicating with each other through XML ﬁles . In addition, exchange protocols with external tools are easily deﬁnable. MACAON is a fast, modular and open tool, distributed under GNU Public License. </abstract>
+	<biblio>Anne Abeill´e, Lionel Cl´ement, and Franc¸ois Toussenel. 2003. Building a treebank for french. In Anne Abeill´e, editor, Treebanks. Kluwer, Dordrecht. Steven Abney. 1996. Partial parsing via ﬁnite-state cascades. In Workshop on Robust Parsing, 8th European Summer School in Logic, Language and Information, Prague, Czech Republic, pages 8–15. M. Attia, J. Foster, D. Hogan, J. Le Roux, L. Tounsi, and J. van Genabith. 2010. Handling Unknown Words in Statistical Latent-Variable Parsing Models for Arabic, English and French. In Proceedings of SPMRL. Lucie Barque, Alexis Nasr, and Alain Polgu`ere. 2010. From the deﬁnitions of the tr´esor de la langue franc¸aise to a semantic database of the french language. In EURALEX 2010, Leeuwarden, Pays Bas. 
 Fr´ed´eric B´echet and Alexis Nasr. 2009. Robust dependency parsing for spoken language understanding of spontaneous speech. In Interspeech, Brighton, United Kingdom. Olivier Blanc, Matthieu Constant, and Eric Laporte. 2006. Outilex, plate-forme logicielle de traitement de textes ´ecrits. In TALN 2006, Leuven. Nancy Ide and Laurent Romary. 2004. International standard for a linguistic annotation framework. Natural language engineering, 10(3-4):211–225. M. Mohri, F. Pereira, and M. Riley. 2000. The design principles of a weighted ﬁnite-state transducer library. Theoretical Computer Science, 231(1):17–32. P. Nocera, G. Linares, D. Massoni´e, and L. Lefort. 2006. Phoneme lattice based A* search algorithm for speech recognition. In Text, Speech and Dialogue, pages 83– 111. Springer. Slav Petrov, Leon Barrett, Romain Thibaux, and Dan Klein. 2006. Learning Accurate, Compact, and Interpretable Tree Annotation. In ACL. Benoˆıt Sagot and Pierre Boullier. 2008. Sxpipe 2: architecture pour le traitement pr´esyntaxique de corpus bruts. Traitement Automatique des Langues, 49(2):155–188. Benoˆıt Sagot, Lionel Cl´ement, Eric Villemonte de la Clergerie, and Pierre Boullier. 2006. The lefff 2 Syntactic Lexicon for French: Architecture, Acquisition, Use. In International Conference on Language Resources and Evaluation, Genoa. Andreas Stolcke. 2002. Srilm - an extensible language modeling toolkit. In International Conference on Spoken Language Processing, Denver, Colorado. S.J. Young. 1994. The HTK Hidden Markov Model Toolkit: Design and Philosophy. Entropic Cambridge Research Laboratory, Ltd, 2:2–44. 
-
+</biblio>
+</article>

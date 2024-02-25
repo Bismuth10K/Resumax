@@ -1,18 +1,16 @@
-Nom fichier : Iria_Juan-Manuel_Gerardo.pdf
-
-Titre : On the Development of the RST Spanish Treebank
-
-Auteurs : Iria da Cunha Juan-Manuel Torres-Moreno Gerardo Sierra Institute for Applied Linguistics (UPF), Spain Laboratoire Informatique d’Avignon (UAPV), France Instituto de Ingeniería (UNAM), Mexico Instituto de Ingeniería (UNAM), Mexico Instituto de Ingeniería (UNAM), Mexico
-gsierram@iingen.unam.
-mx Laboratoire Informatique d’Avignon (UAPV), France École Polytechnique de Montréal, Canada
-iria.dacunha@upf.edu
-juan-manuel.torres@univavignon.fr
-
-Abstract : 
-In this article we present the RST Spanish  Treebank, the first corpus annotated with  rhetorical relations for this language. We  describe the characteristics of the corpus,  the annotation criteria, the annotation  procedure, the inter-annotator agreement,  and other related aspects. Moreover, we  show the interface that we have developed  to carry out searches over the corpus’  annotated texts.  
-
-Bibliographie : 
-Ron Artstein, and Massimo Poesio. 2008. Survey  Article: Inter-Coder Agreement for Computational  Linguistics. Computational Linguistics, 34(4):555596.  
+<article>
+	<preamble>Iria_Juan-Manuel_Gerardo.pdf</preamble>
+	<titre>On the Development of the RST Spanish Treebank</titre>
+	<auteurs>
+		<auteur>
+			<name>Iria da Cunha Juan-Manuel Torres-Moreno Gerardo Sierra Institute for Applied Linguistics (UPF), Spain Laboratoire Informatique d’Avignon (UAPV), France Instituto de Ingeniería (UNAM), Mexico Instituto de Ingeniería (UNAM), Mexico Instituto de Ingeniería (UNAM), Mexico</name>
+		</auteur>
+		<auteur>
+			<name>mx Laboratoire Informatique d’Avignon (UAPV), France École Polytechnique de Montréal, Canada</name>
+		</auteur>
+	</auteurs>
+	<abstract>In this article we present the RST Spanish  Treebank, the first corpus annotated with  rhetorical relations for this language. We  describe the characteristics of the corpus,  the annotation criteria, the annotation  procedure, the inter-annotator agreement,  and other related aspects. Moreover, we  show the interface that we have developed  to carry out searches over the corpus’  annotated texts.  </abstract>
+	<biblio>Ron Artstein, and Massimo Poesio. 2008. Survey  Article: Inter-Coder Agreement for Computational  Linguistics. Computational Linguistics, 34(4):555596.  
 Nadjet Bouayad-Agha, Leo Wanner, and Daniel  Nicklass. 2006. Discourse structuring of dynamic  content. Procesamiento del lenguaje natural, 37:207213.  
 M.  Teresa  Cabré  (1999).  La  terminología:  representación y comunicación. Barcelona: IULAUPF.  
 Lynn Carlson and Daniel Marcu. 2001. Discourse  Tagging Reference Manual. ISI Technical Report  ISITR-545. Los Ángeles: University of Southern  California.  
@@ -50,4 +48,5 @@ Milan Tofiloski, Julian Brooke, and Maite Taboada.  2009. A Syntactic and Lexica
 Hai Zhao, Yan Song, and Chunyu Kit. 2010. How Large  a Corpus Do We Need: Statistical Method Versus  Rule-based Method. In Proceedings of the Seventh  
 conference on International Language Resources and  Evaluation (LREC'10).  
   
-
+</biblio>
+</article>

@@ -1,14 +1,13 @@
-Nom fichier : jing-cutepaste.pdf
-
-Titre : Cut and Paste Based Text Summarization
-
-Auteurs : Hongyan Jing and Kathleen R. McKeown Department of Computer Science Columbia University New York, NY 10027, USA hjing, kathyQcs.columbia.edu
-
-Abstract : 
-We present a cut and paste based text summarizer, which uses operations derived from an analysis of human written abstracts.  The summarizer  
-
-Bibliographie : 
-ANSI. 1997. Guidelines for abstracts. Technical Re
+<article>
+	<preamble>jing-cutepaste.pdf</preamble>
+	<titre>Cut and Paste Based Text Summarization</titre>
+	<auteurs>
+		<auteur>
+			<name>Hongyan Jing and Kathleen R. McKeown Department of Computer Science Columbia University New York, NY 10027, USA hjing, kathyQcs.columbia.edu</name>
+		</auteur>
+	</auteurs>
+	<abstract>We present a cut and paste based text summarizer, which uses operations derived from an analysis of human written abstracts.  The summarizer  </abstract>
+	<biblio>ANSI. 1997. Guidelines for abstracts. Technical Re
 port Z39.14-1997, NISO Press, Bethesda, Maryland.  
 L. Baum. 1972. An inequality and associated max
 imization technique in statistical estimation of  
@@ -41,4 +40,5 @@ American Schools. The Atlantic Monthly Press,  INC., Boston.
 A.J. Viterbi. 1967. Error bounds for convolution  
 codes and an asymptotically optimal decoding algorithm. IEEE Transactions on Information Theory, 13:260-269.  
 185  
-
+</biblio>
+</article>

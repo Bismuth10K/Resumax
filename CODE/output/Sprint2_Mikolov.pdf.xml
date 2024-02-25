@@ -1,21 +1,22 @@
-Nom fichier : Mikolov.pdf
-
-Titre : Efﬁcient Estimation of Word Representations in Vector Space 
-
-Auteurs : Tomas Mikolov Google Inc., Mountain View, CA
-tmikolov@google.com
-Kai Chen Google Inc., Mountain View, CA
-kaichen@google.com
-Greg Corrado Google Inc., Mountain View, CA
-gcorrado@google.com
-Jeffrey Dean Google Inc., Mountain View, CA
-jeff@google.com
-
-Abstract : 
-We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks. We observe large improvements in accuracy at much lower computational cost, i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. Furthermore, we show that these vectors provide state-of-the-art performance on our test set for measuring syntactic and semantic word similarities. 
-
-Bibliographie : 
-[1] Y. Bengio, R. Ducharme, P. Vincent. A neural probabilistic language model. Journal of Machine Learning Research, 3:1137-1155, 2003. 
+<article>
+	<preamble>Mikolov.pdf</preamble>
+	<titre>Efﬁcient Estimation of Word Representations in Vector Space </titre>
+	<auteurs>
+		<auteur>
+			<name>Tomas Mikolov Google Inc., Mountain View, CA</name>
+		</auteur>
+		<auteur>
+			<name>Kai Chen Google Inc., Mountain View, CA</name>
+		</auteur>
+		<auteur>
+			<name>Greg Corrado Google Inc., Mountain View, CA</name>
+		</auteur>
+		<auteur>
+			<name>Jeffrey Dean Google Inc., Mountain View, CA</name>
+		</auteur>
+	</auteurs>
+	<abstract>We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks. We observe large improvements in accuracy at much lower computational cost, i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. Furthermore, we show that these vectors provide state-of-the-art performance on our test set for measuring syntactic and semantic word similarities. </abstract>
+	<biblio>[1] Y. Bengio, R. Ducharme, P. Vincent. A neural probabilistic language model. Journal of Machine Learning Research, 3:1137-1155, 2003. 
 [2] Y. Bengio, Y. LeCun. Scaling learning algorithms towards AI. In: Large-Scale Kernel Machines, MIT Press, 2007. 
 [3] T. Brants, A. C. Popat, P. Xu, F. J. Och, and J. Dean. Large language models in machine translation. In Proceedings of the Joint Conference on Empirical Methods in Natural Language Processing and Computational Language Learning, 2007. 
 [4] R. Collobert and J. Weston. A Uniﬁed Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning. In International Conference on Machine Learning, ICML, 2008. 
@@ -48,4 +49,5 @@ Bibliographie :
 [30] P. D. Turney. Measuring Semantic Similarity by Latent Relational Analysis. In: Proc. International Joint Conference on Artiﬁcial Intelligence, 2005. 
 [31] A. Zhila, W.T. Yih, C. Meek, G. Zweig, T. Mikolov. Combining Heterogeneous Models for Measuring Relational Similarity. NAACL HLT 2013. 
 [32] G. Zweig, C.J.C. Burges. The Microsoft Research Sentence Completion Challenge, Microsoft Research Technical Report MSR-TR-2011-129, 2011. 
-
+</biblio>
+</article>

@@ -1,15 +1,13 @@
-Nom fichier : Das_Martins.pdf
-
-Titre : A Survey on Automatic Text Summarization 
-
-Auteurs : Dipanjan Das Andr´e F.T. Martins Language Technologies Institute Carnegie Mellon University {dipanjan,
-afm}@cs.cmu.edu
-
-Abstract : 
-The increasing availability of online information has necessitated intensive research in the area of automatic text summarization within the Natural Language Processing (NLP) community. Over the past half a century, the problem has been addressed from many diﬀerent perspectives, in varying domains and using various paradigms. This survey intends to investigate some of the most relevant approaches both in the areas of single-document and multipledocument summarization, giving special emphasis to empirical methods and extractive techniques. Some promising approaches that concentrate on speciﬁc details of the summarization problem are also discussed. Special attention is devoted to automatic evaluation of summarization systems, as future research on summarization is strongly dependent on progress in this area. 
-
-Bibliographie : 
-Amari, S.-I. and Nagaoka, H. (2001). Methods of Information Geometry (Translations of Mathematical Monographs). Oxford University Press. [20] 
+<article>
+	<preamble>Das_Martins.pdf</preamble>
+	<titre>A Survey on Automatic Text Summarization </titre>
+	<auteurs>
+		<auteur>
+			<name>Dipanjan Das Andr´e F.T. Martins Language Technologies Institute Carnegie Mellon University {dipanjan,</name>
+		</auteur>
+	</auteurs>
+	<abstract>The increasing availability of online information has necessitated intensive research in the area of automatic text summarization within the Natural Language Processing (NLP) community. Over the past half a century, the problem has been addressed from many diﬀerent perspectives, in varying domains and using various paradigms. This survey intends to investigate some of the most relevant approaches both in the areas of single-document and multipledocument summarization, giving special emphasis to empirical methods and extractive techniques. Some promising approaches that concentrate on speciﬁc details of the summarization problem are also discussed. Special attention is devoted to automatic evaluation of summarization systems, as future research on summarization is strongly dependent on progress in this area. </abstract>
+	<biblio>Amari, S.-I. and Nagaoka, H. (2001). Methods of Information Geometry (Translations of Mathematical Monographs). Oxford University Press. [20] 
 Aone, C., Okurowski, M. E., Gorlinsky, J., and Larsen, B. (1999). A trainable summarizer with knowledge acquired from robust nlp techniques. In Mani, I. and Maybury, M. T., editors, Advances in Automatic Text Summarization, pages 71–80. MIT Press. [4, 5] 
 Barzilay, R. and Elhadad, M. (1997). Using lexical chains for text summarization. In Proceedings ISTS’97. [8] 
 Barzilay, R., McKeown, K., and Elhadad, M. (1999). Information fusion in the context of multi-document summarization. In Proceedings of ACL ’99. [12, 13, 14, 16] 
@@ -57,4 +55,5 @@ Salton, G., Wong, A., and Yang, A. C. S. (1975). A vector space model for automa
 Selman, B., Levesque, H. J., and Mitchell, D. G. (1992). A new method for solving hard satisﬁability problems. In AAAI, pages 440–446. [11] 
 Svore, K., Vanderwende, L., and Burges, C. (2007). Enhancing single-document summarization by combining RankNet and third-party sources. In Proceedings of the EMNLP-CoNLL, pages 448–457. [7, 8] 
 Witbrock, M. J. and Mittal, V. O. (1999). Ultra-summarization (poster abstract): a statistical approach to generating highly condensed non-extractive summaries. In Proceedings of SIGIR ’99, pages 315–316, New York, NY, USA. [18] 
-
+</biblio>
+</article>

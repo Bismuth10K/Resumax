@@ -1,19 +1,19 @@
-Nom fichier : kessler94715.pdf
-
-Titre : Extraction of terminology in the ﬁeld of construction 
-
-Auteurs : 1st R´emy Kessler Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France
-remy.kessler@univ-ubs.fr
-2nd Nicolas B´echet Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France
-nicolas.bechet@irisa.fr
-3rd Giuseppe Berio Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France
-giuseppe.berio@univ-ubs.fr
-
-Abstract : 
-Abstract—We describe a corpus analysis method to extract terminology from a collection of technical speciﬁcations in the ﬁeld of construction. Using statistics and word n-grams analysis, we extract the terminology of the domain and then perform pruning steps with linguistic patterns and internet queries to improve the quality of the ﬁnal terminology. Results are evaluated by using a manual evaluation carried out by 6 experts in the ﬁeld. 
-
-Bibliographie : 
-[1] S. Meignier and T. Merlin, “Lium spkdiarization: an open source toolkit for diarization,” in in CMU SPUD Workshop, 2010. 
+<article>
+	<preamble>kessler94715.pdf</preamble>
+	<titre>Extraction of terminology in the ﬁeld of construction </titre>
+	<auteurs>
+		<auteur>
+			<name>1st R´emy Kessler Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France</name>
+		</auteur>
+		<auteur>
+			<name>2nd Nicolas B´echet Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France</name>
+		</auteur>
+		<auteur>
+			<name>3rd Giuseppe Berio Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France</name>
+		</auteur>
+	</auteurs>
+	<abstract>Abstract—We describe a corpus analysis method to extract terminology from a collection of technical speciﬁcations in the ﬁeld of construction. Using statistics and word n-grams analysis, we extract the terminology of the domain and then perform pruning steps with linguistic patterns and internet queries to improve the quality of the ﬁnal terminology. Results are evaluated by using a manual evaluation carried out by 6 experts in the ﬁeld. </abstract>
+	<biblio>[1] S. Meignier and T. Merlin, “Lium spkdiarization: an open source toolkit for diarization,” in in CMU SPUD Workshop, 2010. 
 [2] P. Pauwels and W. Terkaj, “Express to owl for construction industry: Towards a recommendable and usable ifcowl ontology,” Automation in Construction, vol. 63, pp. 100–133, 03 2016. 
 [3] H. Cunningham, “Gate, a general architecture for text engineering,” in Computers and the Humanities, vol. 36, 2002, pp. 223–254. 
 [4] P. Cimiano and J. V¨olker, “text2onto,” in International conference on application of natural language to information systems. Springer, 2005, pp. 227–238. 
@@ -33,10 +33,11 @@ Bibliographie :
 [18] B. Daille, “Study and implementation of combined techniques for automatic extraction of terminology,” The Balancing Act: Combining Symbolic and Statistical Approaches to Language, 12 2002. 
 [19] C. Lang, R. Schneider, and K. Suchowolec, “Extracting specialized terminology from linguistic corpora,” GRAMMAR AND CORPORA, p. 425, 2018. 
 [20] E. Amjadian, D. Inkpen, T. S. Paribakht, and F. Faez, “Local-global vectors to improve unigram terminology extraction,” in Proceedings of the 5th International Workshop on Computational Terminology, 2016. 
-[21] G. Wohlgenannt and F. Minic, “Using word2vec to build a simple ontology learning system.” in International Semantic Web Conference (Posters & Demos), 2016. 
+[21] G. Wohlgenannt and F. Minic, “Using word2vec to build a simple ontology learning system.” in International Semantic Web Conference (Posters &amp; Demos), 2016. 
 [22] H. Schmid, “Probabilistic part-of-speech tagging using decision trees,” 1994. 
 [23] E. Altman, “Financial ratios, discriminant analysis and the prediction of corporate bankruptcy.” in The Journal of Finance, 23(4). doi:10.2307/2978933, 1968, pp. 589–609. 
 [24] J. Cohen, “A Coefﬁcient of Agreement for Nominal Scales,” Educational and Psychological Measurement, vol. 20, no. 1, p. 37, 1960. 
 [25] M. L. McHugh, “Interrater reliability: the kappa statistic,” in Biochemia medica, 2012. 
 [26] M. Apidianaki, S. M. Mohammad, J. May, E. Shutova, S. Bethard, and M. Carpuat, “Proceedings of the 12th international workshop on semantic evaluation,” in Proceedings of The 12th International Workshop on Semantic Evaluation. Association for Computational Linguistics, 2018. [Online]. Available: http://aclweb.org/anthology/S18-1000 
-
+</biblio>
+</article>
