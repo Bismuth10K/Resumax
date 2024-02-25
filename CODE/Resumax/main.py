@@ -6,7 +6,7 @@ Il est recommandé de générer une venv avec les bibliothèques pyMuPDF et pyth
 import os  # Pour manipuler des dossiers.
 import re  # Pour utiliser du regex.
 import sys  # Commandes système
-from xml.etree.ElementTree import Element, SubElement, ElementTree  # Pour générer des xml
+from xml.etree.ElementTree import Element, SubElement, ElementTree, indent  # Pour générer des xml
 
 import fitz  # Pour lire les pdf, ---pip install PyMuPDF---
 from dateutil.parser import parse  # Pour détecter une date, ---pip install python-dateutil---
@@ -33,9 +33,9 @@ def txt_reco_patterns():
             # 	for l in b["lines"]:
             # 		for s in l["spans"]:
             # 			print(s["size"])
-
-            content = doc[0].get_text("blocks", sort=True)
-
+            content = []
+            for pages in doc:
+                content += pages.get_text("blocks") + ["\npage suivante"]
             with open(doc.name + '.txt', 'w') as f:
                 for i in content:
                     f.write(str(i) + "\n")
@@ -117,6 +117,7 @@ def find_abstract(cur_bloc: str, next_bloc: str, toc=None):
         abstract = cur_bloc
         print("Abstract found by TOC")
     abstract = abstract.replace("-\n", "")  # mot coupé en deux dans un paragraphe, donc on remplace par "".
+    abstract = abstract.replace("- \n", "")
     abstract = abstract.replace("\n", " ")  # retour à la ligne dans un paragraphe, donc on remplace par " ".
     return abstract
 
@@ -137,21 +138,22 @@ def is_date(string: str):
 def find_references(pdf: str) -> list:
     """
     Récupère les références de la bibliographie du document.
-    :param pdf: le document
-    :return: une liste contenant le texte de chaque bloc de la bibliographie
+    :param pdf: Le document
+    :return: Une liste contenant le texte de chaque bloc de la bibliographie
     """
     doc = fitz.open(pdf)
     res = []
     found = False
     for i in range(len(doc)):
         for block in doc[i].get_text("blocks"):
-            if ("References" in block[4] or "REFERENCES" in block[4]):
+            if re.match(r"\Areferences(?: |\n|)+", block[4].lower()):
                 found = True
             elif found:
-                if not block[4].isdigit():
-                    print("Found page ", i)
-                    print(block[4])
-                    res.append(block[4])
+                if not re.match(r"\A[0-9]+(?:\n|)$", block[4]):
+                    tmp_ref = block[4].replace("- \n", "")
+                    tmp_ref = tmp_ref.replace("-\n", "")
+                    tmp_ref = tmp_ref.replace("\n", " ")
+                    res.append(tmp_ref)
     return res
 
 
@@ -162,7 +164,7 @@ def parser(pdf):
     :return: Dictionnaire comportant différentes sections du PDF (auteurs, titre, abstract, biblio...)
     """
     doc = fitz.open(pdf)  # On ouvre le pdf avec pyMuPDF (fitz).
-    auteur = ""
+    auteur = []
     titre = ""
 
     content = doc[0].get_text("blocks")  # Récupération des texts sous forme de blocs.
@@ -177,9 +179,9 @@ def parser(pdf):
     # Si le titre contient un / ou si on l'a pas trouvé dans les metadata,
     # on cherche un nouveau titre dans le document.
     if len(titre) == 0 or re.match(r'/', titre) is not None:
-        print("current titre : " + titre)
+        # print("current titre : " + titre)
         titre, pos_bloc_titre = find_title(content[0], content[1])
-        print("new titre : " + titre)
+        # print("new titre : " + titre)
     print(titre)
 
     # Récupération auteurs.
@@ -197,22 +199,34 @@ def parser(pdf):
         abstract = find_abstract(tmp_txt, tmp_next_txt, doc.get_toc())  # Récupération abstract.
 
         # Récupération auteurs sur plusieurs lignes tant que ce n'est pas un abstract.
-        if i > pos_bloc_titre and abstract == "" and tmp_txt.split() != titre.split():  # and not doc.metadata.get('author')
+        if i > pos_bloc_titre and abstract == "" and tmp_txt.split() != titre.split():
             if not is_date(tmp_txt):  # Permet de filtrer les dates.
-                auteur += tmp_txt.replace("\n", " ") + "\n"
+                tmp_txt = tmp_txt.replace("-\n", "")
+                tmp_txt = tmp_txt.replace("\n", " ") + "\n"
+                liste_mots = tmp_txt.split()
+                print(liste_mots)
+                for words in liste_mots:  # Pour séparer les mails du reste.
+                    if '@' in words:
+                        auteur.append(words)
+                    else:
+                        if len(auteur) != 0:
+                            if '@' not in auteur[-1]:
+                                auteur[-1] += " " + words
+                            else:
+                                auteur.append(words)
+                        else:
+                            auteur.append(words)
+                        print(auteur)
         if len(abstract) > 0:  # Sachant que l'abstract se trouve après les auteurs,
             break  # si on le trouve, on sort de la boucle.
     if len(abstract) == 0:  # Si on ne trouve pas l'abstract, on le dit.
         print("Abstract not found")
-    print()
-    print(auteur)
-    print()
 
     # Récuperation de la bibliographie
     bib = find_references(pdf)
     bibstr = ""
     for ref in bib:
-        bibstr += ref + "\n\n"
+        bibstr += ref + "\n"
 
     parsed_results = {"titre": titre, "auteur": auteur, "abstract": abstract.replace("\n", " "), "biblio": bibstr}
 
@@ -228,8 +242,10 @@ def output_txt(pdf, dict_results: dict):
     with open("../output/Sprint2_" + pdf + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
         f.write("Nom fichier : " + pdf + "\n\n")
         f.write("Titre : " + dict_results.get("titre") + "\n\n")
-        f.write("Auteurs : " + dict_results.get("auteur") + "\n")
-        f.write("Abstract : \n" + dict_results.get("abstract") + "\n\n")
+        f.write("Auteurs : ")
+        for i in dict_results.get("auteur"):
+            f.write(i + "\n")
+        f.write("\nAbstract : \n" + dict_results.get("abstract") + "\n\n")
         f.write("Bibliographie : \n" + dict_results.get("biblio") + "\n")
 
 
@@ -247,8 +263,19 @@ def output_xml(pdf, dict_results: dict):
     titre.text = dict_results.get("titre")
 
     auteurs = SubElement(article, 'auteurs')
-    auteur = SubElement(auteurs, 'auteur')
-    auteur.text = dict_results.get("auteur")  # rajouter enfants name et mail
+    list_auteurs = dict_results.get("auteur")
+    i = 0
+    while i < len(list_auteurs):
+        auteur = SubElement(auteurs, 'auteur')
+        if '@' not in list_auteurs[i]:
+            name = SubElement(auteur, 'name')
+            name.text = list_auteurs[i]
+        if i + 1 < len(auteurs) and '@' in auteurs[i + 1] and '@' not in auteurs[i]:
+            mail = SubElement(auteur, 'mail')
+            mail.text = auteurs[i + 1]
+        if len(auteur) == 0:
+            auteurs.remove(auteur)
+        i += 1
 
     abstract = SubElement(article, 'abstract')
     abstract.text = dict_results.get("abstract")
@@ -257,6 +284,8 @@ def output_xml(pdf, dict_results: dict):
     biblio.text = dict_results.get("biblio")
 
     tree = ElementTree(article)
+
+    indent(tree, space="\t")
 
     with open("../output/Sprint2_" + pdf + '.xml', 'w') as f:
         tree.write(f, encoding='unicode')
@@ -277,6 +306,7 @@ def parse_all_pdf(func_output, func_output_all=None):
                 func_output(file, dict_res)
                 if func_output_all is not None:
                     func_output_all(file, dict_res)
+                print(pdf, "parsé et traité !")
 
 
 if __name__ == '__main__':
