@@ -21,3 +21,34 @@ Voici un récapitulatif de nos sprints jusqu'à là :
 	Améliorer la détection des auteurs.
 	 
 À chaque nouveau sprint, une nouvelle branche sera créée selon le numéro de sprint. À chaque fin de sprint, on merge la branche de main et on créé un release. Ce release contiendra l'exécutable de fin de sprint et le code source à l'heure de la fin.
+
+## Lancement
+Pour exécuter Resumax, il est recommandé de créer une venv python.
+Ouvrez votre terminal, allez `CODE/Resumax/` à partir de la racine du projet, puis tapez les commandes suivantes :
+
+```bash
+$ python -m venv .venv
+$ source .venv/bin/activate
+$ pip install python-dateutil
+$ pip install PyMuPDF
+```
+
+Vous aurez donc un dossier `.venv/` dans le dossier `Resumax/` contenant les librairies necéssaires à l'exécution du script.
+
+Pour l'exécuter, allez dans le dossier `CODE/Resumax/`, vérifier si la venv est bien activée (normalement, vous verrez son nom en début de ligne dans votre terminal, mais cela dépend probablement des terminaux).
+Puis lancez la commande suivante :
+
+```bash
+python main.py -t # Output en txt seulement
+python main.py -x # Output en xml seulement
+python main.py -a # Output en txt et en xml
+```
+
+Vous trouverez les résultats dans le dossier `../output/` en partant du dossier contenant le code.
+
+Le code traite automatiquement tous les .pdf appartenant au dossier `CODE/ressources/` à partir de la racine du projet. 
+Libre à vous d'y mettre vos .pdf.
+
+## Résultats
+Pour l'instant, le parser ne récupère que le titre, les auteurs (avec une distinction auteur et mail), l'abstract et les références.
+
