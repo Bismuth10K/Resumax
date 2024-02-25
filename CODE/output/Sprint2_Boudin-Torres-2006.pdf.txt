@@ -2,110 +2,28 @@ Nom fichier : Boudin-Torres-2006.pdf
 
 Titre : A Scalable MMR Approach to Sentence Scoring for Multi-Document Update Summarization
 
-Auteurs : Florian Boudin ♮ and Marc El-B`eze ♮ 
-♮ Laboratoire Informatique d’Avignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France. 
-florian.boudin@univ-avignon.fr 
-marc.elbeze@univ-avignon.fr 
-Juan-Manuel Torres-Moreno ♮,♭ 
-juan-manuel.torres@univ-avignon.fr 
+Auteurs : Florian Boudin ♮ and Marc El-B`eze ♮ ♮ Laboratoire Informatique d’Avignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France.
+florian.boudin@univ-avignon.fr
+marc.elbeze@univ-avignon.fr
+Juan-Manuel Torres-Moreno ♮,♭
+juan-manuel.torres@univ-avignon.fr
 
 Abstract : 
 We present SMMR, a scalable sentence scoring method for query-oriented update summarization. Sentences are scored thanks to a criterion combining query relevance and dissimilarity with already read documents (history). As the amount of data in history increases, non-redundancy is prioritized over query-relevance. We show that SMMR achieves promising results on the DUC 2007 update corpus. 
 
 Bibliographie : 
-Boudin, F. and J.M. Torres-Moreno.
-2007.
-A Co-
-sine Maximization-Minimization approach for User-
-Oriented Multi-Document Update Summarization.
-In Recent Advances in Natural Language Processing
-(RANLP), pages 81–87.
-
-
-Carbonell, J. and J. Goldstein. 1998. The use of MMR,
-diversity-based reranking for reordering documents
-and producing summaries. In 21st annual interna-
-tional ACM SIGIR conference on Research and de-
-velopment in information retrieval, pages 335–336.
-ACM Press New York, NY, USA.
-
-
-Hachey, B., G. Murray, and D. Reitter.
-2005.
-The
-Embra System at DUC 2005: Query-oriented Multi-
-document Summarization with a Very Large Latent
-Semantic Space. In Document Understanding Con-
-ference (DUC).
-
-
-Hickl, A., K. Roberts, and F. Lacatusu. 2007. LCC’s
-GISTexter at DUC 2007: Machine Reading for Up-
-date Summarization.
-In Document Understanding
-Conference (DUC).
-
-
-Lin, Z., T.S. Chua, M.Y. Kan, W.S. Lee, L. Qiu, and
-S. Ye.
-2007.
-NUS at DUC 2007: Using Evolu-
-tionary Models of Text. In Document Understanding
-Conference (DUC).
-
-
-Lin, C.Y.
-2004.
-Rouge: A Package for Automatic
-Evaluation of Summaries. In Workshop on Text Sum-
-marization Branches Out, pages 25–26.
-
-
-Mani, I. and M.T. Maybury. 1999. Advances in Auto-
-matic Text Summarization. MIT Press.
-
-
-Mani, I. and G. Wilson. 2000. Robust temporal pro-
-cessing of news. In 38th Annual Meeting on Asso-
-ciation for Computational Linguistics, pages 69–76.
-Association for Computational Linguistics Morris-
-town, NJ, USA.
-
-
-Murray, G., S. Renals, and J. Carletta. 2005. Extractive
-Summarization of Meeting Recordings. In Ninth Eu-
-ropean Conference on Speech Communication and
-Technology. ISCA.
-
-
-Salton, G., A. Wong, and C. S. Yang. 1975. A vector
-space model for automatic indexing. Communica-
-tions of the ACM, 18(11):613–620.
-
-
-Swan, R. and J. Allan. 2000. Automatic generation
-of overview timelines. In 23rd annual international
-ACM SIGIR conference on Research and develop-
-ment in information retrieval, pages 49–56.
-
-
-Winkler, W. E. 1999. The state of record linkage and
-current research problems. In Survey Methods Sec-
-tion, pages 73–79.
-
-
-Witte, R., R. Krestel, and S. Bergler. 2007. Generat-
-ing Update Summaries for DUC 2007. In Document
-Understanding Conference (DUC).
-
-
-Ye, S., L. Qiu, T.S. Chua, and M.Y. Kan. 2005. NUS
-at DUC 2005: Understanding documents via con-
-cept links. In Document Understanding Conference
-(DUC).
-
-
-26
-
-
+Boudin, F. and J.M. Torres-Moreno. 2007. A Cosine Maximization-Minimization approach for UserOriented Multi-Document Update Summarization. In Recent Advances in Natural Language Processing (RANLP), pages 81–87. 
+Carbonell, J. and J. Goldstein. 1998. The use of MMR, diversity-based reranking for reordering documents and producing summaries. In 21st annual international ACM SIGIR conference on Research and development in information retrieval, pages 335–336. ACM Press New York, NY, USA. 
+Hachey, B., G. Murray, and D. Reitter. 2005. The Embra System at DUC 2005: Query-oriented Multidocument Summarization with a Very Large Latent Semantic Space. In Document Understanding Conference (DUC). 
+Hickl, A., K. Roberts, and F. Lacatusu. 2007. LCC’s GISTexter at DUC 2007: Machine Reading for Update Summarization. In Document Understanding Conference (DUC). 
+Lin, Z., T.S. Chua, M.Y. Kan, W.S. Lee, L. Qiu, and S. Ye. 2007. NUS at DUC 2007: Using Evolutionary Models of Text. In Document Understanding Conference (DUC). 
+Lin, C.Y. 2004. Rouge: A Package for Automatic Evaluation of Summaries. In Workshop on Text Summarization Branches Out, pages 25–26. 
+Mani, I. and M.T. Maybury. 1999. Advances in Automatic Text Summarization. MIT Press. 
+Mani, I. and G. Wilson. 2000. Robust temporal processing of news. In 38th Annual Meeting on Association for Computational Linguistics, pages 69–76. Association for Computational Linguistics Morristown, NJ, USA. 
+Murray, G., S. Renals, and J. Carletta. 2005. Extractive Summarization of Meeting Recordings. In Ninth European Conference on Speech Communication and Technology. ISCA. 
+Salton, G., A. Wong, and C. S. Yang. 1975. A vector space model for automatic indexing. Communications of the ACM, 18(11):613–620. 
+Swan, R. and J. Allan. 2000. Automatic generation of overview timelines. In 23rd annual international ACM SIGIR conference on Research and development in information retrieval, pages 49–56. 
+Winkler, W. E. 1999. The state of record linkage and current research problems. In Survey Methods Section, pages 73–79. 
+Witte, R., R. Krestel, and S. Bergler. 2007. Generating Update Summaries for DUC 2007. In Document Understanding Conference (DUC). 
+Ye, S., L. Qiu, T.S. Chua, and M.Y. Kan. 2005. NUS at DUC 2005: Understanding documents via concept links. In Document Understanding Conference (DUC). 
 

@@ -1,243 +1,59 @@
-<article><preamble>Das_Martins.pdf</preamble><titre>A Survey on Automatic Text Summarization </titre><auteurs><auteur>Dipanjan Das Andr´e F.T. Martins 
-Language Technologies Institute Carnegie Mellon University {dipanjan, afm}@cs.cmu.edu 
-</auteur></auteurs><abstract>The increasing availability of online information has necessitated intensive research in the area of automatic text summarization within the Natural Language Processing (NLP) community. Over the past half a century, the problem has been addressed from many diﬀerent perspectives, in varying domains and using various paradigms. This survey intends to investigate some of the most relevant approaches both in the areas of single-document and multipledocument summarization, giving special emphasis to empirical methods and extractive techniques. Some promising approaches that concentrate on speciﬁc details of the summarization problem are also discussed. Special attention is devoted to automatic evaluation of summarization systems, as future research on summarization is strongly dependent on progress in this area. </abstract><biblio>Amari, S.-I. and Nagaoka, H. (2001). Methods of Information Geometry (Transla-
-tions of Mathematical Monographs). Oxford University Press. [20]
-
-
-Aone, C., Okurowski, M. E., Gorlinsky, J., and Larsen, B. (1999).
-A trainable
-summarizer with knowledge acquired from robust nlp techniques.
-In Mani, I.
-and Maybury, M. T., editors, Advances in Automatic Text Summarization, pages
-71–80. MIT Press. [4, 5]
-
-
-Barzilay, R. and Elhadad, M. (1997). Using lexical chains for text summarization.
-In Proceedings ISTS’97. [8]
-
-
-Barzilay, R., McKeown, K., and Elhadad, M. (1999).
-Information fusion in the
-context of multi-document summarization. In Proceedings of ACL ’99. [12, 13,
-14, 16]
-
-
-Baxendale, P. (1958). Machine-made index for technical literature - an experiment.
-IBM Journal of Research Development, 2(4):354–361. [2, 3, 5]
-
-
-Brown, F., Pietra, V. J. D., Pietra, S. A. D., and Mercer, R. L. (1993).
-The
-mathematics of statistical machine translation: parameter estimation. Comput.
-Linguist., 19(2):263–311. [18]
-
-
-Burges, C., Shaked, T., Renshaw, E., Lazier, A., Deeds, M., Hamilton, N., and
-Hullender, G. (2005). Learning to rank using gradient descent. In ICML ’05:
-Proceedings of the 22nd international conference on Machine learning, pages 89–
-96, New York, NY, USA. ACM. [8]
-
-
-Carbonell, J. and Goldstein, J. (1998). The use of MMR, diversity-based reranking
-for reordering documents and producing summaries. In Proceedings of SIGIR ’98,
-pages 335–336, New York, NY, USA. [12, 14, 15]
-
-
-Collins, M. (1999). Head-Driven Statistical Models for Natural Language Parsing.
-PhD thesis, University of Pennsylvania. [13, 20]
-
-
-Conroy, J. M. and O’leary, D. P. (2001). Text summarization via hidden markov
-models. In Proceedings of SIGIR ’01, pages 406–407, New York, NY, USA. [6]
-
-
-Cover, T. and Thomas, J. (1991). Elements of Information Theory. Wiley. [25]
-
-
-Daum´e III, H. and Marcu, D. (2002). A noisy-channel model for document com-
-pression. In Proceedings of the Conference of the Association of Computational
-Linguistics (ACL 2002). [20]
-
-
-Daum´e III, H. and Marcu, D. (2004). A tree-position kernel for document compres-
-sion. In Proceedings of DUC2004. [20]
-
-
-Edmundson, H. P. (1969). New methods in automatic extracting. Journal of the
-ACM, 16(2):264–285. [2, 3, 4]
-
-
-28
-
-
-Endres, D. M. and Schindelin, J. E. (2003). A new metric for probability distribu-
-tions. IEEE Transactions on Information Theory, 49(7):1858–1860. [26]
-
-
-Evans, D. K. (2005). Similarity-based multilingual multi-document summarization.
-Technical Report CUCS-014-05, Columbia University. [12, 17]
-
-
-Gous, A. (1999). Spherical subfamily models. [20, 21]
-
-
-Hall, K. and Hofmann, T. (2000).
-Learning curved multinomial subfamilies for
-natural language processing and information retrieval. In Proc. 17th International
-Conf. on Machine Learning, pages 351–358. Morgan Kaufmann, San Francisco,
-CA. [20]
-
-
-Hovy, E. and Lin, C. Y. (1999). Automated text summarization in summarist. In
-Mani, I. and Maybury, M. T., editors, Advances in Automatic Text Summariza-
-tion, pages 81–94. MIT Press. [17]
-
-
-Knight, K. and Marcu, D. (2000). Statistics-based summarization - step one: Sen-
-tence compression. In AAAI/IAAI, pages 703–710. [19]
-
-
-Kupiec, J., Pedersen, J., and Chen, F. (1995). A trainable document summarizer.
-In Proceedings SIGIR ’95, pages 68–73, New York, NY, USA. [4]
-
-
-Lebanon, G. (2006). Sequential document representations and simplicial curves. In
-Proceedings of the 22nd Conference on Uncertainty in Artiﬁcial Intelligence. [22]
-
-
-Lebanon, G., Mao, Y., and Dillon, J. (2007). The locally weighted bag of words
-framework for document representation. J. Mach. Learn. Res., 8:2405–2441. [21,
-22]
-
-
-Lin, C.-Y. (1999). Training a selection function for extraction. In Proceedings of
-CIKM ’99, pages 55–62, New York, NY, USA. [5]
-
-
-Lin, C.-Y. (2004). Rouge: A package for automatic evaluation of summaries. In
-Marie-Francine Moens, S. S., editor, Text Summarization Branches Out: Pro-
-ceedings of the ACL-04 Workshop, pages 74–81, Barcelona, Spain.
-[8, 23, 24,
-25]
-
-
-Lin, C.-Y., Cao, G., Gao, J., and Nie, J.-Y. (2006). An information-theoretic ap-
-proach to automatic evaluation of summaries. In Proceedings of HLT-NAACL
-’06, pages 463–470, Morristown, NJ, USA. [25, 26]
-
-
-Lin, C.-Y. and Hovy, E. (1997). Identifying topics by position. In Proceedings of
-the Fifth conference on Applied natural language processing, pages 283–290, San
-Francisco, CA, USA. [5]
-
-
-Lin, C.-Y. and Hovy, E. (2002). Manual and automatic evaluation of summaries. In
-Proceedings of the ACL-02 Workshop on Automatic Summarization, pages 45–51,
-Morristown, NJ, USA. [23]
-
-
-29
-
-
-Luhn, H. P. (1958). The automatic creation of literature abstracts. IBM Journal of
-Research Development, 2(2):159–165. [2, 3, 6, 8]
-
-
-Mani, I. and Bloedorn, E. (1997). Multi-document summarization by graph search
-and matching. In AAAI/IAAI, pages 622–628. [15, 16]
-
-
-Marcu, D. (1998a). Improving summarization through rhetorical parsing tuning. In
-Proceedings of The Sixth Workshop on Very Large Corpora, pages 206-215, pages
-206–215, Montreal, Canada. [9, 10, 20]
-
-
-Marcu, D. C. (1998b). The rhetorical parsing, summarization, and generation of
-natural language texts. PhD thesis, University of Toronto. Adviser-Graeme Hirst.
-[10]
-
-
-McKeown, K., Klavans, J., Hatzivassiloglou, V., Barzilay, R., and Eskin, E.
-(1999). Towards multidocument summarization by reformulation: Progress and
-prospects. In AAAI/IAAI, pages 453–460. [11, 12, 13, 14, 16]
-
-
-McKeown, K. R. and Radev, D. R. (1995). Generating summaries of multiple news
-articles. In Proceedings of SIGIR ’95, pages 74–82, Seattle, Washington. [8, 11,
-12]
-
-
-Miller, G. A. (1995). Wordnet: a lexical database for english. Commun. ACM,
-38(11):39–41. [4, 9]
-
-
-Nenkova, A. (2005). Automatic text summarization of newswire: Lessons learned
-from the document understanding conference.
-In Proceedings of AAAI 2005,
-Pittsburgh, USA. [7]
-
-
-Ono, K., Sumita, K., and Miike, S. (1994). Abstract generation based on rhetorical
-structure extraction. In Proceedings of Coling ’94, pages 344–348, Morristown,
-NJ, USA. [9]
-
-
-Osborne, M. (2002). Using maximum entropy for sentence extraction. In Proceedings
-of the ACL’02 Workshop on Automatic Summarization, pages 1–8, Morristown,
-NJ, USA. [7]
-
-
-Papineni, K., Roukos, S., Ward, T., and Zhu, W.-J. (2001). Bleu: a method for
-automatic evaluation of machine translation. In Proceedings of ACL ’02, pages
-311–318, Morristown, NJ, USA. [24]
-
-
-Radev, D. R., Hovy, E., and McKeown, K. (2002). Introduction to the special issue
-on summarization. Computational Linguistics., 28(4):399–408. [1, 2]
-
-
-Radev, D. R., Jing, H., and Budzikowska, M. (2000). Centroid-based summarization
-of multiple documents: sentence extraction, utility-based evaluation, and user
-studies. In NAACL-ANLP 2000 Workshop on Automatic summarization, pages
-21–30, Morristown, NJ, USA. [12, 16, 17]
-
-
-30
-
-
-Radev, D. R., Jing, H., Stys, M., and Tam, D. (2004). Centroid-based summariza-
-tion of multiple documents. Information Processing and Management 40 (2004),
-40:919–938. [16, 17]
-
-
-Radev, D. R. and McKeown, K. (1998). Generating natural language summaries
-from multiple on-line sources. Computational Linguistics, 24(3):469–500. [12]
-
-
-Salton, G. and Buckley, C. (1988). On the use of spreading activation methods in
-automatic information. In Proceedings of SIGIR ’88, pages 147–160, New York,
-NY, USA. [15]
-
-
-Salton, G., Wong, A., and Yang, A. C. S. (1975). A vector space model for automatic
-indexing. Communications of the ACM, 18:229–237. [20]
-
-
-Selman, B., Levesque, H. J., and Mitchell, D. G. (1992). A new method for solving
-hard satisﬁability problems. In AAAI, pages 440–446. [11]
-
-
-Svore, K., Vanderwende, L., and Burges, C. (2007). Enhancing single-document
-summarization by combining RankNet and third-party sources. In Proceedings of
-the EMNLP-CoNLL, pages 448–457. [7, 8]
-
-
-Witbrock, M. J. and Mittal, V. O. (1999). Ultra-summarization (poster abstract):
-a statistical approach to generating highly condensed non-extractive summaries.
-In Proceedings of SIGIR ’99, pages 315–316, New York, NY, USA. [18]
-
-
-31
-
-
-</biblio></article>
+<article>
+	<preamble>Das_Martins.pdf</preamble>
+	<titre>A Survey on Automatic Text Summarization </titre>
+	<auteurs>
+		<auteur>
+			<name>Dipanjan Das Andr´e F.T. Martins Language Technologies Institute Carnegie Mellon University {dipanjan,</name>
+		</auteur>
+	</auteurs>
+	<abstract>The increasing availability of online information has necessitated intensive research in the area of automatic text summarization within the Natural Language Processing (NLP) community. Over the past half a century, the problem has been addressed from many diﬀerent perspectives, in varying domains and using various paradigms. This survey intends to investigate some of the most relevant approaches both in the areas of single-document and multipledocument summarization, giving special emphasis to empirical methods and extractive techniques. Some promising approaches that concentrate on speciﬁc details of the summarization problem are also discussed. Special attention is devoted to automatic evaluation of summarization systems, as future research on summarization is strongly dependent on progress in this area. </abstract>
+	<biblio>Amari, S.-I. and Nagaoka, H. (2001). Methods of Information Geometry (Translations of Mathematical Monographs). Oxford University Press. [20] 
+Aone, C., Okurowski, M. E., Gorlinsky, J., and Larsen, B. (1999). A trainable summarizer with knowledge acquired from robust nlp techniques. In Mani, I. and Maybury, M. T., editors, Advances in Automatic Text Summarization, pages 71–80. MIT Press. [4, 5] 
+Barzilay, R. and Elhadad, M. (1997). Using lexical chains for text summarization. In Proceedings ISTS’97. [8] 
+Barzilay, R., McKeown, K., and Elhadad, M. (1999). Information fusion in the context of multi-document summarization. In Proceedings of ACL ’99. [12, 13, 14, 16] 
+Baxendale, P. (1958). Machine-made index for technical literature - an experiment. IBM Journal of Research Development, 2(4):354–361. [2, 3, 5] 
+Brown, F., Pietra, V. J. D., Pietra, S. A. D., and Mercer, R. L. (1993). The mathematics of statistical machine translation: parameter estimation. Comput. Linguist., 19(2):263–311. [18] 
+Burges, C., Shaked, T., Renshaw, E., Lazier, A., Deeds, M., Hamilton, N., and Hullender, G. (2005). Learning to rank using gradient descent. In ICML ’05: Proceedings of the 22nd international conference on Machine learning, pages 89– 96, New York, NY, USA. ACM. [8] 
+Carbonell, J. and Goldstein, J. (1998). The use of MMR, diversity-based reranking for reordering documents and producing summaries. In Proceedings of SIGIR ’98, pages 335–336, New York, NY, USA. [12, 14, 15] 
+Collins, M. (1999). Head-Driven Statistical Models for Natural Language Parsing. PhD thesis, University of Pennsylvania. [13, 20] 
+Conroy, J. M. and O’leary, D. P. (2001). Text summarization via hidden markov models. In Proceedings of SIGIR ’01, pages 406–407, New York, NY, USA. [6] 
+Cover, T. and Thomas, J. (1991). Elements of Information Theory. Wiley. [25] 
+Daum´e III, H. and Marcu, D. (2002). A noisy-channel model for document compression. In Proceedings of the Conference of the Association of Computational Linguistics (ACL 2002). [20] 
+Daum´e III, H. and Marcu, D. (2004). A tree-position kernel for document compression. In Proceedings of DUC2004. [20] 
+Edmundson, H. P. (1969). New methods in automatic extracting. Journal of the ACM, 16(2):264–285. [2, 3, 4] 
+Endres, D. M. and Schindelin, J. E. (2003). A new metric for probability distributions. IEEE Transactions on Information Theory, 49(7):1858–1860. [26] 
+Evans, D. K. (2005). Similarity-based multilingual multi-document summarization. Technical Report CUCS-014-05, Columbia University. [12, 17] 
+Gous, A. (1999). Spherical subfamily models. [20, 21] 
+Hall, K. and Hofmann, T. (2000). Learning curved multinomial subfamilies for natural language processing and information retrieval. In Proc. 17th International Conf. on Machine Learning, pages 351–358. Morgan Kaufmann, San Francisco, CA. [20] 
+Hovy, E. and Lin, C. Y. (1999). Automated text summarization in summarist. In Mani, I. and Maybury, M. T., editors, Advances in Automatic Text Summarization, pages 81–94. MIT Press. [17] 
+Knight, K. and Marcu, D. (2000). Statistics-based summarization - step one: Sentence compression. In AAAI/IAAI, pages 703–710. [19] 
+Kupiec, J., Pedersen, J., and Chen, F. (1995). A trainable document summarizer. In Proceedings SIGIR ’95, pages 68–73, New York, NY, USA. [4] 
+Lebanon, G. (2006). Sequential document representations and simplicial curves. In Proceedings of the 22nd Conference on Uncertainty in Artiﬁcial Intelligence. [22] 
+Lebanon, G., Mao, Y., and Dillon, J. (2007). The locally weighted bag of words framework for document representation. J. Mach. Learn. Res., 8:2405–2441. [21, 22] 
+Lin, C.-Y. (1999). Training a selection function for extraction. In Proceedings of CIKM ’99, pages 55–62, New York, NY, USA. [5] 
+Lin, C.-Y. (2004). Rouge: A package for automatic evaluation of summaries. In Marie-Francine Moens, S. S., editor, Text Summarization Branches Out: Proceedings of the ACL-04 Workshop, pages 74–81, Barcelona, Spain. [8, 23, 24, 25] 
+Lin, C.-Y., Cao, G., Gao, J., and Nie, J.-Y. (2006). An information-theoretic approach to automatic evaluation of summaries. In Proceedings of HLT-NAACL ’06, pages 463–470, Morristown, NJ, USA. [25, 26] 
+Lin, C.-Y. and Hovy, E. (1997). Identifying topics by position. In Proceedings of the Fifth conference on Applied natural language processing, pages 283–290, San Francisco, CA, USA. [5] 
+Lin, C.-Y. and Hovy, E. (2002). Manual and automatic evaluation of summaries. In Proceedings of the ACL-02 Workshop on Automatic Summarization, pages 45–51, Morristown, NJ, USA. [23] 
+Luhn, H. P. (1958). The automatic creation of literature abstracts. IBM Journal of Research Development, 2(2):159–165. [2, 3, 6, 8] 
+Mani, I. and Bloedorn, E. (1997). Multi-document summarization by graph search and matching. In AAAI/IAAI, pages 622–628. [15, 16] 
+Marcu, D. (1998a). Improving summarization through rhetorical parsing tuning. In Proceedings of The Sixth Workshop on Very Large Corpora, pages 206-215, pages 206–215, Montreal, Canada. [9, 10, 20] 
+Marcu, D. C. (1998b). The rhetorical parsing, summarization, and generation of natural language texts. PhD thesis, University of Toronto. Adviser-Graeme Hirst. [10] 
+McKeown, K., Klavans, J., Hatzivassiloglou, V., Barzilay, R., and Eskin, E. (1999). Towards multidocument summarization by reformulation: Progress and prospects. In AAAI/IAAI, pages 453–460. [11, 12, 13, 14, 16] 
+McKeown, K. R. and Radev, D. R. (1995). Generating summaries of multiple news articles. In Proceedings of SIGIR ’95, pages 74–82, Seattle, Washington. [8, 11, 12] 
+Miller, G. A. (1995). Wordnet: a lexical database for english. Commun. ACM, 38(11):39–41. [4, 9] 
+Nenkova, A. (2005). Automatic text summarization of newswire: Lessons learned from the document understanding conference. In Proceedings of AAAI 2005, Pittsburgh, USA. [7] 
+Ono, K., Sumita, K., and Miike, S. (1994). Abstract generation based on rhetorical structure extraction. In Proceedings of Coling ’94, pages 344–348, Morristown, NJ, USA. [9] 
+Osborne, M. (2002). Using maximum entropy for sentence extraction. In Proceedings of the ACL’02 Workshop on Automatic Summarization, pages 1–8, Morristown, NJ, USA. [7] 
+Papineni, K., Roukos, S., Ward, T., and Zhu, W.-J. (2001). Bleu: a method for automatic evaluation of machine translation. In Proceedings of ACL ’02, pages 311–318, Morristown, NJ, USA. [24] 
+Radev, D. R., Hovy, E., and McKeown, K. (2002). Introduction to the special issue on summarization. Computational Linguistics., 28(4):399–408. [1, 2] 
+Radev, D. R., Jing, H., and Budzikowska, M. (2000). Centroid-based summarization of multiple documents: sentence extraction, utility-based evaluation, and user studies. In NAACL-ANLP 2000 Workshop on Automatic summarization, pages 21–30, Morristown, NJ, USA. [12, 16, 17] 
+Radev, D. R., Jing, H., Stys, M., and Tam, D. (2004). Centroid-based summarization of multiple documents. Information Processing and Management 40 (2004), 40:919–938. [16, 17] 
+Radev, D. R. and McKeown, K. (1998). Generating natural language summaries from multiple on-line sources. Computational Linguistics, 24(3):469–500. [12] 
+Salton, G. and Buckley, C. (1988). On the use of spreading activation methods in automatic information. In Proceedings of SIGIR ’88, pages 147–160, New York, NY, USA. [15] 
+Salton, G., Wong, A., and Yang, A. C. S. (1975). A vector space model for automatic indexing. Communications of the ACM, 18:229–237. [20] 
+Selman, B., Levesque, H. J., and Mitchell, D. G. (1992). A new method for solving hard satisﬁability problems. In AAAI, pages 440–446. [11] 
+Svore, K., Vanderwende, L., and Burges, C. (2007). Enhancing single-document summarization by combining RankNet and third-party sources. In Proceedings of the EMNLP-CoNLL, pages 448–457. [7, 8] 
+Witbrock, M. J. and Mittal, V. O. (1999). Ultra-summarization (poster abstract): a statistical approach to generating highly condensed non-extractive summaries. In Proceedings of SIGIR ’99, pages 315–316, New York, NY, USA. [18] 
+</biblio>
+</article>
