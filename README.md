@@ -15,10 +15,21 @@ Voici un récapitulatif de nos sprints jusqu'à là :
     Le but de ce sprint va être de tester si notre librairie (pyMuPDF à ce jour) marche correctement.
     Nous devons réussir à extraire le nom du fichier d'origine, le titre du papier, le(s) auteur(s) et le résumé (abstract).
     
-- **Sprint 3 - Gérer le XML** : (19/02/2024 - 23/02/2024)
+- **Sprint 3 - Gérer le XML** : (19/02/2024 - 25/02/2024)
 
 	Permettre au logiciel de générer des fichiers xml en plus des txt. Le choix doit etre laissé à l'utilisateur par le biais d'arguments de commandes : -x pour un xml, -t pour un txt, -a pour les deux.
 	Améliorer la détection des auteurs.
+
+- **Sprint 4 - Dette technique et amélioration des résultats** : (26/02/2024 - ??/03/2024, point intermédiaire le 12/03)
+
+    Dans un premier temps, rattraper la dette technique.
+    C'est-à-dire retravailler le code pour le rendre plus performant et maintenable.
+    Ainsi, il sera plus facile de rajouter des nouvelles fonctionnalités.
+    
+    Dans un second temps, améliorer la détection des auteurs où il faut extraire les noms des laboratoires et les mails.
+    Puis ajouter l'introduction, le corps, la conclusion et la discussion.
+
+    Et enfin, ajouter le menu textuel.
 	 
 À chaque nouveau sprint, une nouvelle branche sera créée selon le numéro de sprint. À chaque fin de sprint, on merge la branche de main et on créé un release. Ce release contiendra l'exécutable de fin de sprint et le code source à l'heure de la fin.
 
@@ -50,5 +61,5 @@ Le code traite automatiquement tous les .pdf appartenant au dossier `CODE/ressou
 Libre à vous d'y mettre vos .pdf.
 
 ## Résultats
-Pour l'instant, le parser ne récupère que le titre, les auteurs (avec une distinction auteur et mail), l'abstract et les références.
+Pour l'instant, le parser ne récupère que le titre, les auteurs (avec une distinction auteur et mail), l'abstract et les références (résultat attendu du sprint 3).
 
