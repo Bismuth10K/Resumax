@@ -1,3 +1,7 @@
+import re
+from autre import *
+
+
 def check_if_abstract(bloc: str):
     """
     Détermine si un texte contient le terme "abstract" (et donc en est un) ou pas.

@@ -1,6 +1,7 @@
 import fitz
 import re
 
+
 def find_references(pdf: str) -> list:
     """
     Récupère les références de la bibliographie du document.

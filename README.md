@@ -20,7 +20,7 @@ Voici un récapitulatif de nos sprints jusqu'à là :
 	Permettre au logiciel de générer des fichiers xml en plus des txt. Le choix doit etre laissé à l'utilisateur par le biais d'arguments de commandes : -x pour un xml, -t pour un txt, -a pour les deux.
 	Améliorer la détection des auteurs.
 
-- **Sprint 4 - Dette technique et amélioration des résultats** : (26/02/2024 - ??/03/2024, point intermédiaire le 12/03)
+- **Sprint 4 - Dette technique et amélioration des résultats** : (26/02/2024 - 24/03/2024, point intermédiaire le 12/03)
 
     Dans un premier temps, rattraper la dette technique.
     C'est-à-dire retravailler le code pour le rendre plus performant et maintenable.

@@ -9,6 +9,11 @@ import sys  # Commandes système
 
 import fitz  # Pour lire les pdf, ---pip install PyMuPDF---
 
+from titre import *
+from references import *
+from autre import *
+from writer import *
+from abstract import *
 
 # Le dossier contenant les corpus de textes et le texte sous forme de bloc.
 directory = '../ressources/'
@@ -61,7 +66,6 @@ def parser(pdf):
                 tmp_txt = tmp_txt.replace("-\n", "")
                 tmp_txt = tmp_txt.replace("\n", " ") + "\n"
                 liste_mots = tmp_txt.split()
-                print(liste_mots)
                 for words in liste_mots:  # Pour séparer les mails du reste.
                     if '@' in words:
                         auteur.append(words)
@@ -73,7 +77,6 @@ def parser(pdf):
                                 auteur.append(words)
                         else:
                             auteur.append(words)
-                        print(auteur)
         if len(abstract) > 0:  # Sachant que l'abstract se trouve après les auteurs,
             break  # si on le trouve, on sort de la boucle.
     if len(abstract) == 0:  # Si on ne trouve pas l'abstract, on le dit.
