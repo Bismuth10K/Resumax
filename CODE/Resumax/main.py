@@ -8,18 +8,16 @@ import re  # Pour utiliser du regex.
 import sys  # Commandes système
 
 import fitz  # Pour lire les pdf, ---pip install PyMuPDF---
-
-from titre import *
-from references import *
-from autre import *
-from writer import *
-from abstract import *
+import titre
+import author
+import abstract
+import references
 
 # Le dossier contenant les corpus de textes et le texte sous forme de bloc.
 directory = '../ressources/'
 
 
-def parser(pdf):
+def parser_old(pdf):
     """
     Parser du paramètre pdf. Il y récupère plusieurs informations.
     :param pdf: Un document pdf à parser.
@@ -79,6 +77,7 @@ def parser(pdf):
                             auteur.append(words)
         if len(abstract) > 0:  # Sachant que l'abstract se trouve après les auteurs,
             break  # si on le trouve, on sort de la boucle.
+
     if len(abstract) == 0:  # Si on ne trouve pas l'abstract, on le dit.
         print("Abstract not found")
 
@@ -93,6 +92,53 @@ def parser(pdf):
     return parsed_results
 
 
+def parser_new(pdf:str):
+    """
+
+    :param pdf: le chemin du fichier pdf à parser
+    :return: void
+    """
+
+    # Document opening
+    doc = fitz.open(pdf)
+    authors = []
+    mails = []
+    titleStr = ""
+    abstractStr = ""
+
+    # On most documents, the first page is where we find titles, authors and abstracts.
+    page = doc[0]
+
+    # finding title
+    temp = titre.find_title(page, 0)[1]
+    titleStr = temp[0]
+    blknum = temp[1]
+
+
+    # finding authors
+    temp = author.find_authors(page, blknum)
+    authors = temp[0]
+    mails = temp[1]
+    blknum = temp[2]
+
+
+    # finding abstract
+    temp = abstract.find_abstract(page, blknum)
+    abstractStr = temp[0]
+    blknum = temp[1]
+
+
+
+    # finding references
+    refs = references.find_references(pdf)
+
+
+    # on met tout ca dans un dictionnaire pour pouvoir l'écrire dans les fichiers après
+
+    parsed_results = {"titre": titre, "auteur": authors, "mails":mails, "abstract": abstract.replace("\n", " "), "biblio": bibstr}
+
+
+
 def parse_all_pdf(func_output, func_output_all=None):
     """
     Code du sprint 2, récupère : le nom du fichier, le titre de l'article, les auteurs, l'abstract.
@@ -104,7 +150,7 @@ def parse_all_pdf(func_output, func_output_all=None):
     for file in os.listdir(directory):
         if file.endswith(".pdf"):  # On parse tous les pdf dans directory.
             with (open(os.path.join(directory, file), 'rb') as pdf):
-                dict_res = parser(pdf)
+                dict_res = parser_old(pdf)
                 func_output(file, dict_res)
                 if func_output_all is not None:
                     func_output_all(file, dict_res)
