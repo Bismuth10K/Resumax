@@ -155,6 +155,7 @@ if __name__ == '__main__':
         txt_reco_patterns()
 =======
 
+
 directory = '../ressources/'
 
 
