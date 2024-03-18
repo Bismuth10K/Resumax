@@ -59,24 +59,6 @@ def parser_old(pdf):
         abstract = find_abstract(tmp_txt, tmp_next_txt, doc.get_toc())  # Récupération abstract.
 
         # Récupération auteurs sur plusieurs lignes tant que ce n'est pas un abstract.
-        if i > pos_bloc_titre and abstract == "" and tmp_txt.split() != titre.split():
-            if not is_date(tmp_txt):  # Permet de filtrer les dates.
-                tmp_txt = tmp_txt.replace("-\n", "")
-                tmp_txt = tmp_txt.replace("\n", " ") + "\n"
-                liste_mots = tmp_txt.split()
-                for words in liste_mots:  # Pour séparer les mails du reste.
-                    if '@' in words:
-                        auteur.append(words)
-                    else:
-                        if len(auteur) != 0:
-                            if '@' not in auteur[-1]:
-                                auteur[-1] += " " + words
-                            else:
-                                auteur.append(words)
-                        else:
-                            auteur.append(words)
-        if len(abstract) > 0:  # Sachant que l'abstract se trouve après les auteurs,
-            break  # si on le trouve, on sort de la boucle.
 
     if len(abstract) == 0:  # Si on ne trouve pas l'abstract, on le dit.
         print("Abstract not found")
