@@ -13,8 +13,13 @@ import author
 import abstract
 import references
 
-# Le dossier contenant les corpus de textes et le texte sous forme de bloc.
-directory = '../ressources/'
+from titre import *
+from references import *
+from autre import *
+from writer import *
+from abstract import *
+from menu import menu
+
 
 
 def parser_old(pdf):
@@ -139,7 +144,7 @@ def parser_new(pdf:str):
 
 
 
-def parse_all_pdf(func_output, func_output_all=None):
+def parse_all_pdf(pdf_files: list, func_output, func_output_all=None):
     """
     Code du sprint 2, récupère : le nom du fichier, le titre de l'article, les auteurs, l'abstract.
     Le code devra être simplifié lors des futurs sprints.
@@ -147,25 +152,26 @@ def parse_all_pdf(func_output, func_output_all=None):
     """
     if not os.path.exists("../output/"):
         os.makedirs("../output/")
-    for file in os.listdir(directory):
-        if file.endswith(".pdf"):  # On parse tous les pdf dans directory.
-            with (open(os.path.join(directory, file), 'rb') as pdf):
-                dict_res = parser_old(pdf)
-                func_output(file, dict_res)
-                if func_output_all is not None:
-                    func_output_all(file, dict_res)
-                print(pdf, "parsé et traité !")
+    for file in pdf_files:
+        with (open(file, 'rb') as pdf):
+            dict_res = parser(pdf)
+            func_output(file, dict_res)
+            if func_output_all is not None:
+                func_output_all(file, dict_res)
+            print(pdf, "parsé et traité !")
 
 
 if __name__ == '__main__':
-    if len(sys.argv) >= 2:
-        param = sys.argv[1]
-        if '-t' in param:  # Paramètre pour générer des txt.
-            parse_all_pdf(output_txt)
-        elif '-x' in param:  # Paramètre pour générer des xml.
-            parse_all_pdf(output_xml)
-        elif '-a' in param:  # Paramètre pour générer des txt et des xml.
-            parse_all_pdf(output_txt, output_xml)
+    if len(sys.argv) >= 3:
+        output_par = sys.argv[1]
+        files = menu(sys.argv[2])
+
+        if '-t' in output_par:  # Paramètre pour générer des txt.
+            parse_all_pdf(files, output_txt)
+        elif '-x' in output_par:  # Paramètre pour générer des xml.
+            parse_all_pdf(files, output_xml)
+        elif '-a' in output_par:  # Paramètre pour générer des txt et des xml.
+            parse_all_pdf(files, output_txt, output_xml)
         elif '-r':  # Paramètre pour générer les fichiers de reconnaissance des patterns.
             txt_reco_patterns()
     else:  # Parce qu'il n'y a jamais assez de tests !
