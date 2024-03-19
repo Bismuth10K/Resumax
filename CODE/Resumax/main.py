@@ -95,7 +95,7 @@ def parser_new(pdf):
     page = doc[0]
 
     # finding title
-    temp = titre.find_title(page, 0)[1]
+    temp = titre.find_title(page, 0)
     titleStr = temp[0]
     blknum = temp[1]
 
@@ -119,8 +119,16 @@ def parser_new(pdf):
 
 
     # on met tout ca dans un dictionnaire pour pouvoir l'écrire dans les fichiers après
-
-    parsed_results = {"titre": titre, "auteur": authors, "mails":mails, "abstract": abstract.replace("\n", " "), "biblio": refs}
+    print(titleStr)
+    print("---")
+    print(authors)
+    print("---")
+    print(mails)
+    print("---")
+    print(abstractStr)
+    print("---")
+    print(refs)
+    parsed_results = {"titre": titleStr, "auteur": authors, "mails":mails, "abstract": abstractStr.replace("\n", " "), "biblio": refs}
     return parsed_results
 
 

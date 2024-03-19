@@ -1,5 +1,5 @@
 import re
-
+from autre import replacator
 import fitz
 
 
@@ -30,13 +30,11 @@ def find_abstract(page:fitz.Page, blknum:int ,toc=None):
     """
 
     abstract = ""
-    for block in page :
-        if block[5] < blknum :
+    for block in page.get_text("blocks"):
+        if block[5] < blknum:
             continue
-        if re.search(r"\A(?:[0-9]|I|)(?:.|-|)(?: |)[Ii]ntroduction(?: |)(?:\n|)", block):
-            abstract = abstract.replace("-\n", "")  # mot coupé en deux dans un paragraphe, donc on remplace par "".
-            abstract = abstract.replace("- \n", "")
-            abstract = abstract.replace("\n", " ")  # retour à la ligne dans un paragraphe, donc on remplace par " ".
+        if re.search(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)[Ii]ntroduction(?: |)(?:\n|)", block[4].lower()):
+            abstract = replacator(abstract)
             blknum = block[5]
             break
         else :
