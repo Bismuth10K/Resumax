@@ -7,7 +7,7 @@ def output_txt(pdf, dict_results: dict):
     :param pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
     :param dict_results: Le dictionnaire des informations parsées.
     """
-    with open("../output/Sprint2_" + pdf + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
+    with open("../output/Sprint2_" + pdf.split("/")[-1] + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
         f.write("Nom fichier : " + pdf + "\n\n")
         f.write("Titre : " + dict_results.get("titre") + "\n\n")
         f.write("Auteurs : ")
@@ -56,5 +56,5 @@ def output_xml(pdf, dict_results: dict):
 
     indent(tree, space="\t")
 
-    with open("../output/Sprint2_" + pdf + '.xml', 'w') as f:
+    with open("../output/Sprint2_" + pdf.split("/")[-1] + '.xml', 'w') as f:
         tree.write(f, encoding='unicode')
