@@ -33,7 +33,7 @@ def find_abstract(page:fitz.Page, blknum:int ,toc=None):
     for block in page.get_text("blocks"):
         if block[5] < blknum:
             continue
-        if re.search(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)[Ii]ntroduction(?: |)(?:\n|)", block[4].lower()):
+        if re.search(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n)[Ii]ntroduction(?: |)(?:\n|)", block[4].lower()):
             abstract = replacator(abstract)
             blknum = block[5]
             break

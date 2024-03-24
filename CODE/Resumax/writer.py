@@ -14,7 +14,9 @@ def output_txt(pdf, dict_results: dict):
         for i in dict_results.get("auteur"):
             f.write(i + "\n")
         f.write("\nAbstract : \n" + dict_results.get("abstract") + "\n\n")
-        f.write("Bibliographie : \n" + dict_results.get("biblio") + "\n")
+        f.write("Bibliographie : \n")
+        for element in dict_results.get("biblio"):
+             f.write(element + "\n")
 
 
 def output_xml(pdf, dict_results: dict):
