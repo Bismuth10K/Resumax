@@ -19,7 +19,7 @@ def find_body(pdf:str):
                 if not re.fullmatch(r"\A( )*(2|ii|)(?:.|-|)(?: |)(?:\n|)([a-z](?: |))+(?:\n|)", block[4].lower()):
                     intro += block[4]
                 else :
-                    print("do_body")
+                    # print("do_body")
                     do_body = True
                     found_intro = False
 
@@ -34,7 +34,7 @@ def find_body(pdf:str):
             # premiere partie : trouver l'intro
             else :
                 if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", block[4].lower()):
-                    print("found_intro")
+                    # print("found_intro")
                     found_intro = True
                     intro += block[4]
     return intro, corps
@@ -51,7 +51,7 @@ def extract_discuss(body:str):
                 discussed += line + "\n"
         else :
             if re.match(r"(?:[0-9]|)(?: *|)(?:- |)discussion(?:s|)", line.lower()):
-                print("Discussion found")
+                # print("Discussion found")
                 found_discuss = True
             else:
                 recompo += line + "\n"
@@ -59,10 +59,13 @@ def extract_discuss(body:str):
     return discussed, recompo
 
 if __name__ == "__main__":
-    intro, body = find_body("../ressources/Gonzalez_2018_Wisebe.pdf")
+    intro, body = find_body("../ressources/Nasr.pdf")
     discussion, body = extract_discuss(body)
     print(intro)
+    print(type(intro))
     print("-------------------------")
     print(body)
+    print(type(body))
     print("-------------------------")
     print(discussion)
+    print(type(discussion))

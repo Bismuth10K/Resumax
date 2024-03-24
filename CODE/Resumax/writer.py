@@ -44,18 +44,22 @@ def output_xml(pdf, dict_results: dict):
 
     auteurs = SubElement(article, 'auteurs')
     list_auteurs = dict_results.get("auteur")
+    list_mails = dict_results.get("mail")
 
     i = 0
     while i < len(list_auteurs):
         auteur = SubElement(auteurs, 'auteur')
-        if '@' not in list_auteurs[i]:
-            name = SubElement(auteur, 'name')
-            name.text = list_auteurs[i]
-        if i + 1 < len(auteurs) and '@' in auteurs[i + 1] and '@' not in auteurs[i]:
-            mail = SubElement(auteur, 'mail')
-            mail.text = auteurs[i + 1]
-        if len(auteur) == 0:
-            auteurs.remove(auteur)
+
+        name = SubElement(auteur, 'name')
+        name.text = list_auteurs[i]
+
+        mail = SubElement(auteur, 'mail')
+        try:
+            print(list_mails[i])
+            mail.text = list_mails[i]
+        except:
+            auteur.remove(mail)
+
         i += 1
 
     abstract = SubElement(article, 'abstract')
@@ -71,7 +75,7 @@ def output_xml(pdf, dict_results: dict):
     discu.text = dict_results.get("discussion")
 
     biblio = SubElement(article, 'biblio')
-    biblio.text = dict_results.get("biblio")
+    biblio.text = "\n".join(str(elem) for elem in dict_results.get("biblio"))
 
     tree = ElementTree(article)
 

@@ -6,7 +6,7 @@ from autre import replacator
 
 def find_authors(page: fitz.Page, blknum: int):
 	mails = []
-	names = ""
+	names = []
 	for block in page.get_text("blocks"):
 		if block[5] <= blknum:
 			continue
@@ -24,14 +24,15 @@ def find_authors(page: fitz.Page, blknum: int):
 					tmp_auteur = tmp_auteur.replace(m, "")
 
 			# pour les noms, on ajoute ce qui reste du texte du bloc
-			names += tmp_auteur
-	return replacator(names), str(mails), blknum
+			txt_tmp_auteur = "".join(str(element) for element in tmp_auteur)
+			names.append(replacator(txt_tmp_auteur))
+	return names, mails, blknum
 
 
 def email(strings: list):
-	for str in strings:
-		if "@" in str:
-			return str
+	for string in strings:
+		if "@" in string:
+			return string
 
 
 if __name__ == "__main__":
