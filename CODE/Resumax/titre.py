@@ -1,4 +1,5 @@
 import fitz
+
 from autre import replacator
 
 

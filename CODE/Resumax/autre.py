@@ -1,5 +1,6 @@
-import fitz
 import os
+
+import fitz
 from dateutil.parser import parse  # Pour détecter une date, ---pip install python-dateutil---
 
 
@@ -60,4 +61,5 @@ def replacator(text_to_clean: str):
 	return text_to_clean.replace("-\n", "").replace("- \n", "").replace("\n", " ")
 
 
-txt_reco_patterns()
+if __name__ == '__main__':
+	txt_reco_patterns()

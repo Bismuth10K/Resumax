@@ -1,6 +1,5 @@
 import fitz
-import re
-import titre
+
 from autre import replacator
 
 

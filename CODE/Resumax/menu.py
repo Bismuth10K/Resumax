@@ -11,7 +11,8 @@ def menu(path_res: str):
 			print(i, file)
 			i += 1
 	print("\nSélectionnez les fichiers à traiter et à parser.")
-	choix = input("Tapez les numéros des fichiers (séparés par des espaces) ou 'all' si vous voulez tous les traiter : ")
+	choix = input(
+		"Tapez les numéros des fichiers (séparés par des espaces) ou 'all' si vous voulez tous les traiter : ")
 	if "all" not in choix:
 		choix = list(map(int, choix.split()))
 
