@@ -9,11 +9,21 @@ def output_txt(pdf, dict_results: dict):
     """
     with open("../output/Sprint2_" + pdf.split("/")[-1] + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
         f.write("Nom fichier : " + pdf + "\n\n")
+
         f.write("Titre : " + dict_results.get("titre") + "\n\n")
+
         f.write("Auteurs : ")
         for i in dict_results.get("auteur"):
             f.write(i + "\n")
+
         f.write("\nAbstract : \n" + dict_results.get("abstract") + "\n\n")
+
+        f.write("Intro : \n" + dict_results.get("intro") + "\n\n")
+
+        f.write("Corps : \n" + dict_results.get("body") + "\n\n")
+
+        f.write("Discussion et Conclusion : \n" + dict_results.get("discussion") + "\n\n")
+
         f.write("Bibliographie : \n")
         for element in dict_results.get("biblio"):
              f.write(element + "\n")
@@ -50,6 +60,15 @@ def output_xml(pdf, dict_results: dict):
 
     abstract = SubElement(article, 'abstract')
     abstract.text = dict_results.get("abstract")
+
+    intro = SubElement(article, 'intro')
+    intro.text = dict_results.get("intro")
+
+    body = SubElement(article, 'body')
+    body.text = dict_results.get("body")
+
+    discu = SubElement(article, 'discussion')
+    discu.text = dict_results.get("discussion")
 
     biblio = SubElement(article, 'biblio')
     biblio.text = dict_results.get("biblio")

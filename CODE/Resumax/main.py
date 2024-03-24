@@ -12,12 +12,10 @@ import titre
 import author
 import abstract
 import references
+import body
 
-from titre import *
-from references import *
 from autre import *
 from writer import *
-from abstract import *
 from menu import menu
 
 def parser_old(pdf):
@@ -113,6 +111,13 @@ def parser_new(pdf):
     blknum = temp[1]
 
 
+    #finding introduction and body
+    intro, bodyText = body.find_body(pdf)
+
+
+    #extracting discussions and conclusions
+    discussion, bodyText = body.extract_discuss(bodyText)
+
 
     # finding references
     refs = references.find_references(pdf)
@@ -127,8 +132,14 @@ def parser_new(pdf):
     print("---")
     print(abstractStr)
     print("---")
+    print(intro)
+    print("---")
+    print(bodyText)
+    print("---")
+    print(discussion)
+    print("---")
     print(refs)
-    parsed_results = {"titre": titleStr, "auteur": authors, "mails":mails, "abstract": abstractStr.replace("\n", " "), "biblio": refs}
+    parsed_results = {"titre": titleStr, "auteur": authors, "mails":mails, "abstract": abstractStr.replace("\n", " "), "intro":intro, "body":bodyText, "discussion":discussion, "biblio": refs}
     return parsed_results
 
 
