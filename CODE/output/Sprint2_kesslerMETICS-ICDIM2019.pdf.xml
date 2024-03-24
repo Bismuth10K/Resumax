@@ -1,21 +1,241 @@
 <article>
-	<preamble>kesslerMETICS-ICDIM2019.pdf</preamble>
+	<preamble>../ressources/kesslerMETICS-ICDIM2019.pdf</preamble>
 	<titre>A word embedding approach to explore a collection of discussions of people in psychological distress </titre>
 	<auteurs>
 		<auteur>
-			<name>1st R´emy Kessler Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France</name>
+			<name>1st R´emy Kessler Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France  </name>
 		</auteur>
 		<auteur>
-			<name>2nd Nicolas B´echet Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France</name>
+			<name>2nd Nicolas B´echet Universit´e Bretagne Sud CNRS 6074A 56017 Vannes,France  </name>
 		</auteur>
 		<auteur>
-			<name>3rd Gudrun Ledegen Universit´e Rennes II PREFics, EA 4246 5043 Rennes, France</name>
+			<name>3rd Gudrun Ledegen Universit´e Rennes II PREFics, EA 4246 5043 Rennes, France  </name>
 		</auteur>
 		<auteur>
-			<name>4rd Frederic Pugni`ere-Saavedra Universit´e Bretagne Sud PREFics, EA 4246 56017 Vannes, France</name>
+			<name>4rd Frederic Pugni`ere-Saavedra Universit´e Bretagne Sud PREFics, EA 4246 56017 Vannes, France  </name>
 		</auteur>
 	</auteurs>
-	<abstract>Abstract—In order to better adapt to society, an association has developed a web chat application that allows anyone to express and share their concerns and anguishes. Several thousand anonymous conversations have been gathered and form a new corpus of stories about human distress and social violence. We present a method of corpus analysis combining unsupervised learning and word embedding in order to bring out the themes of this particular collection. We compare this approach with a standard algorithm of the literature on a labeled corpus and obtain very good results. An interpretation of the obtained clusters collection conﬁrms the interest of the method. Keywords—word2vec, unsupervised learning, word embedding. </abstract>
+	<abstract>Abstract—In order to better adapt to society, an association has developed a web chat application that allows anyone to express and share their concerns and anguishes. Several thousand anonymous conversations have been gathered and form a new corpus of stories about human distress and social violence. We present a method of corpus analysis combining unsupervised learning and word embedding in order to bring out the themes of this particular collection. We compare this approach with a standard algorithm of the literature on a labeled corpus and obtain very good results. An interpretation of the obtained clusters collection conﬁrms the interest of the method. Keywords—word2vec, unsupervised learning, word embedding.  I. INTRODUCTION  Since the nineties, social suffering has been a theme that has received much attention from public and associative action. Among the consequences, there is an explosion of listening places or socio-technical devices of communication whose objectives consist in moderating the various forms of suffering by the liberation of the speech for a therapeutic purpose [1] [2]. As part of the METICS project, a suicide prevention association developed an application of web chat to meet this need. The web chat is an area that allows anyone to express and share with a volunteer listener their concerns and anguishes. The main speciﬁcity of this device is its anonymous nature. Protected by a pseudonym, the writers are invited to discuss with a volunteer the problematic aspects of their existence. Several thousand anonymous conversations have been gathered and form a corpus of unpublished stories about human distress. The purpose of the METICS project is to make visible the ordinary forms of suffering usually removed from common spaces and to grasp both its modes of enunciation and digital support. In this study, we want to automatically identify the reason for coming on the web chat for each participant. Indeed, even if the association provided us with the theme of all the conversations (work, loneliness, violence, racism, addictions, family, etc.), the original reason has not been preserved. In what follows, we ﬁrst review some of the related  work in Section II. Section III presents the resources used and gives some statistics about the collection. An overview of the system and the strategy for identify the reason for coming on the web chat is given in Section IV. Section V presents the experimental protocol, an evaluation of our system and an interpretation of the ﬁnal results on the collection of human distress.  II. RELATED WORKS  The main characteristic of the approach presented in this paper is to only have to provide the labels of the classes to be predicted. This method does not need to have a tagged data set to predict the different classes, so it is closer to an unsupervised (clustering) or semi-supervised learning method than a supervised. The main idea of clustering is to group untagged data into a number of clusters, such that similar ex- amples are grouped together and different ones are separated. In clustering, the number of classes and the distribution of instances between classes are unknown and the goal is to ﬁnd meaningful clusters. One kind of clustering methods is the partitioning-based one. The k-means algorithm [3] is one of the most popu- lar partitioning-based algorithms because it provides a good compromise between the quality of the solution obtained and its computational complexity [4]. K-means aims to ﬁnd k centroids, one for each cluster, minimizing the sum of the distances of each instance of data from its respective centroid. We can cite other partitioning-based algorithms such as k- medoids or PAM (Partition Around Medoids), which is an evolution of k-means [5]. Hierarchical approaches produce clusters by recursively partitioning data backwards or upwards. For example, in a hierarchical ascending classiﬁcation or CAH [6], each example from the initial dataset represents a cluster. Then, the clusters are merged, according to a similarity measure, until the desired tree structure is obtained. The result of this clustering method is called a dendrogram. Density- based methods like the EM algorithm [7] assume that the data belonging to each cluster is derived from a speciﬁc probability  </abstract>
+	<intro>Intro : I. INTRODUCTION
+Since the nineties, social suffering has been a theme that has
+received much attention from public and associative action.
+Among the consequences, there is an explosion of listening
+places or socio-technical devices of communication whose
+objectives consist in moderating the various forms of suffering
+by the liberation of the speech for a therapeutic purpose [1]
+[2]. As part of the METICS project, a suicide prevention
+association developed an application of web chat to meet
+this need. The web chat is an area that allows anyone to
+express and share with a volunteer listener their concerns and
+anguishes. The main speciﬁcity of this device is its anonymous
+nature. Protected by a pseudonym, the writers are invited
+to discuss with a volunteer the problematic aspects of their
+existence. Several thousand anonymous conversations have
+been gathered and form a corpus of unpublished stories about
+human distress. The purpose of the METICS project is to make
+visible the ordinary forms of suffering usually removed from
+common spaces and to grasp both its modes of enunciation and
+digital support. In this study, we want to automatically identify
+the reason for coming on the web chat for each participant.
+Indeed, even if the association provided us with the theme
+of all the conversations (work, loneliness, violence, racism,
+addictions, family, etc.), the original reason has not been
+preserved. In what follows, we ﬁrst review some of the related
+work in Section II. Section III presents the resources used and
+gives some statistics about the collection. An overview of the
+system and the strategy for identify the reason for coming
+on the web chat is given in Section IV. Section V presents
+the experimental protocol, an evaluation of our system and an
+interpretation of the ﬁnal results on the collection of human
+distress.
+</intro>
+	<body>Corps : The main characteristic of the approach presented in this
+paper is to only have to provide the labels of the classes to
+be predicted. This method does not need to have a tagged
+data set to predict the different classes, so it is closer to an
+unsupervised (clustering) or semi-supervised learning method
+than a supervised. The main idea of clustering is to group
+untagged data into a number of clusters, such that similar ex-
+amples are grouped together and different ones are separated.
+In clustering, the number of classes and the distribution of
+instances between classes are unknown and the goal is to ﬁnd
+meaningful clusters.
+One kind of clustering methods is the partitioning-based
+one. The k-means algorithm [3] is one of the most popu-
+lar partitioning-based algorithms because it provides a good
+compromise between the quality of the solution obtained and
+its computational complexity [4]. K-means aims to ﬁnd k
+centroids, one for each cluster, minimizing the sum of the
+distances of each instance of data from its respective centroid.
+We can cite other partitioning-based algorithms such as k-
+medoids or PAM (Partition Around Medoids), which is an
+evolution of k-means [5]. Hierarchical approaches produce
+clusters by recursively partitioning data backwards or upwards.
+For example, in a hierarchical ascending classiﬁcation or
+CAH [6], each example from the initial dataset represents a
+cluster. Then, the clusters are merged, according to a similarity
+measure, until the desired tree structure is obtained. The result
+of this clustering method is called a dendrogram. Density-
+based methods like the EM algorithm [7] assume that the data
+belonging to each cluster is derived from a speciﬁc probability
+distribution [8]. The idea is to grow a cluster as the density in
+the neighborhood of the cluster exceeds a predeﬁned threshold.
+Model-based classiﬁcation methods like self-organizing
+map - SOM [9] are focus on ﬁnding features to represent each
+cluster. The most used methods are decision trees and neural
+networks. Approaches based on semi-supervised learning such
+as label propagation algorithm [10] are similar to the method
+proposed in this paper because they consist in using a learning
+dataset consisting of a few labelled data points to build a
+model for labelling a larger number of unlabelled data. Closer
+to the theme of our collection, [11] and [12] use supervised
+approaches to automatically detect suicidal people in social
+networks. They extract speciﬁc features like word distribution
+statistics or sentiments to train different machine-learning clas-
+siﬁers and compare performance of machine-learning models
+against the judgments of psychiatric trainees and mental health
+professionals. More recently, CLEF challenge in 2018 consists
+of performing a task on early risk detection of depression on
+texts written in Social Media1. However, these papers and this
+task involve tagged data sets, which is the main difference
+with our proposed approach (we do not have tagged data set).
+III. RESOURCES AND STATISTICS
+The association provided a collection of conversations be-
+tween volunteers and callers between 2005 and 2015, which
+is called “METICS collection” henceforth.
+To reduce noise in the collection, we removed all the
+</body>
+	<discussion>caller and a person from the association, these exchanges are
+information, etc.). We observe particular linguistic phenomena
+glued words) and an explosive lexical creativity [13]. These
+(direct or semi-direct), the speed of the composition of the
+by the material (mobile terminal, tablet, etc.). In addition, we
+Monde to validate our method on a tagged corpus. We only
+Figure 1 presents some descriptive statistics of these two
+IV. METHODOLOGY
+Figure 2 presents an overview of the system, each step will
+ule x), we apply different linguistic pre-processing to each
+model with these discussions while the third module (z) uses
+performs a prediction for each discussion before separating
+1http://early.irlab.org/
+sadness
+METICS
+Total number of documents
+205 661
+Total number of words
+87 122 002
+158 361
+Average words/document
+424
+Total number of words
+41 425 938
+120 684
+Average words/document
+201
+ 
+Conversations
+Word2vec
+Prediction
+pre-processing
+vectors 
+Model 1
+➁
+④
+Model 2
+Model n
+Cluster 2
+Fig. 2. System overview
+We ﬁrst extract the textual content of each discussion. In
+quality of the process. We remove accents, special characters
+to reduce noise in the model: we remove numbers (numeric
+list adapted to our problem. A lemmatization process was
+considering the typographical variations described in Section
+C. word2vec model
+word2vec [14]. We project each word of our corpus in a vector
+In this way, words appearing in similar contexts will have a
+information, one advantage of such modeling is the production
+in which they are encountered. Some words close to a term t in
+those from a model learned from a corpus c2. For example,
+term “teen” vary according to the corpus used. This example
+French or Wikipedia is irrelevant in our case, since the corpus
+words
+teenager, young, 15years, kid,
+Le-Monde
+boy, styx, scamp, rebel
+corpus in learning.
+abbreviations or acronyms. Different parameters were tested
+D. Speciﬁc vectors creation and cluster predictions
+selected using the word2vec model described in step IV-C.
+model by performing a word embedding to reconstruct the
+that the terms closest to the thematic “work” are: “unemploy-
+we observe the terms: “cannabis”, “alcoholism”, “drugs” and
+vector, containing the distance distc(i) between each term i
+the same term can appear in several models. In this way,
+“suicide” and in that of “work”, however, the associated weight
+and 1000 and the best results were obtained with a size of 400.
+discussion and for each cluster according to each linguistic
+Sc(d) =
+X
+tf(i) · distc(i)
+with i the considered term, tf (i) frequency of i in the
+the thematic c. In the end, the class with the highest score is
+V. EXPERIMENTS AND RESULTS
+To evaluate the quality of the obtained clusters, we used a
+Section III, each article having a label according to the theme.
+approach with the optimal parameters, as deﬁned in Sections
+weighting to test the particular inﬂuence of this parameter. To
+with a baseline which consists in a random draw, and with
+size: 700, sliding window size: 5, minimum frequency: 10, vectorization
+learning.
+as mentioned in Section II. To feed the k-means algorithm, we
+[15] where each conversation is described by the frequency
+classic measures of Precision, Recall and F-measure, averaged
+beta = 1 in order not to privilege
+associate a tag with the ﬁnal clusters, we have exhaustively
+the highest F-score.
+Prec.
+F-score
+Baseline
+0.16
+k-means
+0.20
+Without weighting
+0.50
+Speciﬁc Vectors
+0.54
+With pre-processing
+0.30
+0.25
+0.55
+0.53
+0.54
+0.54
+Figure 4 presents a summary of the results obtained with
+low, but remain relatively close to the theoretical random (0.2)
+not very efﬁcient individually, but improve overall the results
+better results in terms of F-score, but remains weak. Speciﬁc
+an F-score of 0.54. The execution without weighting improve
+C. Cluster Analysis
+METICS collection, we apply the whole process with the
+conversations. We use the Latent Dirichlet Allocation [17] in
+average weight of each thematic keywords according to each
+In ﬁgure 5, fear, shrink and trust are present designations
+the writer still express fear when he writes, ”I’m afraid of
+and constructing spheres of meanings around these pivotal
+designations of thing, difﬁcult, and problem are more vague,
+writing what is wrong.
+VI. CONCLUSION AND FUTURE WORK
+exploring a collection of stories about human distress. This
+containing only vocabulary from the linguistic context of the
+lection labeled with classical measures. The detailed analysis
+to the other systems tested. This method of analysis has also
+groupings. We ﬁrst intend to study in more detail the inﬂuence
+planning to be able to assign several tags to each discussion,
+The analysis reinforces the cluster approach to highlight the
+reveal its inner workings. This entry by the discursive routines
+approach other explorations with a particular focus on the
+
+</discussion>
 	<biblio>[1] D. Fassin, “Et la souffrance devint sociale,” in Critique. 680(1), 2004, pp. 16–29. 
 [2] ——, “Souffrir par le social, gouverner par l’´ecoute,” in Politix. 73(1), 2006, pp. 137–157. 
 [3] MacQueen, J., “Some methods for classiﬁcation and analysis of multivariate observations,” in Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability, Vol. 1: Statistics. USA: University of California Press, 1967, pp. 281–297. 
@@ -32,6 +252,5 @@
 [14] T. Mikolov, I. Sutskever, K. Chen, G. Corrado, and J. Dean, “Distributed representations of words and phrases and their compositionality,” in Proceedings of NIPS’13. USA: Curran Associates Inc., 2013, pp. 3111–3119. [Online]. Available: http://dl.acm.org/citation.cfm?id= 2999792.2999959 
 [15] C. D. Manning and H. Sch¨utze, Foundations of Statistical Natural Language Processing. Cambridge, MA, USA: MIT Press, 1999. 
 [16] C. Goutte and E. Gaussier, “ A Probabilistic Interpretation of Precision, Recall and F-Score, with Implication for Evaluation,” ECIR 2005, pp. 345–359, 2005. 
-[17] M. Hoffman, F. R. Bach, and D. M. Blei, “Online learning for latent dirichlet allocation,” in Advances in Neural Information Processing Systems, J. D. Lafferty, C. K. I. Williams, J. Shawe-Taylor, R. S. Zemel, and A. Culotta, Eds. 23, 2010, pp. 856–864. 
-</biblio>
+[17] M. Hoffman, F. R. Bach, and D. M. Blei, “Online learning for latent dirichlet allocation,” in Advances in Neural Information Processing Systems, J. D. Lafferty, C. K. I. Williams, J. Shawe-Taylor, R. S. Zemel, and A. Culotta, Eds. 23, 2010, pp. 856–864. </biblio>
 </article>
