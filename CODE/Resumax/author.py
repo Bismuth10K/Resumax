@@ -23,8 +23,7 @@ def find_authors(page: fitz.Page, blknum: int):
 					tmp_auteur = tmp_auteur.replace(m, "")
 
 			# pour les noms, on ajoute ce qui reste du texte du bloc
-			txt_tmp_auteur = "".join(str(element) for element in tmp_auteur)
-			names.append(replacator(txt_tmp_auteur))
+			names.append(replacator(tmp_auteur))
 	return names, mails, blknum
 
 
@@ -36,4 +35,4 @@ def email(strings: list):
 
 if __name__ == "__main__":
 	d = fitz.open("../ressources/Torres.pdf")
-	find_authors(d[0], 1)
+	tab = find_authors(d[0], 1)
