@@ -8,8 +8,8 @@ def find_body(pdf: str):
 	found_intro = False
 	do_body = False
 
-	intro = "Intro : "
-	corps = "Corps : "
+	intro = ""
+	corps = ""
 	for page in doc:
 		for block in page.get_text("blocks"):
 
@@ -50,7 +50,7 @@ def extract_discuss(body: str):
 			decompo.remove(line)
 			discussed += line + "\n"
 		else:
-			if re.match(r"(?:[0-9]|)(?: *|)(?:- |)discussion(?:s|)", line.lower()):
+			if re.match(r"[0-9]*(?: *|)(?:- |)discussion(?:s|)", line.lower()):
 				# print("Discussion found")
 				found_discuss = True
 			else:
@@ -58,6 +58,33 @@ def extract_discuss(body: str):
 
 	return discussed, recompo
 
+def extract_conclusion(discussion:str, body:str):
+	found_conclu = False
+	conclu = ""
+	discu = ""
+	autre = ""
+	# si la discussion est vide, la conclusion se trouve dans le body
+	if discussion == "":
+		for element in body.split("\n"):
+			if found_conclu:
+				conclu += element + "\n"
+			else:
+				if re.fullmatch(r"[0-9]*[ .\-)/]*conclusion(?:s|)", element.lower()):
+					found_conclu = True
+				else:
+					discu += element + "\n"
+		return (discussion != ""), autre, conclu
+	# sinon la conclusion est dans la discussion
+	else :
+		for element in discussion.split("\n"):
+			if found_conclu:
+				conclu += element + "\n"
+			else:
+				if re.fullmatch(r"[0-9]*[ .\-)/]*conclusion(?:s|)", element.lower()):
+					found_conclu = True
+				else:
+					discu += element + "\n"
+		return (discussion != ""), discu, conclu
 
 if __name__ == "__main__":
 	intro, body = find_body("../ressources/Nasr.pdf")
