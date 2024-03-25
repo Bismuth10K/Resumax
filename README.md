@@ -30,6 +30,10 @@ Voici un récapitulatif de nos sprints jusqu'à là :
     Puis ajouter l'introduction, le corps, la conclusion et la discussion.
 
     Et enfin, ajouter le menu textuel.
+    
+- **Sprint 5 -** : (25/03/2024 - ../04/2024) 
+
+    Visiblement le sprint final : le but sera d'améliorer les résultats le plus possible afin d'obtenir de bons résultats à la vérification.
 	 
 À chaque nouveau sprint, une nouvelle branche sera créée selon le numéro de sprint. À chaque fin de sprint, on merge la branche de main et on créé un release. Ce release contiendra l'exécutable de fin de sprint et le code source à l'heure de la fin.
 
