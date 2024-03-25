@@ -4,16 +4,22 @@
 	<auteurs>
 		<auteur>
 			<name>Dipanjan Das Andr´e F.T. Martins </name>
+			<affiliation>Dipanjan Das Andr´e F.T. Martins </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Language Technologies Institute Carnegie Mellon University {dipanjan,  </name>
+			<affiliation>Language Technologies Institute Carnegie Mellon University {dipanjan,  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>November 21, 2007 </name>
+			<affiliation>November 21, 2007 </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
 	<abstract>Abstract  The increasing availability of online information has necessitated intensive research in the area of automatic text summarization within the Natural Language Processing (NLP) community. Over the past half a century, the problem has been addressed from many diﬀerent perspectives, in varying domains and using various paradigms. This survey intends to investigate some of the most relevant approaches both in the areas of single-document and multipledocument summarization, giving special emphasis to empirical methods and extractive techniques. Some promising approaches that concentrate on speciﬁc details of the summarization problem are also discussed. Special attention is devoted to automatic evaluation of summarization systems, as future research on summarization is strongly dependent on progress in this area.  </abstract>
-	<intro>Intro : 1
+	<introduction>Intro : 1
 Introduction
 The subﬁeld of summarization has been investigated by the NLP community for
 nearly the last half century. Radev et al. (2002) deﬁne a summary as “a text that
@@ -269,8 +275,8 @@ stated as follows:
 P(c | s) =
 1
 Z(s) exp
-</intro>
-	<body>Corps : i
+</introduction>
+	<corps>Corps : i
 λifi(c, s)
 !
 ,
@@ -1415,7 +1421,8 @@ during the course of the survey. We would also like to thank Alex Rudnicky and
 Mohit Kumar for insightful discussions at various points during 2006-2007.
 27
 
-</body>
+</corps>
+	<conclusion>N/A</conclusion>
 	<discussion />
 	<biblio>Amari, S.-I. and Nagaoka, H. (2001). Methods of Information Geometry (Translations of Mathematical Monographs). Oxford University Press. [20] 
 Aone, C., Okurowski, M. E., Gorlinsky, J., and Larsen, B. (1999). A trainable summarizer with knowledge acquired from robust nlp techniques. In Mani, I. and Maybury, M. T., editors, Advances in Automatic Text Summarization, pages 71–80. MIT Press. [4, 5] 

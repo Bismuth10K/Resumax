@@ -4,25 +4,37 @@
 	<auteurs>
 		<auteur>
 			<name>Efﬁcient Adaptive Learning for Classiﬁcation Tasks with Binary Units </name>
+			<affiliation>Efﬁcient Adaptive Learning for Classiﬁcation Tasks with Binary Units </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>J. Manuel Torres Moreno Mirta B. Gordon D´epartement de Recherche Fondamentale sur la Mati`ere Condens´ee, CEA Grenoble, 38054 Grenoble Cedex 9, France </name>
+			<affiliation>J. Manuel Torres Moreno Mirta B. Gordon D´epartement de Recherche Fondamentale sur la Mati`ere Condens´ee, CEA Grenoble, 38054 Grenoble Cedex 9, France </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>This article presents a new incremental learning algorithm for classiﬁcation tasks, called NetLines, which is well adapted for both binary and real-valued input patterns. It generates small, compact feedforward neural networks with one hidden layer of binary units and binary output units. A convergence theorem ensures that solutions with a ﬁnite number of hidden units exist for both binary and real-valued input patterns. An implementation for problems with more than two classes, valid for any binary classiﬁer, is proposed. The generalization error and the size of the resulting networks are compared to the best published resultsonwell-knownclassiﬁcationbenchmarks.Earlystoppingisshown to decrease overﬁtting, without improving the generalization performance. </name>
+			<affiliation>This article presents a new incremental learning algorithm for classiﬁcation tasks, called NetLines, which is well adapted for both binary and real-valued input patterns. It generates small, compact feedforward neural networks with one hidden layer of binary units and binary output units. A convergence theorem ensures that solutions with a ﬁnite number of hidden units exist for both binary and real-valued input patterns. An implementation for problems with more than two classes, valid for any binary classiﬁer, is proposed. The generalization error and the size of the resulting networks are compared to the best published resultsonwell-knownclassiﬁcationbenchmarks.Earlystoppingisshown to decrease overﬁtting, without improving the generalization performance. </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>1 Introduction </name>
+			<affiliation>1 Introduction </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Feedforward neural networks have been successfully applied to the problem of learning pattern classiﬁcation from examples. The relationship of the number of weights to the learning capacity and the network’s generalization ability is well understood only for the simple perceptron, a single binary unit whose output is a sigmoidal function of the weighted sum of its inputs. In this case, efﬁcient learning algorithms based on theoretical results allow the determination of the optimal weights. However, simple perceptrons can generalize only those (very few) problems in which the input patterns are linearly separable (LS). In many actual classiﬁcation tasks, multilayered perceptrons with hidden units are needed. However, neither the architecture (number of units, number of layers) nor the functions that hidden units have to learn are known a priori, and the theoretical understanding of these networks is not enough to provide useful hints. Although pattern classiﬁcation is an intrinsically discrete task, it may be cast as a problem of function approximation or regression by assigning real values to the targets. This is the approach used by backpropagation and </name>
+			<affiliation>Feedforward neural networks have been successfully applied to the problem of learning pattern classiﬁcation from examples. The relationship of the number of weights to the learning capacity and the network’s generalization ability is well understood only for the simple perceptron, a single binary unit whose output is a sigmoidal function of the weighted sum of its inputs. In this case, efﬁcient learning algorithms based on theoretical results allow the determination of the optimal weights. However, simple perceptrons can generalize only those (very few) problems in which the input patterns are linearly separable (LS). In many actual classiﬁcation tasks, multilayered perceptrons with hidden units are needed. However, neither the architecture (number of units, number of layers) nor the functions that hidden units have to learn are known a priori, and the theoretical understanding of these networks is not enough to provide useful hints. Although pattern classiﬁcation is an intrinsically discrete task, it may be cast as a problem of function approximation or regression by assigning real values to the targets. This is the approach used by backpropagation and </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Neural Computation 10, 1007–1030 (1998) c⃝ 1998 Massachusetts Institute of Technology </name>
+			<affiliation>Neural Computation 10, 1007–1030 (1998) c⃝ 1998 Massachusetts Institute of Technology </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
 	<abstract>LETTER Communicated by Scott Fahlman  Efﬁcient Adaptive Learning for Classiﬁcation Tasks with Binary Units  J. Manuel Torres Moreno Mirta B. Gordon D´epartement de Recherche Fondamentale sur la Mati`ere Condens´ee, CEA Grenoble, 38054 Grenoble Cedex 9, France  This article presents a new incremental learning algorithm for classi- ﬁcation tasks, called NetLines, which is well adapted for both binary and real-valued input patterns. It generates small, compact feedforward neural networks with one hidden layer of binary units and binary output units. A convergence theorem ensures that solutions with a ﬁnite num- ber of hidden units exist for both binary and real-valued input patterns. An implementation for problems with more than two classes, valid for any binary classiﬁer, is proposed. The generalization error and the size of the resulting networks are compared to the best published resultsonwell-knownclassiﬁcationbenchmarks.Earlystoppingisshown to decrease overﬁtting, without improving the generalization perfor- mance.  1 Introduction  Feedforward neural networks have been successfully applied to the prob- lem of learning pattern classiﬁcation from examples. The relationship of the number of weights to the learning capacity and the network’s generalization ability is well understood only for the simple perceptron, a single binary unit whose output is a sigmoidal function of the weighted sum of its inputs. In this case, efﬁcient learning algorithms based on theoretical results allow the determination of the optimal weights. However, simple perceptrons can generalize only those (very few) problems in which the input patterns are linearly separable (LS). In many actual classiﬁcation tasks, multilayered per- ceptrons with hidden units are needed. However, neither the architecture (number of units, number of layers) nor the functions that hidden units have to learn are known a priori, and the theoretical understanding of these networks is not enough to provide useful hints. Although pattern classiﬁcation is an intrinsically discrete task, it may be cast as a problem of function approximation or regression by assigning real values to the targets. This is the approach used by backpropagation and  Neural Computation 10, 1007–1030 (1998) c⃝ 1998 Massachusetts Institute of Technology  </abstract>
-	<intro>Intro : 1 Introduction
+	<introduction>Intro : 1 Introduction
 Feedforward neural networks have been successfully applied to the prob-
 lem of learning pattern classiﬁcation from examples. The relationship of the
 number of weights to the learning capacity and the network’s generalization
@@ -125,8 +137,8 @@ tion of trees of networks for multiclass problems is presented in section 4.
 A comparison of the generalization error and the network’s size, with re-
 sults obtained with other learning procedures, is presented in section 5. The
 conclusions are set out in section 6.
-</intro>
-	<body>Corps : 2.1 Deﬁnitions. We are given a training set of P input-output examples
+</introduction>
+	<corps>Corps : 2.1 Deﬁnitions. We are given a training set of P input-output examples
 {⃗ξµ, τ µ}, where µ = 1, 2, . . . , P. The inputs ⃗ξµ = (1, ξµ
 1 , ξµ
 2 , . . . , ξµ
@@ -1098,7 +1110,8 @@ Acknowledgments
 J.M. thanks Consejo Nacional de Ciencia y Tecnolog´ıa and Universidad
 Aut´onoma Metropolitana, M´exico, for ﬁnancial support (grant 65659).
 
-</body>
+</corps>
+	<conclusion>N/A</conclusion>
 	<discussion />
 	<biblio>Alpaydin, E. A. I. (1990). Neural models of supervised and unsupervised learning. Unpublished doctoral dissertation, Ecole Polytechnique F´ed´erale de Lausanne, Switzerland. Biehl, M., &amp; Opper, M. (1991). Tilinglike learning in the parity machine. Physical Review A, 44, 6888. Bottou, L., &amp; Vapnik, V. (1992). Local learning algorithms. Neural Computation, 4(6), 888–900. Breiman, L. (1994). Bagging predictors (Tech. Rep. No. 421). Berkeley: Department of Statistics, University of California at Berkeley. Breiman, L., Friedman, J. H., Olshen, R. A., &amp; Stone, C. J. (1984). Classiﬁcation and regression trees. Monterey, CA: Wadsworth and Brooks/Cole. Denker,J.,Schwartz,D.,Wittner,B.,Solla,S.,Howard,R.,Jackel,L.,&amp;Hopﬁeld,J. (1987). Large automatic learning, rule extraction, and generalization. Complex Systems, 1, 877–922. Depenau, J. (1995). Automated design of neural network architecture for classiﬁcation. Unpublished doctoral dissertation, Computer Science Department, Aarhus University. Drucker, H., Schapire, R., &amp; Simard, P. (1993). Improving performance in neural networks using a boosting algorithm. In S. J. Hanson, J. D. Cowan, &amp; C. L. Giles (Eds.), Advances in neural information processing systems, 5 (pp. 42– 49). San Mateo, CA: Morgan Kaufmann. Fahlman, S. E., &amp; Lebiere, C. (1990). The cascade-correlation learning architecture. In D. S. Touretzky (Ed.), Advances in neural information processing systems, 2 (pp. 524–532). San Mateo: Morgan Kaufmann. Farrell, K. R., &amp; Mammone, R. J. (1994). Speaker recognition using neural tree networks. In J. D. Cowan, G. Tesauro, &amp; J. Alspector (Eds.), Advances in Neural Information Processing Systems, 6 (pp. 1035–1042). San Mateo, CA: Morgan Kaufmann. Frean, M. (1990). The Upstart algorithm: A method for constructing and training feedforward neural networks. Neural Computation, 2(2), 198–209. Frean, M. (1992). A “thermal” perceptron learning rule. Neural Computation, 4(6), 946–957. Friedman, J. H. (1996). On bias, variance, 0/1-loss, and the curse-of-dimensionality (Tech. Rep.) Stanford, CA: Department of Statistics, Stanford University. Fritzke, B. (1994). Supervised learning with growing cell structures. In J. D. Cowan, G. Tesauro, &amp; J. Alspector (Eds.), Advances in neural information processing systems, 6 (pp. 255–262). San Mateo, CA: Morgan Kaufmann. Gallant, S. I. (1986). Optimal linear discriminants. In Proc. 8th. Conf. Pattern Recognition, Oct. 28–31, Paris, vol. 4. 
 Classiﬁcation Tasks with Binary Units 1029 

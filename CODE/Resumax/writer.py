@@ -7,7 +7,7 @@ def output_txt(pdf, dict_results: dict):
 	:param pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
 	:param dict_results: Le dictionnaire des informations parsées.
 	"""
-	with open("../output/Sprint2_" + pdf.split("/")[-1] + '.txt',
+	with open("../output/Sprint_" + pdf.split("/")[-1][:-4] + '.txt',
 				'w') as f:  # On les sauvegarde dans le dossier output.
 		f.write("Nom fichier : " + pdf + "\n\n")
 
@@ -54,26 +54,31 @@ def output_xml(pdf, dict_results: dict):
 		name = SubElement(auteur, 'name')
 		name.text = list_auteurs[i]
 
+		affi = SubElement(auteur, 'affiliation')
+		affi.text = list_auteurs[i]
+
 		mail = SubElement(auteur, 'mail')
 		try:
-			print(list_mails[i])
 			mail.text = list_mails[i]
 		except:
-			auteur.remove(mail)
+			mail.text = "N/A"
 
 		i += 1
 
 	abstract = SubElement(article, 'abstract')
 	abstract.text = dict_results.get("abstract")
 
-	intro = SubElement(article, 'intro')
+	intro = SubElement(article, 'introduction')
 	intro.text = dict_results.get("intro")
 
-	body = SubElement(article, 'body')
+	body = SubElement(article, 'corps')
 	body.text = dict_results.get("body")
 
 	discu = SubElement(article, 'discussion')
 	discu.text = dict_results.get("discussion")
+
+	conc = SubElement(article, 'conclusion')
+	conc.text = "N/A"
 
 	biblio = SubElement(article, 'biblio')
 	biblio.text = "\n".join(str(elem) for elem in dict_results.get("biblio"))
@@ -82,5 +87,5 @@ def output_xml(pdf, dict_results: dict):
 
 	indent(tree, space="\t")
 
-	with open("../output/Sprint2_" + pdf.split("/")[-1] + '.xml', 'w') as f:
+	with open("../output/Sprint_" + pdf.split("/")[-1][:-4] + '.xml', 'w') as f:
 		tree.write(f, encoding='unicode')

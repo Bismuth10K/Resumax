@@ -131,7 +131,6 @@ def parser_new(pdf):
 	# print(discussion)
 	# print("---")
 	# print(refs)
-	print(type(refs))
 	parsed_results = {"titre": titleStr, "auteur": authors, "mails": mails, "abstract": abstractStr.replace("\n", " "),
 						"intro": intro, "body": bodyText, "discussion": discussion, "biblio": refs}
 	return parsed_results

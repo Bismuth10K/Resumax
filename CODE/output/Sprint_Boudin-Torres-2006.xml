@@ -4,28 +4,42 @@
 	<auteurs>
 		<auteur>
 			<name>Florian Boudin ♮ and Marc El-B`eze ♮ </name>
+			<affiliation>Florian Boudin ♮ and Marc El-B`eze ♮ </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>♮ Laboratoire Informatique d’Avignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France. </name>
+			<affiliation>♮ Laboratoire Informatique d’Avignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France. </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name> </name>
+			<affiliation> </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name> </name>
+			<affiliation> </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Juan-Manuel Torres-Moreno ♮,♭ </name>
+			<affiliation>Juan-Manuel Torres-Moreno ♮,♭ </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>♭ ´Ecole Polytechnique de Montr´eal CP 6079 Succ. Centre Ville H3C 3A7 Montr´eal (Qu´ebec), Canada. </name>
+			<affiliation>♭ ´Ecole Polytechnique de Montr´eal CP 6079 Succ. Centre Ville H3C 3A7 Montr´eal (Qu´ebec), Canada. </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name> </name>
+			<affiliation> </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
 	<abstract>Abstract  We present SMMR, a scalable sentence scoring method for query-oriented update summarization. Sentences are scored thanks to a criterion combining query relevance and dissimilarity with already read documents (history). As the amount of data in history increases, non-redundancy is prioritized over query-relevance. We show that SMMR achieves promising results on the DUC 2007 update corpus.  </abstract>
-	<intro>Intro : 1
+	<introduction>Intro : 1
 Introduction
 Extensive experiments on query-oriented multi-
 document summarization have been carried out
@@ -99,8 +113,8 @@ rest of the paper is organized as follows. Section 2
 introduces our proposed sentence scoring method
 and Section 3 presents experiments and evaluates
 our approach.
-</intro>
-	<body>Corps : The underlying idea of our method is that as the
+</introduction>
+	<corps>Corps : The underlying idea of our method is that as the
 number of sentences in the history increases, the
 likelihood to have redundant information within
 candidate sentences also increases.
@@ -353,7 +367,8 @@ Worst human
 Table 1: ROUGE average recall scores computed
 on the DUC 2007 update corpus.
 4
-</body>
+</corps>
+	<conclusion>N/A</conclusion>
 	<discussion>In this paper we have described SMMR, a scal-
 achieves very promising results. An important as-
 not requires re-ranking nor linguistic knowledge,
