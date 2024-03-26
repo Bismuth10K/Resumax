@@ -1,23 +1,31 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='utf8'?>
 <article>
 	<preamble>../ressources/Mikolov.pdf</preamble>
 	<titre>Efﬁcient Estimation of Word Representations in Vector Space </titre>
 	<auteurs>
 		<auteur>
 			<name>Tomas Mikolov Google Inc., Mountain View, CA  </name>
+			<affiliation>Tomas Mikolov Google Inc., Mountain View, CA  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Kai Chen Google Inc., Mountain View, CA  </name>
+			<affiliation>Kai Chen Google Inc., Mountain View, CA  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Greg Corrado Google Inc., Mountain View, CA  </name>
+			<affiliation>Greg Corrado Google Inc., Mountain View, CA  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Jeffrey Dean Google Inc., Mountain View, CA  </name>
+			<affiliation>Jeffrey Dean Google Inc., Mountain View, CA  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
 	<abstract>Abstract  We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks. We observe large improvements in accuracy at much lower computational cost, i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. Furthermore, we show that these vectors provide state-of-the-art performance on our test set for measuring syntactic and semantic word similarities.  </abstract>
-	<intro>1
+	<introduction>1
 Introduction
 Many current NLP systems and techniques treat words as atomic units - there is no notion of similar-
 ity between words, as these are represented as indices in a vocabulary. This choice has several good
@@ -78,8 +86,8 @@ vectors were made available for future research and comparison2. However, as far
 architectures were signiﬁcantly more computationally expensive for training than the one proposed
 in [13], with the exception of certain version of log-bilinear model where diagonal weight matrices
 are used [23].
-</intro>
-	<body>Many different types of models were proposed for estimating continuous representations of words,
+</introduction>
+	<corps>Many different types of models were proposed for estimating continuous representations of words,
 including the well-known Latent Semantic Analysis (LSA) and Latent Dirichlet Allocation (LDA).
 In this paper, we focus on distributed representations of words learned by neural networks, as it was
 previously shown that they perform signiﬁcantly better than LSA for preserving linear regularities
@@ -788,8 +796,9 @@ order of billions of words per hour for typical hyperparameter choices. We also 
 1.4 million vectors that represent named entities, trained on more than 100 billion words. Some of
 our follow-up work will be published in an upcoming NIPS 2013 paper [21].
 
-</body>
+</corps>
 	<discussion />
+	<conclusion>N/A</conclusion>
 	<biblio>[1] Y. Bengio, R. Ducharme, P. Vincent. A neural probabilistic language model. Journal of Machine Learning Research, 3:1137-1155, 2003. 
 [2] Y. Bengio, Y. LeCun. Scaling learning algorithms towards AI. In: Large-Scale Kernel Machines, MIT Press, 2007. 
 [3] T. Brants, A. C. Popat, P. Xu, F. J. Och, and J. Dean. Large language models in machine translation. In Proceedings of the Joint Conference on Empirical Methods in Natural Language Processing and Computational Language Learning, 2007. 

@@ -1,26 +1,36 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='utf8'?>
 <article>
 	<preamble>../ressources/jing-cutepaste.pdf</preamble>
 	<titre>Cut and Paste Based Text Summarization  </titre>
 	<auteurs>
 		<auteur>
 			<name>Hongyan  Jing and Kathleen  R. McKeown  </name>
+			<affiliation>Hongyan  Jing and Kathleen  R. McKeown  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Department  of Computer Science  </name>
+			<affiliation>Department  of Computer Science  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>Columbia University  </name>
+			<affiliation>Columbia University  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>New York, NY 10027, USA  </name>
+			<affiliation>New York, NY 10027, USA  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 		<auteur>
 			<name>hjing, kathyQcs.columbia.edu  </name>
+			<affiliation>hjing, kathyQcs.columbia.edu  </affiliation>
+			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
 	<abstract>Abstract   We present a cut and paste based text summarizer, which uses operations derived from an analysis of human written abstracts.  The summarizer   edits extracted sentences, using reduction to remove  inessential phrases and combination to merge resuiting phrases together as coherent sentences. Our  work includes a statistically based sentence decomposition program that identifies where the phrases of  a summary originate in the original document, producing an aligned corpus of summaries and articles  which we used to develop the summarizer.   </abstract>
-	<intro>1 
+	<introduction>1 
 Introduction 
 There is a big gap between the summaries produced 
 by current automatic summarizers and the abstracts 
@@ -44,8 +54,8 @@ Rather than focusing
 on how to identify key sentences, as do other re- 
 searchers, we study how to generate the text of a 
 summary once key sentences have been extracted. 
-</intro>
-	<body>is to reuse the text in an article to generate the 
+</introduction>
+	<corps>is to reuse the text in an article to generate the 
 summary. 
 However, instead of simply extracting 
 sentences as current summarizers do, the cut and 
@@ -741,8 +751,9 @@ or recommendations expressed in this material are
 those of the authors and do not necessarily reflect 
 the views of the National Science Foundation. 
 
-</body>
+</corps>
 	<discussion />
+	<conclusion>N/A</conclusion>
 	<biblio>ANSI. 1997. Guidelines for abstracts. Technical Re
 port Z39.14-1997, NISO Press, Bethesda, Maryland.  
 L. Baum. 1972. An inequality and associated max
