@@ -7,7 +7,7 @@ def output_txt(pdf, dict_results: dict):
 	:param pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
 	:param dict_results: Le dictionnaire des informations parsées.
 	"""
-	with open("../output/Sprint_" + pdf.split("/")[-1][:-4] + '.txt',
+	with open("../output/" + pdf.split("/")[-1][:-4] + '.txt',
 				'w') as f:  # On les sauvegarde dans le dossier output.
 		f.write("Nom fichier : " + pdf + "\n\n")
 
@@ -89,5 +89,5 @@ def output_xml(pdf, dict_results: dict):
 
 #	with open("../output/Sprint2_" + pdf.split("/")[-1] + '.xml', 'w') as f:
 #		tree.write(f, encoding="UTF-8")
-	tree.write("../output/Sprint_" + pdf.split("/")[-1][:-4] + '.xml', encoding="utf8", xml_declaration=True)
+	tree.write("../output/" + pdf.split("/")[-1][:-4] + '.xml', encoding="utf8", xml_declaration=True)
 
