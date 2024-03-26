@@ -1,5 +1,5 @@
 from xml.etree.ElementTree import Element, SubElement, ElementTree, indent  # Pour générer des xml
-
+import string
 
 def output_txt(pdf, dict_results: dict):
 	"""
@@ -41,7 +41,7 @@ def output_xml(pdf, dict_results: dict):
 	preamble.text = pdf
 
 	titre = SubElement(article, 'titre')
-	titre.text = dict_results.get("titre")
+	titre.text = "".join(x for x in dict_results.get("titre") if x in string.printable)
 
 	auteurs = SubElement(article, 'auteurs')
 	list_auteurs = dict_results.get("auteur")
@@ -52,30 +52,30 @@ def output_xml(pdf, dict_results: dict):
 		auteur = SubElement(auteurs, 'auteur')
 
 		name = SubElement(auteur, 'name')
-		name.text = list_auteurs[i]
+		name.text = "".join(x for x in list_auteurs[i] if x in string.printable)
 
 		affi = SubElement(auteur, 'affiliation')
-		affi.text = list_auteurs[i]
+		affi.text = "".join(x for x in list_auteurs[i] if x in string.printable)
 
 		mail = SubElement(auteur, 'mail')
 		try:
-			mail.text = list_mails[i]
+			mail.text = "".join(x for x in list_mails[i] if x in string.printable)
 		except:
 			mail.text = "N/A"
 
 		i += 1
 
 	abstract = SubElement(article, 'abstract')
-	abstract.text = dict_results.get("abstract")
+	abstract.text = "".join(x for x in dict_results.get("abstract") if x in string.printable)
 
 	intro = SubElement(article, 'introduction')
-	intro.text = dict_results.get("intro")
+	intro.text = "".join(x for x in dict_results.get("intro") if x in string.printable)
 
 	body = SubElement(article, 'corps')
-	body.text = dict_results.get("body")
+	body.text = "".join(x for x in dict_results.get("body") if x in string.printable)
 
 	discu = SubElement(article, 'discussion')
-	discu.text = dict_results.get("discussion")
+	discu.text = "".join(x for x in dict_results.get("discussion") if x in string.printable)
 
 	conc = SubElement(article, 'conclusion')
 	conc.text = "N/A"

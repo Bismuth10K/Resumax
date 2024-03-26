@@ -4,18 +4,13 @@
 	<titre>A Scalable MMR Approach to Sentence Scoring for Multi-Document Update Summarization </titre>
 	<auteurs>
 		<auteur>
-			<name>Florian Boudin ♮ and Marc El-B`eze ♮ </name>
-			<affiliation>Florian Boudin ♮ and Marc El-B`eze ♮ </affiliation>
+			<name>Florian Boudin  and Marc El-B`eze  </name>
+			<affiliation>Florian Boudin  and Marc El-B`eze  </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 		<auteur>
-			<name>♮ Laboratoire Informatique d’Avignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France. </name>
-			<affiliation>♮ Laboratoire Informatique d’Avignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France. </affiliation>
-			<mail>N/A</mail>
-		</auteur>
-		<auteur>
-			<name> </name>
-			<affiliation> </affiliation>
+			<name> Laboratoire Informatique dAvignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France. </name>
+			<affiliation> Laboratoire Informatique dAvignon 339 chemin des Meinajaries, BP1228, 84911 Avignon Cedex 9, France. </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 		<auteur>
@@ -24,13 +19,18 @@
 			<mail>N/A</mail>
 		</auteur>
 		<auteur>
-			<name>Juan-Manuel Torres-Moreno ♮,♭ </name>
-			<affiliation>Juan-Manuel Torres-Moreno ♮,♭ </affiliation>
+			<name> </name>
+			<affiliation> </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 		<auteur>
-			<name>♭ ´Ecole Polytechnique de Montr´eal CP 6079 Succ. Centre Ville H3C 3A7 Montr´eal (Qu´ebec), Canada. </name>
-			<affiliation>♭ ´Ecole Polytechnique de Montr´eal CP 6079 Succ. Centre Ville H3C 3A7 Montr´eal (Qu´ebec), Canada. </affiliation>
+			<name>Juan-Manuel Torres-Moreno , </name>
+			<affiliation>Juan-Manuel Torres-Moreno , </affiliation>
+			<mail>N/A</mail>
+		</auteur>
+		<auteur>
+			<name> Ecole Polytechnique de Montreal CP 6079 Succ. Centre Ville H3C 3A7 Montreal (Quebec), Canada. </name>
+			<affiliation> Ecole Polytechnique de Montreal CP 6079 Succ. Centre Ville H3C 3A7 Montreal (Quebec), Canada. </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 		<auteur>
@@ -47,7 +47,7 @@ document summarization have been carried out
 over the past few years.
 Most of the strategies
 to produce summaries are based on an extrac-
-tion method, which identiﬁes salient textual seg-
+tion method, which identies salient textual seg-
 ments, most often sentences, in documents. Sen-
 tences containing the most salient concepts are se-
 lected, ordered and assembled according to their
@@ -62,7 +62,7 @@ tion: has the user already read documents on the
 topic? In the case of a positive answer, producing
 an extract focusing on only new facts is of inter-
 est. In this way, an important issue is introduced:
-c⃝ 2008.
+c 2008.
 Licensed under the Creative Commons
 Attribution-Noncommercial-Share Alike 3.0 Unported
 li-
@@ -85,10 +85,10 @@ cently written facts are not necessarily new facts.
 Machine Reading (MR) was used by (Hickl et
 al., 2007) to construct knowledge representations
 from clusters of documents. Sentences contain-
-ing “new” information (i.e. that could not be in-
+ing new information (i.e. that could not be in-
 ferred by any previously considered document)
 are selected to generate summary. However, this
-highly efﬁcient approach (best system in DUC
+highly efcient approach (best system in DUC
 2007 update) requires large linguistic resources.
 (Witte et al., 2007) propose a rule-based system
 based on fuzzy coreference cluster graphs. Again,
@@ -97,8 +97,8 @@ tence ranking scheme. Several strategies remain-
 ing on post-processing redundancy removal tech-
 niques have been suggested. Extracts constructed
 from history were used by (Boudin and Torres-
-Moreno, 2007) to minimize history’s redundancy.
-(Lin et al., 2007) have proposed a modiﬁed Max-
+Moreno, 2007) to minimize historys redundancy.
+(Lin et al., 2007) have proposed a modied Max-
 imal Marginal Relevance (MMR) (Carbonell and
 Goldstein, 1998) re-ranker during sentence selec-
 tion, constructing the summary by incrementally
@@ -123,36 +123,36 @@ We propose
 a scalable sentence scoring method derived from
 MMR that, as the size of the history increases,
 gives more importance to non-redundancy that to
-query relevance. We deﬁne H to represent the pre-
+query relevance. We dene H to represent the pre-
 viously read documents (history), Q to represent
 the query and s the candidate sentence. The fol-
-lowing subsections formally deﬁne the similarity
+lowing subsections formally dene the similarity
 measures and the scalable MMR scoring method.
 2.1
 A query-oriented multi-document
 summarizer
-We have ﬁrst started by implementing a simple
+We have rst started by implementing a simple
 summarizer for which the task is to produce query-
 focused summaries from clusters of documents.
 Each document is pre-processed: documents are
-segmented into sentences, sentences are ﬁltered
+segmented into sentences, sentences are ltered
 (words which do not carry meaning are removed
 such as functional words or common words) and
-normalized using a lemmas database (i.e. inﬂected
-forms “go”, “goes”, “went”, “gone”... are replaced
-by “go”). An N-dimensional term-space Γ, where
+normalized using a lemmas database (i.e. inected
+forms go, goes, went, gone... are replaced
+by go). An N-dimensional term-space , where
 N is the number of different terms found in the
 cluster, is constructed. Sentences are represented
-in Γ by vectors in which each component is the
+in  by vectors in which each component is the
 term frequency within the sentence. Sentence scor-
 ing can be seen as a passage retrieval task in Infor-
 mation Retrieval (IR). Each sentence s is scored by
 computing a combination of two similarity mea-
-sures between the sentence and the query. The ﬁrst
+sures between the sentence and the query. The rst
 measure is the well known cosine angle (Salton et
 al., 1975) between the sentence and the query vec-
-torial representations in Γ (denoted respectively ⃗s
-and ⃗Q). The second similarity measure is based
+torial representations in  (denoted respectively s
+and Q). The second similarity measure is based
 on the Jaro-Winkler distance (Winkler, 1999). The
 original Jaro-Winkler measure, denoted JW, uses
 the number of matching characters and transposi-
@@ -163,21 +163,21 @@ measure to calculate the similarity between the
 sentence s and the query Q:
 JWe(s, Q) =
 1
-|Q| ·
+|Q| 
 X
-q∈Q
+qQ
 max
-m∈S′ JW(q, m)
+mS JW(q, m)
 (1)
-where S′ is the term set of s in which the terms
+where S is the term set of s in which the terms
 m that already have maximized JW(q, m) are re-
 moved. The use of JWe smooths normalization and
 misspelling errors. Each sentence s is scored using
 the linear combination:
-Sim1(s, Q) = α · cosine(⃗s, ⃗Q)
-+ (1 − α) · JWe(s, Q)
+Sim1(s, Q) =   cosine(s, Q)
++ (1  )  JWe(s, Q)
 (2)
-where α = 0.7, optimally tuned on the past DUCs
+where  = 0.7, optimally tuned on the past DUCs
 data (2005 and 2006). The system produces a list
 of ranked sentences from which the summary is
 constructed by arranging the high scored sentences
@@ -192,14 +192,14 @@ summary is constructed incrementally from a list
 of ranked sentences, at each iteration the sentence
 which maximizes MMR is chosen:
 MMR = arg max
-s∈S
-[ λ · Sim1(s, Q)
-− (1 − λ) · max
-sj∈E Sim2(s, sj) ]
+sS
+[   Sim1(s, Q)
+ (1  )  max
+sjE Sim2(s, sj) ]
 (3)
 where S is the set of candidates sentences and E
-is the set of selected sentences. λ represents an
-interpolation coefﬁcient between sentence’s rele-
+is the set of selected sentences.  represents an
+interpolation coefcient between sentences rele-
 vance and non-redundancy. Sim2(s, sj) is a nor-
 malized Longest Common Substring (LCS) mea-
 sure between sentences s and sj. Detecting sen-
@@ -211,29 +211,29 @@ Sim2 are ranged in [0, 1], they can be seen as prob-
 abilities even though they are not. Just as rewriting
 (3) as (NR stands for Novelty Relevance):
 NR = arg max
-s∈S
-[ λ · Sim1(s, Q)
-+ (1 − λ) · (1 − max
-sh∈H Sim2(s, sh)) ]
+sS
+[   Sim1(s, Q)
++ (1  )  (1  max
+shH Sim2(s, sh)) ]
 (4)
 We can understand that (4) equates to an OR com-
 bination. But as we are looking for a more intu-
 itive AND and since the similarities are indepen-
 dent, we have to use the product combination. The
 24
-scoring method deﬁned in (2) is modiﬁed into a
+scoring method dened in (2) is modied into a
 double maximization criterion in which the best
 ranked sentence will be the most relevant to the
 query AND the most different to the sentences in
 H.
 SMMR(s) = Sim1(s, Q)
-·
-
-1 − max
-sh∈H Sim2(s, sh)
-f(H)
+
+
+1  max
+shH Sim2(s, sh)
+f(H)
 (5)
-Decreasing λ in (3) with the length of the sum-
+Decreasing  in (3) with the length of the sum-
 mary was suggested by (Murray et al., 2005) and
 successfully used in the DUC 2005 by (Hachey
 et al., 2005), thereby emphasizing the relevance
@@ -243,7 +243,7 @@ Sim-
 ilarly, we propose to follow this assumption in
 SMMR using a function denoted f that as the
 amount of data in history increases, prioritize non-
-redundancy (f(H) → 0).
+redundancy (f(H)  0).
 3
 Experiments
 The method described in the previous section has
@@ -256,7 +256,7 @@ The DUC 2007 update corpus
 We used for our experiments the DUC 2007 up-
 date competition data set. The corpus is composed
 of 10 topics, with 25 documents per topic. The up-
-date task goal was to produce short (∼100 words)
+date task goal was to produce short (100 words)
 multi-document update summaries of newswire ar-
 ticles under the assumption that the user has al-
 ready read a set of earlier articles. The purpose
@@ -265,7 +265,7 @@ reader of new information about a particular topic.
 Given a DUC topic and its 3 document clusters: A
 (10 documents), B (8 documents) and C (7 doc-
 uments), the task is to create from the documents
-three brief, ﬂuent summaries that contribute to sat-
+three brief, uent summaries that contribute to sat-
 isfying the information need expressed in the topic
 statement.
 1. A summary of documents in cluster A.
@@ -300,8 +300,8 @@ Results
 Table 1 reports the results obtained on the DUC
 2007 update data set for different sentence scor-
 ing methods. cosine + JWe stands for the scor-
-ing method deﬁned in (2) and NR improves it
-with sentence re-ranking deﬁned in equation (4).
+ing method dened in (2) and NR improves it
+with sentence re-ranking dened in equation (4).
 SMMR is the combined adaptation we have pro-
 posed in (5). The function f(H) used in SMMR is
 the simple rational function 1
@@ -315,7 +315,7 @@ that non-redundancy have to be favoured as the
 size of history grows. Baseline results are obtained
 on summaries generated by taking the leading sen-
 tences of the most recent documents of the cluster,
-up to 100 words (ofﬁcial baseline of DUC). The
+up to 100 words (ofcial baseline of DUC). The
 table also lists the three top performing systems at
 DUC 2007 and the lowest scored human reference.
 As we can see from these results, SMMR out-
@@ -325,7 +325,7 @@ ranked second at the DUC 2007 update competi-
 tion. Moreover, no post-processing was applied to
 the selected sentences leaving an important margin
 of progress. Another interesting result is the high
-performance of the non-update speciﬁc method
+performance of the non-update specic method
 (cosine + JWe) that could be due to the small size
 3ROUGE is available at http://haydn.isi.edu/ROUGE/.
 25

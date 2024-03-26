@@ -4,12 +4,12 @@
 	<titre>Summary Evaluation with and without References </titre>
 	<auteurs>
 		<auteur>
-			<name>Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Vel´azquez-Morales </name>
-			<affiliation>Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Vel´azquez-Morales </affiliation>
+			<name>Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velazquez-Morales </name>
+			<affiliation>Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velazquez-Morales </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
-	<abstract>Abstract—We study a new content-based method for the evaluation of text summarization systems without human models which is used to produce system rankings. The research is carried out using a new content-based evaluation framework called FRESA to compute a variety of divergences among probability distributions. We apply our comparison framework to various well-established content-based evaluation measures in text summarization such as COVERAGE, RESPONSIVENESS, PYRAMIDS and ROUGE studying their associations in various text summarization tasks including generic multi-document summarization in English and French, focus-based multi-document summarization in English and generic single-document summarization in French and Spanish.  Index Terms—Text summarization evaluation, content-based evaluation measures, divergences.  I. INTRODUCTION T EXT summarization evaluation has always been a complex and controversial issue in computational linguistics. In the last decade, signiﬁcant advances have been made in this ﬁeld as well as various evaluation measures have been designed. Two evaluation campaigns have been led by the U.S. agence DARPA. The ﬁrst one, SUMMAC, ran from 1996 to 1998 under the auspices of the Tipster program [1], and the second one, entitled DUC (Document Understanding Conference) [2], was the main evaluation forum from 2000 until 2007. Nowadays, the Text Analysis Conference (TAC) [3] provides a forum for assessment of different information access technologies including text summarization. Evaluation in text summarization can be extrinsic or intrinsic [4]. In an extrinsic evaluation, the summaries are assessed in the context of an speciﬁc task carried out by a human or a machine. In an intrinsic evaluation, the summaries are evaluated in reference to some ideal model. SUMMAC was mainly extrinsic while DUC and TAC followed an intrinsic evaluation paradigm. In an intrinsic evaluation, an  Manuscript received June 8, 2010. Manuscript accepted for publication July 25, 2010. Juan-Manuel Torres-Moreno is with LIA/Universit´e d’Avignon, France and ´Ecole Polytechnique de Montr´eal, Canada (juan-manuel.torres@univ-avignon.fr). Eric SanJuan is with LIA/Universit´e d’Avignon, France (eric.sanjuan@univ-avignon.fr). Horacio Saggion is with DTIC/Universitat Pompeu Fabra, Spain (horacio.saggion@upf.edu). Iria da Cunha is with IULA/Universitat Pompeu Fabra, Spain; LIA/Universit´e d’Avignon, France and Instituto de Ingenier´ıa/UNAM, Mexico (iria.dacunha@upf.edu). Patricia Vel´azquez-Morales is with VM Labs, France (patricia velazquez@yahoo.com).  automatically generated summary (peer) has to be compared with one or more reference summaries (models). DUC used an interface called SEE to allow human judges to compare a peer with a model. Thus, judges give a COVERAGE score to each peer produced by a system and the ﬁnal system COVERAGE score is the average of the COVERAGE’s scores asigned. These system’s COVERAGE scores can then be used to rank summarization systems. In the case of query-focused summarization (e.g. when the summary should answer a question or series of questions) a RESPONSIVENESS score is also assigned to each summary, which indicates how responsive the summary is to the question(s). Because manual comparison of peer summaries with model summaries is an arduous and costly process, a body of research has been produced in the last decade on automatic content-based evaluation procedures. Early studies used text similarity measures such as cosine similarity (with or without weighting schema) to compare peer and model summaries [5]. Various vocabulary overlap measures such as n-grams overlap or longest common subsequence between peer and model have also been proposed [6], [7]. The BLEU machine translation evaluation measure [8] has also been tested in summarization [9]. The DUC conferences adopted the ROUGE package for content-based evaluation [10]. ROUGE implements a series of recall measures based on n-gram co-occurrence between a peer summary and a set of model summaries. These measures are used to produce systems’ rank. It has been shown that system rankings, produced by some ROUGE measures (e.g., ROUGE-2, which uses 2-grams), have a correlation with rankings produced using COVERAGE. In recent years the PYRAMIDS evaluation method [11] has been introduced. It is based on the distribution of “content” of a set of model summaries. Summary Content Units (SCUs) are ﬁrst identiﬁed in the model summaries, then each SCU receives a weight which is the number of models containing or expressing the same unit. Peer SCUs are identiﬁed in the peer, matched against model SCUs, and weighted accordingly. The PYRAMIDS score given to a peer is the ratio of the sum of the weights of its units and the sum of the weights of the best possible ideal summary with the same number of SCUs as the peer. The PYRAMIDS scores can be also used for ranking summarization systems. [11] showed that PYRAMIDS scores produced reliable system rankings when multiple (4 or more) models were used and that PYRAMIDS rankings correlate with rankings produced by ROUGE-2 and ROUGE-SU2 (i.e. ROUGE with skip 2-grams). However, this method requires the creation  13 Polibits (42) 2010  </abstract>
+	<abstract>AbstractWe study a new content-based method for the evaluation of text summarization systems without human models which is used to produce system rankings. The research is carried out using a new content-based evaluation framework called FRESA to compute a variety of divergences among probability distributions. We apply our comparison framework to various well-established content-based evaluation measures in text summarization such as COVERAGE, RESPONSIVENESS, PYRAMIDS and ROUGE studying their associations in various text summarization tasks including generic multi-document summarization in English and French, focus-based multi-document summarization in English and generic single-document summarization in French and Spanish.  Index TermsText summarization evaluation, content-based evaluation measures, divergences.  I. INTRODUCTION T EXT summarization evaluation has always been a complex and controversial issue in computational linguistics. In the last decade, signicant advances have been made in this eld as well as various evaluation measures have been designed. Two evaluation campaigns have been led by the U.S. agence DARPA. The rst one, SUMMAC, ran from 1996 to 1998 under the auspices of the Tipster program [1], and the second one, entitled DUC (Document Understanding Conference) [2], was the main evaluation forum from 2000 until 2007. Nowadays, the Text Analysis Conference (TAC) [3] provides a forum for assessment of different information access technologies including text summarization. Evaluation in text summarization can be extrinsic or intrinsic [4]. In an extrinsic evaluation, the summaries are assessed in the context of an specic task carried out by a human or a machine. In an intrinsic evaluation, the summaries are evaluated in reference to some ideal model. SUMMAC was mainly extrinsic while DUC and TAC followed an intrinsic evaluation paradigm. In an intrinsic evaluation, an  Manuscript received June 8, 2010. Manuscript accepted for publication July 25, 2010. Juan-Manuel Torres-Moreno is with LIA/Universite dAvignon, France and Ecole Polytechnique de Montreal, Canada (juan-manuel.torres@univ-avignon.fr). Eric SanJuan is with LIA/Universite dAvignon, France (eric.sanjuan@univ-avignon.fr). Horacio Saggion is with DTIC/Universitat Pompeu Fabra, Spain (horacio.saggion@upf.edu). Iria da Cunha is with IULA/Universitat Pompeu Fabra, Spain; LIA/Universite dAvignon, France and Instituto de Ingeniera/UNAM, Mexico (iria.dacunha@upf.edu). Patricia Velazquez-Morales is with VM Labs, France (patricia velazquez@yahoo.com).  automatically generated summary (peer) has to be compared with one or more reference summaries (models). DUC used an interface called SEE to allow human judges to compare a peer with a model. Thus, judges give a COVERAGE score to each peer produced by a system and the nal system COVERAGE score is the average of the COVERAGEs scores asigned. These systems COVERAGE scores can then be used to rank summarization systems. In the case of query-focused summarization (e.g. when the summary should answer a question or series of questions) a RESPONSIVENESS score is also assigned to each summary, which indicates how responsive the summary is to the question(s). Because manual comparison of peer summaries with model summaries is an arduous and costly process, a body of research has been produced in the last decade on automatic content-based evaluation procedures. Early studies used text similarity measures such as cosine similarity (with or without weighting schema) to compare peer and model summaries [5]. Various vocabulary overlap measures such as n-grams overlap or longest common subsequence between peer and model have also been proposed [6], [7]. The BLEU machine translation evaluation measure [8] has also been tested in summarization [9]. The DUC conferences adopted the ROUGE package for content-based evaluation [10]. ROUGE implements a series of recall measures based on n-gram co-occurrence between a peer summary and a set of model summaries. These measures are used to produce systems rank. It has been shown that system rankings, produced by some ROUGE measures (e.g., ROUGE-2, which uses 2-grams), have a correlation with rankings produced using COVERAGE. In recent years the PYRAMIDS evaluation method [11] has been introduced. It is based on the distribution of content of a set of model summaries. Summary Content Units (SCUs) are rst identied in the model summaries, then each SCU receives a weight which is the number of models containing or expressing the same unit. Peer SCUs are identied in the peer, matched against model SCUs, and weighted accordingly. The PYRAMIDS score given to a peer is the ratio of the sum of the weights of its units and the sum of the weights of the best possible ideal summary with the same number of SCUs as the peer. The PYRAMIDS scores can be also used for ranking summarization systems. [11] showed that PYRAMIDS scores produced reliable system rankings when multiple (4 or more) models were used and that PYRAMIDS rankings correlate with rankings produced by ROUGE-2 and ROUGE-SU2 (i.e. ROUGE with skip 2-grams). However, this method requires the creation  13 Polibits (42) 2010  </abstract>
 	<introduction>I. INTRODUCTION
 T
 EXT summarization evaluation has always been a
@@ -19,10 +19,10 @@ controversial
 issue
 in
 computational
-linguistics. In the last decade, signiﬁcant advances have been
-made in this ﬁeld as well as various evaluation measures have
+linguistics. In the last decade, signicant advances have been
+made in this eld as well as various evaluation measures have
 been designed. Two evaluation campaigns have been led by
-the U.S. agence DARPA. The ﬁrst one, SUMMAC, ran from
+the U.S. agence DARPA. The rst one, SUMMAC, ran from
 1996 to 1998 under the auspices of the Tipster program [1],
 and the second one, entitled DUC (Document Understanding
 Conference) [2], was the main evaluation forum from 2000
@@ -31,7 +31,7 @@ until 2007. Nowadays, the Text Analysis Conference (TAC)
 access technologies including text summarization.
 Evaluation in text summarization can be extrinsic or
 intrinsic [4]. In an extrinsic evaluation, the summaries are
-assessed in the context of an speciﬁc task carried out by a
+assessed in the context of an specic task carried out by a
 human or a machine. In an intrinsic evaluation, the summaries
 are evaluated in reference to some ideal model. SUMMAC
 was mainly extrinsic while DUC and TAC followed an
@@ -42,22 +42,22 @@ Juan-Manuel
 Torres-Moreno
 is
 with
-LIA/Universit´e
-d’Avignon,
+LIA/Universite
+dAvignon,
 France
 and
-´Ecole
+Ecole
 Polytechnique
 de
-Montr´eal,
+Montreal,
 Canada
 (juan-manuel.torres@univ-avignon.fr).
 Eric
 SanJuan
 is
 with
-LIA/Universit´e
-d’Avignon,
+LIA/Universite
+dAvignon,
 France
 (eric.sanjuan@univ-avignon.fr).
 Horacio
@@ -78,10 +78,10 @@ IULA/Universitat
 Pompeu
 Fabra,
 Spain;
-LIA/Universit´e d’Avignon, France and Instituto de Ingenier´ıa/UNAM, Mexico
+LIA/Universite dAvignon, France and Instituto de Ingeniera/UNAM, Mexico
 (iria.dacunha@upf.edu).
 Patricia
-Vel´azquez-Morales
+Velazquez-Morales
 is
 with
 VM
@@ -92,9 +92,9 @@ automatically generated summary (peer) has to be compared
 with one or more reference summaries (models). DUC used
 an interface called SEE to allow human judges to compare
 a peer with a model. Thus, judges give a COVERAGE score
-to each peer produced by a system and the ﬁnal system
-COVERAGE score is the average of the COVERAGE’s scores
-asigned. These system’s COVERAGE scores can then be used
+to each peer produced by a system and the nal system
+COVERAGE score is the average of the COVERAGEs scores
+asigned. These systems COVERAGE scores can then be used
 to rank summarization systems. In the case of query-focused
 summarization (e.g. when the summary should answer a
 question or series of questions) a RESPONSIVENESS score
@@ -114,16 +114,16 @@ summarization [9]. The DUC conferences adopted the ROUGE
 package for content-based evaluation [10]. ROUGE implements
 a series of recall measures based on n-gram co-occurrence
 between a peer summary and a set of model summaries. These
-measures are used to produce systems’ rank. It has been shown
+measures are used to produce systems rank. It has been shown
 that system rankings, produced by some ROUGE measures
 (e.g., ROUGE-2, which uses 2-grams), have a correlation with
 rankings produced using COVERAGE.
 In recent years the PYRAMIDS evaluation method [11] has
-been introduced. It is based on the distribution of “content”
+been introduced. It is based on the distribution of content
 of a set of model summaries. Summary Content Units (SCUs)
-are ﬁrst identiﬁed in the model summaries, then each SCU
+are rst identied in the model summaries, then each SCU
 receives a weight which is the number of models containing
-or expressing the same unit. Peer SCUs are identiﬁed in the
+or expressing the same unit. Peer SCUs are identied in the
 peer, matched against model SCUs, and weighted accordingly.
 The PYRAMIDS score given to a peer is the ratio of the sum
 of the weights of its units and the sum of the weights of the
@@ -136,7 +136,7 @@ rankings produced by ROUGE-2 and ROUGE-SU2 (i.e. ROUGE
 with skip 2-grams). However, this method requires the creation
 13
 Polibits (42) 2010
-of models and the identiﬁcation, matching, and weighting of
+of models and the identication, matching, and weighting of
 SCUs in both: models and peers.
 [12] evaluated the effectiveness of the Jensen-Shannon
 (J S) [13] theoretic measure in predicting systems ranks
@@ -190,7 +190,7 @@ In this paper we present a series of experiments aimed at
 a better understanding of the value of the J S divergence
 for ranking summarization systems. We have carried out
 experimentation with the proposed measure and we have
-veriﬁed that in certain tasks (such as those studied by
+veried that in certain tasks (such as those studied by
 [12])
 there
 is
@@ -214,10 +214,10 @@ our inquiry; then in Section III we explain the methodology
 adopted in our work and the tools and resources used for
 experimentation. In Section IV we present the experiments
 carried out together with the results. Section V discusses the
-results and Section VI concludes the paper and identiﬁes future
+results and Section VI concludes the paper and identies future
 work.
 II. RELATED WORK
-One of the ﬁrst works to use content-based measures in
+One of the rst works to use content-based measures in
 text summarization evaluation is due to [5], who presented an
 evaluation framework to compare rankings of summarization
 systems produced by recall and cosine-based measures. They
@@ -260,7 +260,7 @@ score. There are several statistics depending on the used
 n-grams and the text processing applied to the input texts
 (e.g., lemmatization, stop-word removal).
 [15] proposed a method of evaluation based on the
-use of “distances” or divergences between two probability
+use of distances or divergences between two probability
 distributions (the distribution of units in the automatic
 summary
 and
@@ -284,7 +284,7 @@ Pw log2
 Pw
 Qw
 (1)
-While J S divergence is deﬁned as follows:
+While J S divergence is dened as follows:
 DJ S(P||Q) = 1
 2
 X
@@ -315,30 +315,30 @@ III. METHODOLOGY
 The followed methodology in this paper mirrors the one
 adopted in past work (e.g. [5], [7], [12]). Given a particular
 summarization task T, p data points to be summarized
-with input material {Ii}p−1
+with input material {Ii}p1
 i=0 (e.g. document(s), question(s),
-topic(s)), s peer summaries {SUMi,k}s−1
-m model summaries {MODELi,j}m−1k=0 for input i, and
+topic(s)), s peer summaries {SUMi,k}s1
+m model summaries {MODELi,j}m1k=0 for input i, and
 j=0
 for input i, we will
 compare rankings of the s peer summaries produced by various
 evaluation measures. Some measures that we use compare
 summaries with n of the m models:
-MEASUREM(SUMi,k, {MODELi,j}n−1
+MEASUREM(SUMi,k, {MODELi,j}n1
 j=0 )
 (3)
-Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velázquez-Morales
+Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velzquez-Morales
 14
 Polibits (42) 2010
 while other measures compare peers with all or some of the
 input material:
-MEASUREM(SUMi,k, I′
+MEASUREM(SUMi,k, I
 i)
 (4)
-where I′
+where I
 i is some subset of input Ii. The values produced
 by the measures for each summary SUMi,k are averaged
-for each system k = 0, . . . , s − 1 and these averages are
+for each system k = 0, . . . , s  1 and these averages are
 used to produce a ranking. Rankings are then compared
 using Spearman Rank correlation [17] which is used to
 measure the degree of association between two variables
@@ -346,18 +346,18 @@ whose values are used to rank objects. We have chosen
 to use this correlation to compare directly results to those
 presented in [12]. Computation of correlations is done using
 the Statistics-RankCorrelation-0.12 package1, which computes
-the rank correlation between two vectors. We also veriﬁed
+the rank correlation between two vectors. We also veried
 the good conformity of the results with the correlation test
-of Kendall τ calculated with the statistical software R. The
+of Kendall  calculated with the statistical software R. The
 two nonparametric tests of Spearman and Kendall do not
-really stand out as the treatment of ex-æquo. The good
+really stand out as the treatment of ex-quo. The good
 correspondence between the two tests shows that they do not
 introduce bias in our analysis. Subsequently will mention only
-the ρ of Sperman more widely used in this ﬁeld.
+the  of Sperman more widely used in this eld.
 A. Tools
 We carry out experimentation using a new summarization
-evaluation framework: FRESA –FRamework for Evaluating
-Summaries Automatically–, which includes document-based
+evaluation framework: FRESA FRamework for Evaluating
+Summaries Automatically, which includes document-based
 summary
 evaluation
 measures
@@ -368,7 +368,7 @@ distribution2. As in the ROUGE package, FRESA supports
 different n-grams and skip n-grams probability distributions.
 The FRESA environment can be used in the evaluation of
 summaries in English, French, Spanish and Catalan, and it
-integrates ﬁltering and lemmatization in the treatment of
+integrates ltering and lemmatization in the treatment of
 summaries and documents. It is developed in Perl and will
 be made publicly available. We also use the ROUGE package
 [10] to compute various ROUGE statistics in new datasets.
@@ -380,15 +380,15 @@ multi-document-summarization
 in
 English
 (production of a short summary of a cluster of related
-documents) using data from DUC’043, task 2: 50
-clusters, 10 documents each – 294,636 words.
+documents) using data from DUC043, task 2: 50
+clusters, 10 documents each  294,636 words.
 2) Focused-based summarization in English (production of
 a short focused multi-document summary focused on the
-question “who is X?”, where X is a person’s name) using
-data from the DUC’04 task 5: 50 clusters, 10 documents
-each plus a target person name – 284,440 words.
-1http://search.cpan.org/∼gene/Statistics-RankCorrelation-0.12/
-2FRESA is available at: http://lia.univavignon.fr/ﬁleadmin/axes/TALNE/
+question who is X?, where X is a persons name) using
+data from the DUC04 task 5: 50 clusters, 10 documents
+each plus a target person name  284,440 words.
+1http://search.cpan.org/gene/Statistics-RankCorrelation-0.12/
+2FRESA is available at: http://lia.univavignon.fr/leadmin/axes/TALNE/
 Ressources.html
 3http://www-nlpir.nist.gov/projects/duc/guidelines/2004.html
 3) Update-summarization task that consists of creating a
@@ -397,49 +397,49 @@ sub-tasks are considered here: A) an initial summary has
 to be produced based on an initial set of documents and
 topic; B) an update summary has to be produced from
 a different (but related) cluster assuming documents
-used in A) are known. The English TAC’08 Update
+used in A) are known. The English TAC08 Update
 Summarization dataset is used, which consists of 48
-topics with 20 documents each – 36,911 words.
+topics with 20 documents each  36,911 words.
 4) Opinion summarization where systems have to analyze
 a set of blog articles and summarize the opinions
-about a target in the articles. The TAC’08 Opinion
+about a target in the articles. The TAC08 Opinion
 Summarization in English4 data set (taken from the
 Blogs06 Text Collection) is used: 25 clusters and targets
-(i.e., target entity and questions) were used – 1,167,735
+(i.e., target entity and questions) were used  1,167,735
 words.
 5) Generic single-document summarization in Spanish
-using the Medicina Cl´ınica5 corpus, which is composed
+using the Medicina Clnica5 corpus, which is composed
 of 50 medical articles in Spanish, each one with its
-corresponding author abstract – 124,929 words.
+corresponding author abstract  124,929 words.
 6) Generic single document summarization in French using
-the “Canadien French Sociological Articles” corpus
+the Canadien French Sociological Articles corpus
 from the journal Perspectives interdisciplinaires sur le
-travail et la sant´e (PISTES)6. It contains 50 sociological
+travail et la sante (PISTES)6. It contains 50 sociological
 articles in French, each one with its corresponding
-author abstract – 381,039 words.
+author abstract  381,039 words.
 7) Generic multi-document-summarization in French using
 data from the RPM27 corpus [18], 20 different themes
 consisting of 10 articles and 4 abstracts by reference
-thematic – 185,223 words.
+thematic  185,223 words.
 For experimentation in the TAC and the DUC datasets we use
 directly the peer summaries produced by systems participating
 in the evaluations. For experimentation in Spanish and French
 (single and multi-document summarization) we have created
 summaries at a similar ratio to those of reference using the
 following systems:
-– ENERTEX [19], a summarizer based on a theory of
+ ENERTEX [19], a summarizer based on a theory of
 textual energy;
-– CORTEX [20], a single-document sentence extraction
+ CORTEX [20], a single-document sentence extraction
 system for Spanish and French that combines various
 statistical measures of relevance (angle between sentence
 and topic, various Hamming weights for sentences, etc.)
 and applies an optimal decision algorithm for sentence
 selection;
-– SUMMTERM [21], a terminology-based summarizer that
+ SUMMTERM [21], a terminology-based summarizer that
 is used for summarization of medical articles and
 uses specialized terminology for scoring and ranking
 sentences;
-– REG [22], summarization system based on an greedy
+ REG [22], summarization system based on an greedy
 algorithm;
 4http://www.nist.gov/tac/data/index.html
 5http://www.elsevier.es/revistas/ctl servlet? f=7032&amp;revistaid=2
@@ -448,39 +448,39 @@ algorithm;
 Summary Evaluation with and without References
 15
 Polibits (42) 2010
-– J S summarizer, a summarization system that scores
+ J S summarizer, a summarization system that scores
 and ranks sentences according to their Jensen-Shannon
 divergence to the source document;
-– a lead-based summarization system that selects the lead
+ a lead-based summarization system that selects the lead
 sentences of the document;
-– a
+ a
 random-based
 summarization
 system
 that
 selects
 sentences at random;
-– Open Text Summarizer [23], a multi-lingual summarizer
+ Open Text Summarizer [23], a multi-lingual summarizer
 based on the frequency and
-– commercial systems: Word, SSSummarizer8, Pertinence9
+ commercial systems: Word, SSSummarizer8, Pertinence9
 and Copernic10.
 C. Evaluation Measures
 The following measures derived from human assessment of
 the content of the summaries are used in our experiments:
-– COVERAGE is understood as the degree to which one
+ COVERAGE is understood as the degree to which one
 peer summary conveys the same information as a model
 summary [2]. COVERAGE was used in DUC evaluations.
 This measure is used as indicated in equation 3 using
 human references or models.
-– RESPONSIVENESS ranks summaries in a 5-point scale
-indicating how well the summary satisﬁed a given
+ RESPONSIVENESS ranks summaries in a 5-point scale
+indicating how well the summary satised a given
 information need [2]. It is used in focused-based
 summarization tasks. This measure is used as indicated
 in equation 4 since a human judges the summary
-with respect to a given input “user need” (e.g., a
+with respect to a given input user need (e.g., a
 question). RESPONSIVENESS was used in DUC and TAC
 evaluations.
-– PYRAMIDS [11] is a content assessment measure which
+ PYRAMIDS [11] is a content assessment measure which
 compares content units in a peer summary to weighted
 content units in a set of model summaries. This
 measure is used as indicated in equation 3 using human
@@ -489,16 +489,16 @@ for content-based evaluation in the TAC evaluations.
 For DUC and TAC datasets the values of these measures are
 available and we used them directly. We used the following
 automatic evaluation measures in our experiments:
-– ROUGE [14], which is a recall metric that takes into
+ ROUGE [14], which is a recall metric that takes into
 account n-grams as units of content for comparing peer
-and model summaries. The ROUGE formula speciﬁed in
+and model summaries. The ROUGE formula specied in
 [10] is as follows:
 ROUGE-n(R, M) =
 P
-m ∈ M P
-n−gram∈P countmatch(n − gram)
+m  M P
+ngramP countmatch(n  gram)
 P
-m ∈ M P count(n-gram)
+m  M P count(n-gram)
 (5)
 where R is the summary to be evaluated, M is the set of
 model (human) summaries, countmatch is the number of
@@ -512,9 +512,9 @@ presented here we used uni-grams, 2-grams, and the skip
 ROUGE-2 and ROUGE-SU4). ROUGE is used to compare
 a peer summary to a set of model summaries in our
 framework (as indicated in equation 3).
-– Jensen-Shannon divergence formula given in Equation 2
+ Jensen-Shannon divergence formula given in Equation 2
 is implemented in our FRESA package with the following
-speciﬁcation (Equation 6) for the probability distribution
+specication (Equation 6) for the probability distribution
 of words w.
 Pw = CT
 w
@@ -524,10 +524,10 @@ Qw =
 CS
 w
 NS
-if w ∈ S
+if w  S
 CT
-w+δ
-N+δ∗B
+w+
+N+B
 otherwise
 (6)
 Where P is the probability distribution of words w in
@@ -537,10 +537,10 @@ summary N = NT +NS, B = 1.5|V |, CT
 w is the number
 of words in the text and CS
 w is the number of words in
-the summary. For smoothing the summary’s probabilities
-we have used δ = 0.005. We have also implemented
+the summary. For smoothing the summarys probabilities
+we have used  = 0.005. We have also implemented
 other smoothing approaches (e.g. Good-Turing [24], that
-uses the CPAN Perl’s Statistics-Smoothing-SGT-2.1.2
+uses the CPAN Perls Statistics-Smoothing-SGT-2.1.2
 package11) in FRESA, but we do not use them in
 the experiments reported here. Following the ROUGE
 approach, in addition to word uni-grams we use 2-grams
@@ -554,28 +554,28 @@ of multiple documents, these are concatenated (in the
 given input order) to form a single input from which
 probabilities are computed.
 IV. EXPERIMENTS AND RESULTS
-We ﬁrst replicated the experiments presented in [12] to
+We rst replicated the experiments presented in [12] to
 verify that our implementation of J S produced correlation
-results compatible with that work. We used the TAC’08
+results compatible with that work. We used the TAC08
 Update Summarization data set and computed J S and
 ROUGE measures for each peer summary. We produced
 two system rankings (one for each measure), which were
 compared to rankings produced using the manual PYRAMIDS
 and RESPONSIVENESS scores. Spearman correlations were
 computed among the different rankings. The results are
-presented in Table I. These results conﬁrm a high correlation
+presented in Table I. These results conrm a high correlation
 among PYRAMIDS, RESPONSIVENESS and J S. We also
-veriﬁed high correlation between J S and ROUGE-2 (0.83
+veried high correlation between J S and ROUGE-2 (0.83
 Spearman correlation, not shown in the table) in this task and
 dataset.
-Then, we experimented with data from DUC’04, TAC’08
+Then, we experimented with data from DUC04, TAC08
 Opinion Summarization pilot task as well as single and
-11http://search.cpan.org/∼bjoernw/Statistics-Smoothing-SGT-2.1.2/
-Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velázquez-Morales
+11http://search.cpan.org/bjoernw/Statistics-Smoothing-SGT-2.1.2/
+Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velzquez-Morales
 16
 Polibits (42) 2010
 TABLE I
-SPEARMAN CORRELATION OF CONTENT-BASED MEASURES IN TAC’08
+SPEARMAN CORRELATION OF CONTENT-BASED MEASURES IN TAC08
 UPDATE SUMMARIZATION TASK
 Mesure
 PYRAMIDS
@@ -595,35 +595,35 @@ p &lt; 0.005
 multi-document summarization in Spanish and French. In spite
 of the fact that the experiments for French and Spanish corpora
 use less data points (i.e., less summarizers per task) than
-for English, results are still quite signiﬁcant. For DUC’04,
+for English, results are still quite signicant. For DUC04,
 we computed the J S measure for each peer summary in
 tasks 2 and 5 and we used J S, ROUGE, COVERAGE and
-RESPONSIVENESS scores to produce systems’ rankings. The
-various Spearman’s rank correlation values for DUC’04 are
+RESPONSIVENESS scores to produce systems rankings. The
+various Spearmans rank correlation values for DUC04 are
 presented in Tables II (for task 2) and III (for task 5).
-For task 2, we have veriﬁed a strong correlation between
+For task 2, we have veried a strong correlation between
 J S and COVERAGE. For task 5, the correlation between
 J S and COVERAGE is weak, and that between J S and
 RESPONSIVENESS is weak and negative.
 Although the Opinion Summarization (OS) task is a new
 type of summarization task and its evaluation is a complicated
 issue, we have decided to compare J S rankings with those
-obtained using PYRAMIDS and RESPONSIVENESS in TAC’08.
-Spearman’s correlation values are listed in Table IV. As it can
+obtained using PYRAMIDS and RESPONSIVENESS in TAC08.
+Spearmans correlation values are listed in Table IV. As it can
 be seen, there is weak and negative correlation of J S with
 both PYRAMIDS and RESPONSIVENESS. Correlation between
 PYRAMIDS and RESPONSIVENESS rankings is high for this
-task (0.71 Spearman’s correlation value).
+task (0.71 Spearmans correlation value).
 For experimentation in mono-document summarization
 in Spanish and French, we have run 11 multi-lingual
 summarization systems; for experimentation in French, we
 have run 12 systems. In both cases, we have produced
 summaries at a compression rate close to the compression rate
-of the authors’ provided abstracts. We have then computed J S
+of the authors provided abstracts. We have then computed J S
 and ROUGE measures for each summary and we have averaged
-the measure’s values for each system. These averages were
+the measures values for each system. These averages were
 used to produce rankings per each measure. We computed
-Spearman’s correlations for all pairs of rankings.
+Spearmans correlations for all pairs of rankings.
 Results are presented in Tables V, VI and VII. All results
 show medium to strong correlation between the J S measures
 and ROUGE measures. However the J S measure based on
@@ -641,7 +641,7 @@ evaluation metrics that do not rely on human models but that
 compare summary content to input content directly [12]. We
 have some positive and some negative results regarding the
 direct use of the full document in content-based evaluation.
-We have veriﬁed that in both generic muti-document
+We have veried that in both generic muti-document
 summarization
 and
 in
@@ -666,7 +666,7 @@ to better assess the content of the peers [25], the task being a
 determinant factor in the selection of content for the summary.
 Our multi-lingual experiments in generic single-document
 summarization
-conﬁrm
+conrm
 a
 strong
 correlation
@@ -692,7 +692,7 @@ professionals of a specialized domain (as, for example, the
 medical domain) adopt similar strategies to summarize their
 texts and they tend to choose roughly the same content chunks
 for their summaries. Previous studies have shown that author
-abstracts are able to reformulate content with ﬁdelity [27] and
+abstracts are able to reformulate content with delity [27] and
 these abstracts are ideal candidates for comparison purposes.
 Because of this, the summary of the author of a medical article
 can be taken as reference for summaries evaluation. It is worth
@@ -707,7 +707,7 @@ summaries for comparison purposes. We have carried out
 extensive experimentation with different summarization tasks
 drawing a clearer picture of tasks where the measures could
 be applied. This paper makes the following contributions:
-– We have shown that if we are only interested in ranking
+ We have shown that if we are only interested in ranking
 summarization systems according to the content of their
 automatic summaries, there are tasks were models could
 be subtituted by the full document in the computation of
@@ -718,7 +718,7 @@ Summary Evaluation with and without References
 17
 Polibits (42) 2010
 TABLE II
-SPEARMAN ρ OF CONTENT-BASED MEASURES WITH COVERAGE IN DUC’04 TASK 2
+SPEARMAN  OF CONTENT-BASED MEASURES WITH COVERAGE IN DUC04 TASK 2
 Mesure
 COVERAGE
 p-value
@@ -729,7 +729,7 @@ J S
 0.68
 p &lt; 0.0025
 TABLE III
-SPEARMAN ρ OF CONTENT-BASED MEASURES IN DUC’04 TASK 5
+SPEARMAN  OF CONTENT-BASED MEASURES IN DUC04 TASK 5
 Mesure
 COVERAGE
 p-value
@@ -746,7 +746,7 @@ p &lt; 0.050
 -0.18
 p &lt; 0.25
 TABLE IV
-SPEARMAN ρ OF CONTENT-BASED MEASURES IN TAC’08 OS TASK
+SPEARMAN  OF CONTENT-BASED MEASURES IN TAC08 OS TASK
 Mesure
 PYRAMIDS
 p-value
@@ -758,7 +758,7 @@ p &lt; 0.25
 -0.14
 p &lt; 0.25
 TABLE V
-SPEARMAN ρ OF CONTENT-BASED MEASURES WITH ROUGE IN THE Medicina Cl´ınica CORPUS (SPANISH)
+SPEARMAN  OF CONTENT-BASED MEASURES WITH ROUGE IN THE Medicina Clnica CORPUS (SPANISH)
 Mesure
 ROUGE-1
 p-value
@@ -798,12 +798,12 @@ found weak correlation among different rankings in
 complex summarization tasks such as the summarization
 of biographical information and the summarization of
 opinions.
-– We have also carried out large-scale experiments in
+ We have also carried out large-scale experiments in
 Spanish and French which show positive medium to
-strong correlation among system’s ranks produced by
+strong correlation among systems ranks produced by
 ROUGE and divergence measures that do not use the
 model summaries.
-– We have also presented a new framework, FRESA, for
+ We have also presented a new framework, FRESA, for
 the computation of measures based on J S divergence.
 Following the ROUGE approach, FRESA package use
 word uni-grams, 2-grams and skip n-grams computing
@@ -819,7 +819,7 @@ plan to apply FRESA to the rest of the DUC and TAC
 summarization tasks, by using several smoothing techniques.
 As a novel idea, we contemplate the possibility of adapting
 the evaluation framework for the phrase compression task
-[29], which, to our knowledge, does not have an efﬁcient
+[29], which, to our knowledge, does not have an efcient
 evaluation measure. The main idea is to calculate J S from
 an automatically-compressed sentence taking the complete
 sentence by reference. In the long term, we plan to incorporate
@@ -827,7 +827,7 @@ a representation of the task/topic in the calculation of
 measures. To carry out these comparisons, however, we are
 dependent on the existence of references.
 FRESA will also be used in the new question-answer task
-campaign INEX’2010 (http://www.inex.otago.ac.nz/tracks/qa/
+campaign INEX2010 (http://www.inex.otago.ac.nz/tracks/qa/
 qa.asp) for the evaluation of long answers. This task aims
 to answer a question by extraction and agglomeration of
 sentences in Wikipedia. This kind of task corresponds
@@ -842,20 +842,20 @@ multi-document summarizer guided by a query, the search
 systems targeted information (focused IR) and the question
 answering systems.
 ACKNOWLEDGMENT
-We are grateful to the Programa Ram´on y Cajal from
-Ministerio de Ciencia e Innovaci´on, Spain. This work is
+We are grateful to the Programa Ramon y Cajal from
+Ministerio de Ciencia e Innovacion, Spain. This work is
 partially supported by: a postdoctoral grant from the National
 Program for Mobility of Research Human Resources (National
-Plan of Scientiﬁc Research, Development and Innovation
-2008-2011, Ministerio de Ciencia e Innovaci´on, Spain); the
+Plan of Scientic Research, Development and Innovation
+2008-2011, Ministerio de Ciencia e Innovacion, Spain); the
 research project CONACyT, number 82050, and the research
-project PAPIIT-DGAPA (Universidad Nacional Aut´onoma de
-M´exico), number IN403108.
-Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velázquez-Morales
+project PAPIIT-DGAPA (Universidad Nacional Autonoma de
+Mexico), number IN403108.
+Juan-Manuel Torres-Moreno, Horacio Saggion, Iria da Cunha, Eric SanJuan, and Patricia Velzquez-Morales
 18
 Polibits (42) 2010
 TABLE VI
-SPEARMAN ρ OF CONTENT-BASED MEASURES WITH ROUGE IN THE PISTES CORPUS (FRENCH)
+SPEARMAN  OF CONTENT-BASED MEASURES WITH ROUGE IN THE PISTES CORPUS (FRENCH)
 Mesure
 ROUGE-1
 p-value
@@ -892,7 +892,7 @@ p &lt; 0.02
 0.83
 p &lt; 0.010
 TABLE VII
-SPEARMAN ρ OF CONTENT-BASED MEASURES WITH ROUGE IN THE RPM2 CORPUS (FRENCH)
+SPEARMAN  OF CONTENT-BASED MEASURES WITH ROUGE IN THE RPM2 CORPUS (FRENCH)
 Measure
 ROUGE-1
 p-value

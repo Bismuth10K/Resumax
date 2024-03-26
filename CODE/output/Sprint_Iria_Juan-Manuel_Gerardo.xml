@@ -4,8 +4,8 @@
 	<titre>On the Development of the RST Spanish Treebank  </titre>
 	<auteurs>
 		<auteur>
-			<name>Iria da Cunha  Juan-Manuel Torres-Moreno  Gerardo Sierra  Institute for Applied  Linguistics (UPF), Spain  Laboratoire Informatique  d’Avignon (UAPV), France  Instituto de Ingeniería (UNAM),  Mexico  Instituto de Ingeniería  (UNAM), Mexico  Instituto de Ingeniería (UNAM),  Mexico   mx  Laboratoire Informatique  d’Avignon (UAPV), France  École Polytechnique de Montréal,  Canada    </name>
-			<affiliation>Iria da Cunha  Juan-Manuel Torres-Moreno  Gerardo Sierra  Institute for Applied  Linguistics (UPF), Spain  Laboratoire Informatique  d’Avignon (UAPV), France  Instituto de Ingeniería (UNAM),  Mexico  Instituto de Ingeniería  (UNAM), Mexico  Instituto de Ingeniería (UNAM),  Mexico   mx  Laboratoire Informatique  d’Avignon (UAPV), France  École Polytechnique de Montréal,  Canada    </affiliation>
+			<name>Iria da Cunha  Juan-Manuel Torres-Moreno  Gerardo Sierra  Institute for Applied  Linguistics (UPF), Spain  Laboratoire Informatique  dAvignon (UAPV), France  Instituto de Ingeniera (UNAM),  Mexico  Instituto de Ingeniera  (UNAM), Mexico  Instituto de Ingeniera (UNAM),  Mexico   mx  Laboratoire Informatique  dAvignon (UAPV), France  cole Polytechnique de Montral,  Canada    </name>
+			<affiliation>Iria da Cunha  Juan-Manuel Torres-Moreno  Gerardo Sierra  Institute for Applied  Linguistics (UPF), Spain  Laboratoire Informatique  dAvignon (UAPV), France  Instituto de Ingeniera (UNAM),  Mexico  Instituto de Ingeniera  (UNAM), Mexico  Instituto de Ingeniera (UNAM),  Mexico   mx  Laboratoire Informatique  dAvignon (UAPV), France  cole Polytechnique de Montral,  Canada    </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 		<auteur>
@@ -19,7 +19,7 @@
 			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
-	<abstract>Abstract   In this article we present the RST Spanish  Treebank, the first corpus annotated with  rhetorical relations for this language. We  describe the characteristics of the corpus,  the annotation criteria, the annotation  procedure, the inter-annotator agreement,  and other related aspects. Moreover, we  show the interface that we have developed  to carry out searches over the corpus’  annotated texts.   </abstract>
+	<abstract>Abstract   In this article we present the RST Spanish  Treebank, the first corpus annotated with  rhetorical relations for this language. We  describe the characteristics of the corpus,  the annotation criteria, the annotation  procedure, the inter-annotator agreement,  and other related aspects. Moreover, we  show the interface that we have developed  to carry out searches over the corpus  annotated texts.   </abstract>
 	<introduction>1 
 Introduction 
 The Rhetorical Structure Theory (RST) (Mann and 
@@ -138,7 +138,7 @@ Renkema, 2008). This corpus includes 65 texts
 (each one tagged by one annotator) of several types 
 and from several sources: 21 articles from the Wall 
 Street Journal extracted from the RST Discourse 
-Treebank, 30 movies and books’ reviews extracted 
+Treebank, 30 movies and books reviews extracted 
 from the epinions.com website, and 14 diverse 
 texts, including letters, webs, magazine articles, 
 newspaper editorials, etc. The tool used for 
@@ -155,7 +155,7 @@ Another well-known corpus is the Potsdam
 Commentary Corpus, for German (Stede, 2004; 
 Reitter and Stede, 2003). This corpus includes 173 
 texts on politics from the on-line newspaper 
-Märkische Allgemeine Zeitung. It contains 32,962 
+Mrkische Allgemeine Zeitung. It contains 32,962 
 words and 2,195 sentences. It is annotated with 
 several data: morphology, syntax, rhetorical 
 structure, connectors, correference and informative 
@@ -196,7 +196,7 @@ The second one, Rhetalho (Pardo and Seno,
 evaluation. It contains 50 texts: 20 introduction 
 sections and 10 conclusion sections from computer 
 science scientific articles, and 20 texts from the on-
-line newspaper Folha de São Paulo (7 from the 
+line newspaper Folha de So Paulo (7 from the 
 Daily section, 7 from the World section and 6 from 
                                                            
 3 http://www.isi.edu/~marcu/discourse/ 
@@ -245,7 +245,7 @@ specialized texts (ex. blogs, news, websites) in
 order to guarantee the representativity of the 
 corpus. We did not find a pre-existing Spanish 
 corpus with these characteristics, so we decided to 
-build our own corpus. Following Cabré (1999), we 
+build our own corpus. Following Cabr (1999), we 
 consider that a text is specialized if it is written by 
 a professional in a given domain. According to this 
 work, specialized texts can be divided in three 
@@ -261,7 +261,7 @@ specialized texts of the three mentioned levels:
 high (scientific articles, conference proceedings, 
 doctoral theses, etc.), average (textbooks) and low 
 (articles and reports from popular magazines, 
-associations’ websites, etc.). The texts have been 
+associations websites, etc.). The texts have been 
 divided in 9 domains (some of them including 
 subdivisions): 
 Astrophysics, 
@@ -335,7 +335,7 @@ useful to apply machine learning methods.
 If we measure the corpus size in terms of words 
 or texts, we can take as a reference the other RST 
 corpora. Nevertheless, as Sierra states (2008), it is 
-“absurd” to try to build an exhaustive corpus 
+absurd to try to build an exhaustive corpus 
 covering all the aspects of a language. On the 
 contrary, 
 the 
@@ -372,7 +372,7 @@ leave the corpus as it is, with few or no examples
 of some cases (but the problem will be the lack of 
 training examples for machine learning systems), 
 or b) to add low-frequency examples artificially to 
-“enrich” the corpus (but the problem will be the 
+enrich the corpus (but the problem will be the 
 distortion of the native frequency distribution and 
 perhaps the confusion of machine learning 
 systems). In the current state of our project, we 
@@ -388,7 +388,7 @@ RST discourse segmenter (da Cunha et al., 2011).
 Quantity 
 Relation 
 Type 
-Nº 
+N 
 % 
 Elaboration 
 N-S 
@@ -526,13 +526,13 @@ a) All the sentences of the text are segmented as
 EDUs (we consider that a sentence is a textual 
 passage between a period and another period, a 
 semicolon, a question mark or an exclamation 
-point; texts’ titles are also segmented). Exs.4 
+point; texts titles are also segmented). Exs.4 
  
-[Éstas son las razones fundamentales que motivaron 
+[stas son las razones fundamentales que motivaron 
 este trabajo.] 
       [These are the fundamental reasons which motivated this 
 work.] 
-[Estudio de caso único sobre violencia conyugal] 
+[Estudio de caso nico sobre violencia conyugal] 
        [Study of a case on conjugal violence] 
 b) Intra-sentence EDUs are segmented, using the 
 following criteria: 
@@ -540,8 +540,8 @@ following criteria:
 b1) An intra-sentence EDU has to include a finite 
 verb, an infinitive or a gerund. Ex.  
  
-[Siendo una variante de la eliminación Gaussiana,] 
-[posee características didácticas ventajosas.] 
+[Siendo una variante de la eliminacin Gaussiana,] 
+[posee caractersticas didcticas ventajosas.] 
       [Being a variant of Gaussian elimination,] [it possesses 
  didactic profitable characteristics.] 
 b2) 
@@ -552,25 +552,25 @@ or
 substantive sentences are not segmented. Ex.  
  
 [Se muestra que el modelo discreto en diferencias finitas 
-es convergente y que su realización se reduce a resolver 
-una sucesión de sistemas lineales tridiagonales.] 
+es convergente y que su realizacin se reduce a resolver 
+una sucesin de sistemas lineales tridiagonales.] 
       [It appears that the discreet model in finite differences is 
 convergent and that its accomplishment is to solve a 
  succession of tridiagonal linear systems.] 
 b3) Subordinate relative clauses are not segmented. 
 Ex. 
  
-[Durante el proceso, que utiliza solo aritmética entera, 
+[Durante el proceso, que utiliza solo aritmtica entera, 
 se obtiene el determinante de la matriz de coeficientes 
-del sistema, sin necesidad de cálculos adicionales.] 
+del sistema, sin necesidad de clculos adicionales.] 
        [During the process, which only uses entire arithmetic, the 
 determinant of the system coefficient matrix is obtained, 
  without  additional calculations.] 
 b4) Elements in parentheses are only segmented if 
 they follow the criterion b1. Ex.  
-[Este año se cumple el bicentenario del nacimiento de 
-Niels (Nicolás, en nuestro idioma) Henrik Abel.] 
-       [This year is the bicentenary of Niels's birth (Nicolás, in 
+[Este ao se cumple el bicentenario del nacimiento de 
+Niels (Nicols, en nuestro idioma) Henrik Abel.] 
+       [This year is the bicentenary of Niels's birth (Nicols, in 
 our language) Henrik Abel.] 
  
    
@@ -578,13 +578,13 @@ b5) Embedded units are segmented by means of
 the non-relation Same-Unit proposed by Carlon 
 and Marcu (2001). Figure 1 shows this structure. 
  
-[En décadas precedentes se ha puesto de manifiesto,] [y 
-así lo han atestiguado muchos investigadores de la 
+[En dcadas precedentes se ha puesto de manifiesto,] [y 
+as lo han atestiguado muchos investigadores de la 
                                                            
 4 Spanish examples were extracted from the corpus. English 
 translations are ours. 
-terminología científica serbia,] [una tendencia a 
-importar préstamos del inglés.]  
+terminologa cientfica serbia,] [una tendencia a 
+importar prstamos del ingls.]  
         [In previous decades it has been shown,] [and it has been 
 testified by many researchers of the scientific Serbian 
 terminology,] [a trend to import loanwords from English.]  
@@ -602,8 +602,8 @@ searches over it (see Section 4).
 3.4 
 Selecting and Training the Annotators 
 With regard to the corpus annotators, we have a 
-team of 10 people (last year Bachelor’s degree 
-students, Master’s degree students and PhDs) 5 . 
+team of 10 people (last year Bachelors degree 
+students, Masters degree students and PhDs) 5 . 
 Before the annotation, they took a RST course of 6 
 months (100 hours), where the segmentation and 
 annotation methodology used for the development 
@@ -625,7 +625,7 @@ and they tried to get an agreement on the most
 complicated cases. Thirdly, the relations were 
                                                            
 5  We thank annotators (Adriana Valerio, Brenda Castro, 
-Daniel Rodríguez, Ita Cruz, Jessica Méndez, Josué Careaga, 
+Daniel Rodrguez, Ita Cruz, Jessica Mndez, Josu Careaga, 
 Luis Cabrera, Marina Fomicheva and Paulina De La Vega) 
 and interface developers (Luis Cabrera and Juan Rolland). 
 6 This course was given in the framework of a last-year subject 
@@ -647,7 +647,7 @@ Designing and Managing the Annotation
 Procedure 
 We start from the following annotation definition:  
  
-Annotation (‘tagging’) is the process of adding new 
+Annotation (tagging) is the process of adding new 
 information into source material by humans 
 (annotators) or suitably trained machines. [...]. The 
 addition process usually requires some sort of 
@@ -675,8 +675,8 @@ the same sentence are annotated in a binary way.
 Second, sentences inside the same paragraph are 
 linked. Finally, paragraphs are linked.  
 Hovy (2010) states that it is difficult to 
-determine if, for the same money (we add “for the 
-same time”), it is better to double-annotate less, or 
+determine if, for the same money (we add for the 
+same time), it is better to double-annotate less, or 
 to single-annotate more. As he explains, Dligach et 
 al. (2010) made an experiment with OntoNotes 
 (Pradhan et al., 2007) verb sense annotation. The 
@@ -714,7 +714,7 @@ one). Following this methodology, we have
 measured inter-annotator agreement over the test 
 corpus. We employ an on-line automatic tool for 
 RST trees comparison, RSTeval (Mazeiro and 
-Pardo, 2009), where Marcu’s methodology has 
+Pardo, 2009), where Marcus methodology has 
 been implemented (for 4 languages: English, 
 Portuguese, Spanish and Basque). We know that 
 there are some other ways to measure agreement, 
@@ -785,10 +785,10 @@ annotator segmented the following passage into 2
 EDUs because she detected a Means relation, but 
 the second EDU does not include any verb): 
  
-[Además estudiamos el desarrollo de criterios para 
+[Adems estudiamos el desarrollo de criterios para 
 determinar si un semigrupo dado tiene dicha propiedad ] 
 [mediante el estudio de desigualdades de curvatura-
-dimensión. ]  
+dimensin. ]  
       [We also study the development of tests in order to 
 determine if a given semi group has this property] [by means 
  of curvature-dimension inequalities.]  
@@ -818,13 +818,13 @@ disagreement. The first one was the ambiguity of
 some relations and their corresponding connectors; 
 for example, Justification-Reason, Antithesis-
 Concession or Circumstance-Means relations, like 
-in the following passage (in Spanish, “al” may 
+in the following passage (in Spanish, al may 
 indicate time or manner): 
  
 [Los 
-niños 
+nios 
 aprenden 
-matemáticas] 
+matemticas] 
 [al 
 resolver 
 problemas.] 
@@ -834,7 +834,7 @@ annotators when determining nuclearity. For
 example, in the following passage, one annotator 
 marked Background and the other one Elaboration: 
  
-[Quedó 
+[Qued 
 un 
 hueco 
 en 
@@ -843,10 +843,10 @@ pared
 de 
 60 
 x 
-1.20cm.]S_Background [Norma y Andrés quieren 
+1.20cm.]S_Background [Norma y Andrs quieren 
 colocar en el hueco una pecera. ]N_Background 
  
-[Quedó 
+[Qued 
 un 
 hueco 
 en 
@@ -855,10 +855,10 @@ pared
 de 
 60 
 x 
-1.20cm.]N_Elaboration [Norma y Andrés quieren 
+1.20cm.]N_Elaboration [Norma y Andrs quieren 
 colocar en el hueco una pecera. ]S_Elaboration 
       [A hole of 60 x 1.20 cm remained in the wall.] [Norma and 
- Andrés want to place a fish tank in the hole.]  
+ Andrs want to place a fish tank in the hole.]  
 It is easier to solve segmentation disagreement 
 than relations disagreement, since in this case 
 annotator subjectivity is more evident; we must 

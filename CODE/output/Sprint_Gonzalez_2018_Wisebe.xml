@@ -4,17 +4,17 @@
 	<titre>WiSeBE: Window-Based Sentence Boundary Evaluation </titre>
 	<auteurs>
 		<auteur>
-			<name>Carlos-Emiliano Gonz´alez-Gallardo1,2(B) and Juan-Manuel Torres-Moreno1,2 </name>
-			<affiliation>Carlos-Emiliano Gonz´alez-Gallardo1,2(B) and Juan-Manuel Torres-Moreno1,2 </affiliation>
+			<name>Carlos-Emiliano Gonzalez-Gallardo1,2(B) and Juan-Manuel Torres-Moreno1,2 </name>
+			<affiliation>Carlos-Emiliano Gonzalez-Gallardo1,2(B) and Juan-Manuel Torres-Moreno1,2 </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 		<auteur>
-			<name>1 LIA - Universit´e d’Avignon et des Pays de Vaucluse, 339 chemin des Meinajaries, 84140 Avignon, France   2 D´epartement de GIGL, ´Ecole Polytechnique de Montr´eal, C.P. 6079, succ. Centre-ville, Montr´eal, Qu´ebec H3C 3A7, Canada </name>
-			<affiliation>1 LIA - Universit´e d’Avignon et des Pays de Vaucluse, 339 chemin des Meinajaries, 84140 Avignon, France   2 D´epartement de GIGL, ´Ecole Polytechnique de Montr´eal, C.P. 6079, succ. Centre-ville, Montr´eal, Qu´ebec H3C 3A7, Canada </affiliation>
+			<name>1 LIA - Universite dAvignon et des Pays de Vaucluse, 339 chemin des Meinajaries, 84140 Avignon, France   2 Departement de GIGL, Ecole Polytechnique de Montreal, C.P. 6079, succ. Centre-ville, Montreal, Quebec H3C 3A7, Canada </name>
+			<affiliation>1 LIA - Universite dAvignon et des Pays de Vaucluse, 339 chemin des Meinajaries, 84140 Avignon, France   2 Departement de GIGL, Ecole Polytechnique de Montreal, C.P. 6079, succ. Centre-ville, Montreal, Quebec H3C 3A7, Canada </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
-	<abstract>Abstract. Sentence Boundary Detection (SBD) has been a major research topic since Automatic Speech Recognition transcripts have been used for further Natural Language Processing tasks like Part of Speech Tagging, Question Answering or Automatic Summarization. But what about evaluation? Do standard evaluation metrics like precision, recall, F-score or classiﬁcation error; and more important, evaluating an automatic system against a unique reference is enough to conclude how well a SBD system is performing given the ﬁnal application of the transcript? In this paper we propose Window-based Sentence Boundary Evaluation (WiSeBE), a semi-supervised metric for evaluating Sentence Boundary Detection systems based on multi-reference (dis)agreement. We evaluate and compare the performance of diﬀerent SBD systems over a set of Youtube transcripts using WiSeBE and standard metrics. This double evaluation gives an understanding of how WiSeBE is a more reliable metric for the SBD task.  Keywords: Sentence Boundary Detection · Evaluation Transcripts · Human judgment  </abstract>
+	<abstract>Abstract. Sentence Boundary Detection (SBD) has been a major research topic since Automatic Speech Recognition transcripts have been used for further Natural Language Processing tasks like Part of Speech Tagging, Question Answering or Automatic Summarization. But what about evaluation? Do standard evaluation metrics like precision, recall, F-score or classication error; and more important, evaluating an automatic system against a unique reference is enough to conclude how well a SBD system is performing given the nal application of the transcript? In this paper we propose Window-based Sentence Boundary Evaluation (WiSeBE), a semi-supervised metric for evaluating Sentence Boundary Detection systems based on multi-reference (dis)agreement. We evaluate and compare the performance of dierent SBD systems over a set of Youtube transcripts using WiSeBE and standard metrics. This double evaluation gives an understanding of how WiSeBE is a more reliable metric for the SBD task.  Keywords: Sentence Boundary Detection  Evaluation Transcripts  Human judgment  </abstract>
 	<introduction>1
 Introduction
 The goal of Automatic Speech Recognition (ASR) is to transform spoken data
@@ -29,13 +29,13 @@ to reach a minimal syntactic information in the text.
 To measure the performance of a SBD system, the automatically segmented
 transcript is evaluated against a single reference normally done by a human. But
 c
-⃝ Springer Nature Switzerland AG 2018
-I. Batyrshin et al. (Eds.): MICAI 2018, LNAI 11289, pp. 119–131, 2018.
+ Springer Nature Switzerland AG 2018
+I. Batyrshin et al. (Eds.): MICAI 2018, LNAI 11289, pp. 119131, 2018.
 https://doi.org/10.1007/978-3-030-04497-8_10
 120
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 given a transcript, does it exist a unique reference? Or, is it possible that the
-same transcript could be segmented in ﬁve diﬀerent ways by ﬁve diﬀerent people
+same transcript could be segmented in ve dierent ways by ve dierent people
 in the same conditions? If so, which one is correct; and more important, how
 to fairly evaluate the automatically segmented transcript? These questions are
 the foundations of Window-based Sentence Boundary Evaluation (WiSeBE), a
@@ -58,29 +58,29 @@ the document [8].
 Similar to SBD is the Punctuation Marks Disambiguation (PMD) or Sentence
 Boundary Disambiguation. This task aims to segment a formal written text into
 well formed sentences based on the existent punctuation marks [11,19,20,29]. In
-this context a sentence is deﬁned (for English) by the Cambridge Dictionary1
+this context a sentence is dened (for English) by the Cambridge Dictionary1
 as:
-“a group of words, usually containing a verb, that expresses a thought in
+a group of words, usually containing a verb, that expresses a thought in
 the form of a statement, question, instruction, or exclamation and starts
-with a capital letter when written”.
+with a capital letter when written.
 PMD carries certain complications, some given the ambiguity of punctuation
 marks within a sentence. A period can denote an acronym, an abbreviation, the
 end of the sentence or a combination of them as in the following example:
 The U.S. president, Mr. Donald Trump, is meeting with the F.B.I.
 director Christopher A. Wray next Thursday at 8 p.m.
-However its diﬃculties, DPM proﬁts of morphological and lexical information
+However its diculties, DPM prots of morphological and lexical information
 to achieve a correct sentence segmentation. By contrast, segmenting an ASR
 transcript should be done without any (or almost any) lexical information and
-a ﬂurry deﬁnition of sentence.
+a urry denition of sentence.
 1 https://dictionary.cambridge.org/.
 WiSeBE: Window-Based Sentence Boundary Evaluation
 121
 The obvious division in spoken language may be considered speaker utter-
 ances. However, in a normal conversation or even in a monologue, the way ideas
-are organized diﬀers largely from written text. This diﬀerences, added to disﬂu-
+are organized diers largely from written text. This dierences, added to disu-
 encies like revisions, repetitions, restarts, interruptions and hesitations make the
-deﬁnition of a sentence unclear thus complicating the segmentation task [27].
-Table 1 exempliﬁes some of the diﬃculties that are present when working with
+denition of a sentence unclear thus complicating the segmentation task [27].
+Table 1 exemplies some of the diculties that are present when working with
 spoken language.
 Table 1. Sentence Boundary Detection example
 Speech transcript
@@ -89,56 +89,56 @@ two two women can look out after
 a kid so bad as a man and a
 woman can so you can have a you
 can have a mother and a father
-that that still don’t do right with
+that that still dont do right with
 the kid and you can have to men
 that can so as long as the love
 each other as long as they love
-each other it doesn’t matter
+each other it doesnt matter
 two // two women can look out
 after a kid so bad as a man and a
 woman can // so you can have a
 // you can have a mother and a
-father that // that still don’t do
+father that // that still dont do
 right with the kid and you can
 have to men that can // so as
 long as the love each other // as
 long as they love each other it
-doesn’t matter//
+doesnt matter//
 Stolcke and Shriberg [26] considered a set of linguistic structures as segments
 including the following list:
-– Complete sentences
-– Stand-alone sentences
-– Disﬂuent sentences aborted in mid-utterance
-– Interjections
-– Back-channel responses.
+ Complete sentences
+ Stand-alone sentences
+ Disuent sentences aborted in mid-utterance
+ Interjections
+ Back-channel responses.
 In [17], Meteer and Iyer divided speaker utterances into segments, consisting
 each of a single independent clause. A segment was considered to begin either
 at the beginning of an utterance, or after the end of the preceding segment. Any
-dysﬂuency between the end of the previous segments and the begging of current
+dysuency between the end of the previous segments and the begging of current
 one was considered part of the current segments.
-Rott and ˇCerva [23] aimed to summarize news delivered orally segmenting the
-transcripts into “something that is similar to sentences”. They used a syntactic
+Rott and Cerva [23] aimed to summarize news delivered orally segmenting the
+transcripts into something that is similar to sentences. They used a syntactic
 analyzer to identify the phrases within the text.
 A wide study focused in unbalanced data for the SBD task was performed
 by Liu et al. [15]. During this study they followed the segmentation scheme pro-
 posed by the Linguistic Data Consortium2 on the Simple Metadata Annotation
-Speciﬁcation V5.0 guideline (SimpleMDE V5.0) [27], dividing the transcripts in
+Specication V5.0 guideline (SimpleMDE V5.0) [27], dividing the transcripts in
 Semantic Units.
 2 https://www.ldc.upenn.edu/.
 122
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 A Semantic Unit (SU) is considered to be an atomic element of the transcript
 that manages to express a complete thought or idea on the part of the speaker
 [27]. Sometimes a SU corresponds to the equivalent of a sentence in written text,
 but other times (the most part of them) a SU corresponds to a phrase or a single
 word.
-SUs seem to be an inclusive conception of a segment, they embrace diﬀerent
-previous segment deﬁnitions and are ﬂexible enough to deal with the majority
+SUs seem to be an inclusive conception of a segment, they embrace dierent
+previous segment denitions and are exible enough to deal with the majority
 of spoken language troubles. For these reasons we will adopt SUs as our segment
-deﬁnition.
+denition.
 2.1
 Sentence Boundary Evaluation
-SBD research has been focused on two diﬀerent aspects; features and methods.
+SBD research has been focused on two dierent aspects; features and methods.
 Regarding the features, some work focused on acoustic elements like pauses
 duration, fundamental frequencies, energy, rate of speech, volume change and
 speaker turn [10,12,14].
@@ -149,10 +149,10 @@ have also been explored [1,13,14,32], which is advantageous when both audio
 signal and transcript are available.
 With respect to the methods used for SBD, they mostly rely on statisti-
 cal/neural machine translation [12,22], language models [8,15,18,26], conditional
-random ﬁelds [16,30] and deep neural networks [3,7,29].
-Despite their diﬀerences in features and/or methodology, almost all previous
+random elds [16,30] and deep neural networks [3,7,29].
+Despite their dierences in features and/or methodology, almost all previous
 cited research share a common element; the evaluation methodology. Metrics as
-Precision, Recall, F1-score, Classiﬁcation Error Rate and Slot Error Rate (SER)
+Precision, Recall, F1-score, Classication Error Rate and Slot Error Rate (SER)
 are used to evaluate the proposed system against one reference. As discussed
 in Sect. 1, further NLP tasks rely on the result of SBD, meaning that is crucial
 to have a good segmentation. But comparing the output of a system against a
@@ -161,30 +161,30 @@ bad?
 Bohac et al. [1] compared the human ability to punctuate recognized spon-
 taneous speech. They asked 10 people (correctors) to punctuate about 30 min of
 ASR transcripts in Czech. For an average of 3,962 words, the punctuation marks
-placed by correctors varied between 557 and 801; this means a diﬀerence of 244
+placed by correctors varied between 557 and 801; this means a dierence of 244
 segments for the same transcript. Over all correctors, the absolute consensus for
 period (.) was only 4.6% caused by the replacement of other punctuation marks
 as semicolons (;) and exclamation marks (!). These results are understandable if
-we consider the diﬃculties presented previously in this section.
+we consider the diculties presented previously in this section.
 To our knowledge, the amount of studies that have tried to target the sentence
 boundary evaluation with a multi-reference approach is very small. In [1], Bohac
 et al. evaluated the overall punctuation accuracy for Czech in a straightforward
-multi-reference framework. They considered a period (.) valid if at least ﬁve of
+multi-reference framework. They considered a period (.) valid if at least ve of
 their 10 correctors agreed on its position.
 WiSeBE: Window-Based Sentence Boundary Evaluation
 123
-Kol´aˇr and Lamel [13] considered two independent references to evaluate their
-system and proposed two approaches. The ﬁst one was to calculate the SER for
+Kolar and Lamel [13] considered two independent references to evaluate their
+system and proposed two approaches. The st one was to calculate the SER for
 each of one the two available references and then compute their mean. They
 found this approach to be very strict because for those boundaries where no
 agreement between references existed, the system was going to be partially wrong
 even the fact that it has correctly predicted the boundary. Their second app-
 roach tried to moderate the number of unjust penalizations. For this case, a
-classiﬁcation was considered incorrect only if it didn’t match either of the two
+classication was considered incorrect only if it didnt match either of the two
 references.
 These two examples exemplify the real need and some straightforward solu-
 tions for multi-reference evaluation metrics. However, we think that it is possible
-to consider in a more inclusive approach the similarities and diﬀerences that mul-
+to consider in a more inclusive approach the similarities and dierences that mul-
 tiple references could provide into a sentence boundary evaluation protocol.
 3
 Window-Based Sentence Boundary Evaluation
@@ -194,44 +194,44 @@ formance of a candidate segmentation over a set of segmentation references and
 the agreement between those references.
 Let R = {R1, R2, ..., Rm} be the set of all available references given a tran-
 script T = {t1, t2, ..., tn}, where tj is the jth word in the transcript; a reference
-Ri is deﬁned as a binary vector in terms of the existent SU boundaries in T.
+Ri is dened as a binary vector in terms of the existent SU boundaries in T.
 Ri = {b1, b2, ..., bn}
 (1)
 where
 bj =
-
+
 1 if tj is a boundary
 0 otherwise
-Given a transcript T, the candidate segmentation CT is deﬁned similar to Ri.
+Given a transcript T, the candidate segmentation CT is dened similar to Ri.
 CT = {b1, b2, ..., bn}
 (2)
 where
 bj =
-
+
 1 if tj is a boundary
 0 otherwise
 3.1
 General Reference and Agreement Ratio
 A General Reference (RG) is then constructed to calculate the agreement ratio
-between all references in. It is deﬁned by the boundary frequencies of each ref-
-erence Ri ∈ R.
+between all references in. It is dened by the boundary frequencies of each ref-
+erence Ri  R.
 RG = {d1, d2, ..., dn}
 (3)
 where
 124
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 dj =
 m
-
+
 i=1
 tij
-∀tj ∈ T,
+tj  T,
 dj = [0, m]
 (4)
 The Agreement Ratio (RGAR) is needed to get a numerical value of the dis-
 tribution of SU boundaries over R. A value of RGAR close to 0 means a low
 agreement between references in R, while RGAR = 1 means a perfect agreement
-(∀Ri ∈ R, Ri = Ri+1|i = 1, ..., m − 1) in R.
+(Ri  R, Ri = Ri+1|i = 1, ..., m  1) in R.
 RGAR = RGP B
 RGHA
 (5)
@@ -239,21 +239,21 @@ In the equation above, RGP B corresponds to the ponderated common boundaries
 of RG and RGHA to its hypothetical maximum agreement.
 RGP B =
 n
-
+
 j=1
-dj [dj ≥ 2]
+dj [dj  2]
 (6)
-RGHA = m ×
-
-dj∈RG
-1 [dj ̸= 0]
+RGHA = m 
+
+djRG
+1 [dj = 0]
 (7)
 3.2
 Window-Boundaries Reference
-In Sect. 2 we discussed about how disﬂuencies complicate SU segmentation. In a
+In Sect. 2 we discussed about how disuencies complicate SU segmentation. In a
 multi-reference environment this causes disagreement between references around
 a same SU boundary. The way WiSeBE handle disagreements produced by dis-
-ﬂuencies is with a Window-boundaries Reference (RW ) deﬁned as:
+uencies is with a Window-boundaries Reference (RW ) dened as:
 RW = {w1, w2, ..., wp}
 (8)
 where each window wk considers one or more boundaries dj from RG with a
@@ -263,34 +263,34 @@ wk = {dj, dj+1, dj+2, ...}
 3.3
 W iSeBE
 WiSeBE is a normalized score dependent of (1) the performance of CT over RW
-and (2) the agreement between all references in R. It is deﬁned as:
-WiSeBE = F1RW × RGAR
+and (2) the agreement between all references in R. It is dened as:
+WiSeBE = F1RW  RGAR
 WiSeBE = [0, 1]
 (10)
 where F1RW corresponds to the harmonic mean of precision and recall of CT
-with respect to RW (Eq. 11), while RGAR is the agreement ratio deﬁned in (5).
+with respect to RW (Eq. 11), while RGAR is the agreement ratio dened in (5).
 RGAR can be interpreted as a scaling factor; a low value will penalize the overall
 WiSeBE score given the low agreement between references. By contrast, for a
-high agreement in R (RGAR ≈ 1), WiSeBE ≈ F1RW .
+high agreement in R (RGAR  1), WiSeBE  F1RW .
 WiSeBE: Window-Based Sentence Boundary Evaluation
 125
-F1RW = 2 × precisionRW × recallRW
+F1RW = 2  precisionRW  recallRW
 precisionRW + recallRW
 (11)
 precisionRW =
-
-bj∈CT 1
-[bj = 1, bj ∈ w
-∀w ∈ RW ]
-
-bj∈CT 1
+
+bjCT 1
+[bj = 1, bj  w
+w  RW ]
+
+bjCT 1
 [bj = 1]
 (12)
 recallRW =
-
-wk∈RW 1
-[wk ∋ b
-∀b ∈ CT ]
+
+wkRW 1
+[wk  b
+b  CT ]
 p
 (13)
 Equations 12 and 13 describe precision and recall of CT with respect to RW .
@@ -301,24 +301,24 @@ w in RW .
 4
 Evaluating with W iSeBE
 To exemplify the WiSeBE score we evaluated and compared the performance
-of two diﬀerent SBD systems over a set of YouTube videos in a multi-reference
-environment. The ﬁrst system (S1) employs a Convolutional Neural Network to
+of two dierent SBD systems over a set of YouTube videos in a multi-reference
+environment. The rst system (S1) employs a Convolutional Neural Network to
 determine if the middle word of a sliding window corresponds to a SU bound-
 ary or not [6]. The second approach (S2) by contrast, introduces a bidirectional
 Recurrent Neural Network model with attention mechanism for boundary detec-
 tion [28].
-In a ﬁrst glance we performed the evaluation of the systems against each
+In a rst glance we performed the evaluation of the systems against each
 one of the references independently. Then, we implemented a multi-reference
 evaluation with WiSeBE.
 4.1
 Dataset
-We focused evaluation over a small but diversiﬁed dataset composed by 10
+We focused evaluation over a small but diversied dataset composed by 10
 YouTube videos in the English language in the news context. The selected videos
-cover diﬀerent topics like technology, human rights, terrorism and politics with
+cover dierent topics like technology, human rights, terrorism and politics with
 a length variation between 2 and 10 min. To encourage the diversity of content
 format we included newscasts, interviews, reports and round tables.
 During the transcription phase we opted for a manual transcription process
-because we observed that using transcripts from an ASR system will diﬃcult
+because we observed that using transcripts from an ASR system will dicult
 in a large degree the manual segmentation process. The number of words per
 transcript oscilate between 271 and 1,602 with a total number of 8,080.
 We gave clear instructions to three evaluators (ref1, ref2, ref3) of how seg-
@@ -330,7 +330,7 @@ The number of segments per transcript and reference can be seen in Table 2. An
 interesting remark is that ref3 assigns about 43% less boundaries than the mean
 of the other two references.
 126
-C.-E. Gonz´alez-Gallardo and J.-M. Torres-Moreno
+C.-E. Gonzalez-Gallardo and J.-M. Torres-Moreno
 Table 2. Manual dataset segmentation
 Reference v1
 v2
@@ -359,7 +359,7 @@ ref3
 Evaluation
 We ran both systems (S1 &amp; S2) over the manually transcribed videos obtaining
 the number of boundaries shown in Table 3. In general, it can be seen that S1
-predicts 27% more segments than S2. This diﬀerence can aﬀect the performance
+predicts 27% more segments than S2. This dierence can aect the performance
 of S1, increasing its probabilities of false positives.
 Table 3. Automatic dataset segmentation
 System v1
@@ -396,7 +396,7 @@ disagreement between them has been taken into account.
 All values related to the WiSeBE score are displayed in Table 5. The Agree-
 ment Ratio (RGAR) between references oscillates between 0.525 for v8 and 0.767
 for v5. The lower the RGAR, the bigger the penalization WiSeBE will give to
-the ﬁnal score. A good example is S2 for transcript v4 where F1RW reaches a
+the nal score. A good example is S2 for transcript v4 where F1RW reaches a
 value of 0.800, but after considering RGAR the WiSeBE score falls to 0.462.
 It is feasible to think that if all references are taken into account at the same
 time during evaluation (F1RW ), the score will be bigger compared to an average
@@ -531,22 +531,22 @@ S2
 0.364 0.538
 0.4645 0.487
 Mean scores S1
-—
+
 0.520
-—
+
 0.510
-—
+
 0.404
-—
+
 0.481
 S2
-—
+
 0.543
-—
+
 0.554
-—
+
 0.433
-—
+
 0.510
 An important remark is the behavior of S1 and S2 concerning v6. If evalu-
 ated without considering any (dis)agreement between references (F1mean), S2
@@ -556,8 +556,8 @@ overperforms S1; this is inverted once the systems are evaluated with WiSeBE.
 	<discussion>5.1
 In Sect. 3 we described the WiSeBE score and how it relies on the RGAR value
 agreement value over all elements of R. To test this hypothesis, we computed
-Kappa [4] of each video in the dataset (κR).
-is conﬁrmed by a PCC value equal to 0.890, which means a very strong positive
+Kappa [4] of each video in the dataset (R).
+is conrmed by a PCC value equal to 0.890, which means a very strong positive
 5.2
 Results form Table 5 may give an idea that WiSeBE is just an scaled F1mean.
 128
@@ -635,7 +635,7 @@ RGAR
 0.839
 0.743
 0.704
-diﬀerent system ranking than F1mean given the integral multi-reference principle
+dierent system ranking than F1mean given the integral multi-reference principle
 twofold inclusion of all available references it performs. First, the construction of
 the computation of RGAR, which scales the result depending of the agreement
 WiSeBE: Window-Based Sentence Boundary Evaluation

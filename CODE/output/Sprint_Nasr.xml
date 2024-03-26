@@ -4,17 +4,17 @@
 	<titre>MACAON An NLP Tool Suite for Processing Word Lattices </titre>
 	<auteurs>
 		<auteur>
-			<name>Alexis Nasr Fr´ed´eric B´echet Jean-Franc¸ois Rey Benoˆıt Favre Joseph Le Roux∗ </name>
-			<affiliation>Alexis Nasr Fr´ed´eric B´echet Jean-Franc¸ois Rey Benoˆıt Favre Joseph Le Roux∗ </affiliation>
+			<name>Alexis Nasr Frederic Bechet Jean-Francois Rey Benot Favre Joseph Le Roux </name>
+			<affiliation>Alexis Nasr Frederic Bechet Jean-Francois Rey Benot Favre Joseph Le Roux </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 		<auteur>
-			<name>Laboratoire d’Informatique Fondamentale de Marseille- CNRS - UMR 6166 Universit´e Aix-Marseille (alexis.nasr,frederic.bechet,jean-francois.rey,benoit.favre,joseph.le.roux)  </name>
-			<affiliation>Laboratoire d’Informatique Fondamentale de Marseille- CNRS - UMR 6166 Universit´e Aix-Marseille (alexis.nasr,frederic.bechet,jean-francois.rey,benoit.favre,joseph.le.roux)  </affiliation>
+			<name>Laboratoire dInformatique Fondamentale de Marseille- CNRS - UMR 6166 Universite Aix-Marseille (alexis.nasr,frederic.bechet,jean-francois.rey,benoit.favre,joseph.le.roux)  </name>
+			<affiliation>Laboratoire dInformatique Fondamentale de Marseille- CNRS - UMR 6166 Universite Aix-Marseille (alexis.nasr,frederic.bechet,jean-francois.rey,benoit.favre,joseph.le.roux)  </affiliation>
 			<mail>N/A</mail>
 		</auteur>
 	</auteurs>
-	<abstract>Abstract  MACAON is a tool suite for standard NLP tasks developed for French. MACAON has been designed to process both human-produced text and highly ambiguous word-lattices produced by NLP tools. MACAON is made of several native modules for common tasks such as a tokenization, a part-of-speech tagging or syntactic parsing, all communicating with each other through XML ﬁles . In addition, exchange protocols with external tools are easily deﬁnable. MACAON is a fast, modular and open tool, distributed under GNU Public License.  </abstract>
+	<abstract>Abstract  MACAON is a tool suite for standard NLP tasks developed for French. MACAON has been designed to process both human-produced text and highly ambiguous word-lattices produced by NLP tools. MACAON is made of several native modules for common tasks such as a tokenization, a part-of-speech tagging or syntactic parsing, all communicating with each other through XML les . In addition, exchange protocols with external tools are easily denable. MACAON is a fast, modular and open tool, distributed under GNU Public License.  </abstract>
 	<introduction>1
 Introduction
 The automatic processing of textual data generated
@@ -25,7 +25,7 @@ guage processing tools. Unlike native texts (texts
 produced by humans), this new kind of texts is the
 result of imperfect processors and they are made
 of several hypotheses, usually weighted with con-
-ﬁdence measures. Automatic text production sys-
+dence measures. Automatic text production sys-
 tems can produce these weighted hypotheses as n-
 best lists, word lattices, or confusion networks. It is
 crucial for this space of ambiguous solutions to be
@@ -33,7 +33,7 @@ kept for later processing since the ambiguities of the
 lower levels can sometimes be resolved during high-
 level processing stages. It is therefore important to
 be able to represent this ambiguity.
-∗This work has been funded by the French Agence Nationale
+This work has been funded by the French Agence Nationale
 pour la Recherche, through the projects SEQUOIA (ANR-08-
 EMER-013) and DECODA (2009-CORD-005-01)
 MACAON is a suite of tools developped to pro-
@@ -52,10 +52,10 @@ From a general point of view, a MACAON module
 can be seen as an annotation device1 which adds a
 new level of annotation to its input that generally de-
 pends on annotations from preceding modules. The
-modules communicate through XML ﬁles that allow
+modules communicate through XML les that allow
 the representation different layers of annotation as
 well as ambiguities at each layer. Moreover, the ini-
-tial XML structuring of the processed ﬁles (logical
+tial XML structuring of the processed les (logical
 structuring of a document, information from the Au-
 tomatic Speech Recognition module ...) remains
 untouched by the processing stages.
@@ -80,9 +80,9 @@ French among which SXPIPE (Sagot and Boullier,
 TEX3. A general comparison of MACAON with these
 tools is beyond the scope of this paper. Let us just
 mention that MACAON shares with most of them the
-use of ﬁnite state machines as core data represen-
+use of nite state machines as core data represen-
 tation. Some modules are implemented as standard
-operations on ﬁnite state machines.
+operations on nite state machines.
 MACAON can also be compared to the numerous
 development frameworks for developping process-
 ing tools, such as GATE4, FREELING5, ELLOGON6
@@ -91,10 +91,10 @@ ing of native texts.
 The MACAON exchange format shares a cer-
 tain number of features with linguistic annotation
 scheme standards such as the Text Encoding Initia-
-tive8, XCES9, or EAGLES10. They all aim at deﬁning
+tive8, XCES9, or EAGLES10. They all aim at dening
 standards for various types of corpus annotations.
 The main difference between MACAON and these
-approaches is that MACAON deﬁnes an exchange for-
+approaches is that MACAON denes an exchange for-
 mat between NLP modules and not an annotation
 format. More precisely, this format is dedicated to
 the compact representation of ambiguity: some in-
@@ -102,17 +102,17 @@ formation represented in the exchange format are
 to be interpreted by MACAON modules and would
 not be part of an annotation format.
 Moreover,
-the MACAON exchange format was deﬁned from the
-bottom up, originating from the authors’ need to use
+the MACAON exchange format was dened from the
+bottom up, originating from the authors need to use
 several existing tools and adapt their input/output
 formats in order for them to be compatible. This is in
 contrast with a top down approach which is usually
 chosen when specifying a standard. Still, MACAON
 shares several characteristics with the LAF (Ide and
-Romary, 2004) which aims at deﬁning high level
+Romary, 2004) which aims at dening high level
 standards for exchanging linguistic data.
 2www.nooj4nlp.net/pages/nooj.html
-3www-igm.univ-mlv.fr/˜unitex
+3www-igm.univ-mlv.fr/unitex
 4gate.ac.uk
 5garraf.epsevg.upc.es/freeling
 6www.ellogon.org
@@ -129,8 +129,8 @@ speech signal that is to be processed, as a sentence,
 a clause, a syntactic constituent, a lexical unit, a
 named entity ...A segment can be equipped with at-
 tributes that describe some of its aspects. A syntac-
-tic constituent, for example, will deﬁne the attribute
-type which speciﬁes its syntactic type (Noun Phrase,
+tic constituent, for example, will dene the attribute
+type which species its syntactic type (Noun Phrase,
 Verb Phrase ...). A segment is made of one or more
 smaller segments.
 A sequence of segments covering a whole sen-
@@ -138,26 +138,26 @@ tence for written text, or a spoken utterance for oral
 data, is called a segmentation. Such a sequence can
 be weighted.
 An annotation level groups together segments of
-a same type, as well as segmentations deﬁned on
-these segments. Four levels are currently deﬁned:
+a same type, as well as segmentations dened on
+these segments. Four levels are currently dened:
 pre-lexical, lexical, morpho-syntactic and syntactic.
-Two relations are deﬁned on segments: the prece-
+Two relations are dened on segments: the prece-
 dence relation that organises linearly segments of a
 given level into segmentations and the dominance
 relation that describes how a segment is decomposed
 in smaller segments either of the same level or of a
 lower level.
-We have represented in ﬁgure 2, a schematic rep-
+We have represented in gure 2, a schematic rep-
 resentation of the analysis of the reconstructed out-
 put a speech recognizer would produce on the in-
-put time ﬂies like an arrow11. Three annotation lev-
+put time ies like an arrow11. Three annotation lev-
 els have been represented, lexical, morpho-syntactic
-and syntactic. Each level is represented by a ﬁnite-
+and syntactic. Each level is represented by a nite-
 state automaton which models the precedence rela-
-tion deﬁned over the segments of this level. Seg-
-ment time, for example, precedes segment ﬂies. The
+tion dened over the segments of this level. Seg-
+ment time, for example, precedes segment ies. The
 segments are implicitly represented by the labels of
-the automaton’s arcs. This label should be seen as
+the automatons arcs. This label should be seen as
 a reference to a more complex objet, the actual seg-
 ment. The dominance relations are represented with
 dashed lines that link segments of different levels.
@@ -204,18 +204,18 @@ NP
 Figure 1: Three annotation levels for a sample sentence.
 Plain lines represent annotation hypotheses within a level
 while dashed lines represent links between levels. Trian-
-gles with the tip up are “and” nodes and triangles with
-the tip down are “or” nodes. For instance, in the part-of-
-speech layer, The ﬁrst NN can either refer to “time” or
-“thyme”. In the chunking layer, segments that span mul-
-tiple part-of-speech tags are linked to them through “and”
+gles with the tip up are and nodes and triangles with
+the tip down are or nodes. For instance, in the part-of-
+speech layer, The rst NN can either refer to time or
+thyme. In the chunking layer, segments that span mul-
+tiple part-of-speech tags are linked to them through and
 nodes.
 The most immediate ambiguity phenomenon is
 the segmentation ambiguity: several segmentations
 are possible at every level. This ambiguity is rep-
 resented in a compact way through the factoring of
 segments that participate in different segmentations,
-by way of a ﬁnite state automaton.
+by way of a nite state automaton.
 The second ambiguity phenomenon is the dom-
 inance ambiguity, where a segment can be decom-
 posed in several ways into lower level segments.
@@ -224,9 +224,9 @@ the NN segment appearing in one of the outgoing
 transition of the initial state of the morpho-syntactic
 level dominates both thyme and time segments of the
 lexical level. The triangle with the tip down is an
-“or” node, modeling the fact that NN corresponds to
+or node, modeling the fact that NN corresponds to
 time or thyme.
-Triangles with the tip up are “and” nodes. They
+Triangles with the tip up are and nodes. They
 model the fact that the PP segment of the syntac-
 tic level dominates segments IN, DT and NN of the
 morpho-syntactic level.
@@ -235,23 +235,23 @@ XML representation
 The MACAON exchange format is implemented in
 XML. A segment is represented with the XML tag
 &lt;segment&gt; which has four mandatory attributes:
-• type indicates the type of the segment, four dif-
-ferent types are currently deﬁned: atome (pre-
+ type indicates the type of the segment, four dif-
+ferent types are currently dened: atome (pre-
 lexical unit usually referred to as token in en-
 glish), ulex (lexical unit), cat (part of speech)
 and chunk (a non recursive syntactic unit).
-• id associates to a segment a unique identiﬁer in
+ id associates to a segment a unique identier in
 the document, in order to be able to reference
 it.
-• start and end deﬁne the span of the segment.
+ start and end dene the span of the segment.
 These two attributes are numerical and repre-
-sent either the index of the ﬁrst and last char-
+sent either the index of the rst and last char-
 acter of the segment in the text string or the
 beginning and ending time of the segment in
 a speech signal.
-A segment can deﬁne other attributes that can be
-useful for a given description level. We often ﬁnd
-the stype attribute that deﬁnes subtypes of a given
+A segment can dene other attributes that can be
+useful for a given description level. We often nd
+the stype attribute that denes subtypes of a given
 type.
 The dominance relation is represented through the
 use of the &lt;sequence&gt; tag. The domination of the
@@ -289,7 +289,7 @@ Markov model.
 The precedence relation (i.e.
 the organization
 of segments in segmentations), is represented as a
-weighted ﬁnite state automaton. Automata are rep-
+weighted nite state automaton. Automata are rep-
 resented as a start state, accept states and a list of
 transitions between states, as in the following exam-
 ple that corresponds to the lexical level of our exam-
@@ -323,21 +323,21 @@ the
 &lt;section&gt; tag which regroups two tags,
 the
 &lt;segments&gt; tag that contains the different segment
-tags deﬁned at this annotation level and the &lt;fsm&gt;
+tags dened at this annotation level and the &lt;fsm&gt;
 tag that represents all the segmentations of this level.
 3
 The MACAON architecture
 Three aspects have guided the architecture of
 MACAON: openness, modularity, and speed. Open-
-ness has been achieved by the deﬁnition of an ex-
+ness has been achieved by the denition of an ex-
 change format which has been made as general as
 possible, in such a way that mapping can be de-
-ﬁned from and to third party modules as ASR, MT
+ned from and to third party modules as ASR, MT
 systems or parsers. Modularity has been achieved
-by the deﬁnition of independent modules that com-
-municate with each other through XML ﬁles using
+by the denition of independent modules that com-
+municate with each other through XML les using
 standard UNIX pipes. A module can therefore be re-
-placed easily. Speed has been obtained using efﬁ-
+placed easily. Speed has been obtained using ef-
 cient algorithms and a representation especially de-
 signed to load linguistic data and models in a fast
 way.
@@ -346,19 +346,19 @@ nents. Libraries contain either linguistic data, mod-
 els or API functions. Two kinds of components are
 presented, the MACAON core components and third
 party components for which mappings to and from
-the MACAON exchange format have been deﬁned.
+the MACAON exchange format have been dened.
 3.1
 Libraries
 The main MACAON library is macaon common.
-It deﬁnes a simple interface to the MACAON ex-
+It denes a simple interface to the MACAON ex-
 change format and functions to load XML MACAON
-ﬁles into memory using efﬁcient data structures.
+les into memory using efcient data structures.
 Other libraries macaon lex, macaon code and
 macaon tagger lib represent the lexicon, the
 morphological data base and the tagger models in
 memory.
 MACAON only relies on two third-party libraries,
-which are gfsm12, a ﬁnite state machine library and
+which are gfsm12, a nite state machine library and
 libxml, an XML library13.
 3.2
 The MACAON core components
@@ -366,30 +366,30 @@ A brief description of several standard components
 developed in the MACAON framework is given be-
 low. They all comply with the exchange format de-
 scribed above and add a &lt;macaon stamp&gt; to the
-XML ﬁle that indicates the name of the component,
+XML le that indicates the name of the component,
 the date and the component version number, and rec-
 ognizes a set of standard options.
 maca select is a pre-processing component: it adds
-a macaon tag under the target tags speciﬁed by
-the user to the input XML ﬁle.
+a macaon tag under the target tags specied by
+the user to the input XML le.
 The follow-
 ing components will only process the document
 parts enclosed in macaon tags.
 maca segmenter segments a text into sentences by
 examining the context of punctuation with a
-regular grammar given as a ﬁnite state automa-
+regular grammar given as a nite state automa-
 ton. It is disabled for automatic speech tran-
 scriptions which do not typically include punc-
 tuation signs and come with their own segmen-
 tation.
-12ling.uni-potsdam.de/˜moocow/projects/
+12ling.uni-potsdam.de/moocow/projects/
 gfsm/
 13xmlsoft.org
 89
 maca tokenizer tokenizes a sentence into pre-
 lexical units. It is also based on regular gram-
 mars that recognize simple tokens as well as a
-predeﬁned set of special tokens, such as time
+predened set of special tokens, such as time
 expressions, numerical expressions, urls....
 maca lexer allows to regroup pre-lexical units into
 lexical units. It is based on the lefff French lex-
@@ -401,7 +401,7 @@ maca tagger associates to every lexical unit one or
 more part-of-speech labels.
 It is based on a
 trigram Hidden Markov Model trained on the
-French Treebank (Abeill´e et al., 2003). The es-
+French Treebank (Abeille et al., 2003). The es-
 timation of the HMM parameters has been re-
 alized by the SRILM toolkit (Stolcke, 2002).
 maca anamorph produces the morphological anal-
@@ -410,10 +410,10 @@ speech. The morphological information come
 from the lefff lexicon.
 maca chunker gathers sequences of part-of-speech
 tags in non recursive syntactic units. This com-
-ponent implements a cascade of ﬁnite state
+ponent implements a cascade of nite state
 transducers, as proposed by Abney (1996). It
 adds some features to the initial Abney pro-
-posal, like the possibility to deﬁne the head of
+posal, like the possibility to dene the head of
 a chunk.
 maca conv is a set of converters from and to the
 MACAON exchange format.
@@ -424,12 +424,12 @@ FSM format (Mohri et al.,
 2000) to the
 MACAON exchange format. macaon2txt and
 txt2macaon convert from and to plain text
-ﬁles.
+les.
 macaon2lorg and lorg2macaon
 convert to and from the format of the LORG
 parser (see section 3.3).
 maca view is a graphical interface that allows to in-
-spect MACAON XML ﬁles and run the compo-
+spect MACAON XML les and run the compo-
 nents.
 3.3
 Third party components
@@ -458,13 +458,13 @@ different settings when interfacing it with MACAON.
 4
 Applications
 MACAON has been used in several projects, two of
-which are brieﬂy described here, the DEFINIENS
+which are briey described here, the DEFINIENS
 project and the LUNA project.
 DEFINIENS (Barque et al., 2010) is a project that
-aims at structuring the deﬁnitions of a large coverage
-French lexicon, the Tr´esor de la langue franc¸aise.
-The lexicographic deﬁnitions have been processed
-by MACAON in order to decompose the deﬁnitions
+aims at structuring the denitions of a large coverage
+French lexicon, the Tresor de la langue francaise.
+The lexicographic denitions have been processed
+by MACAON in order to decompose the denitions
 into complex semantico-syntactic units. The data
 processed is therefore native text that possesses a
 rich XML structure that has to be preserved during
@@ -474,12 +474,12 @@ ing information from oral data about hotel booking.
 The word lattices produced by an ASR system have
 been processed by MACAON up to a partial syntactic
 level from which frames are built. More details can
-be found in (B´echet and Nasr, 2009). The key aspect
+be found in (Bechet and Nasr, 2009). The key aspect
 of the use of MACAON for the LUNA project is the
 ability to perform the linguistic analyses on the mul-
 tiple hypotheses produced by the ASR system. It is
 therefore possible, for a given syntactic analysis, to
-14www.computing.dcu.ie/˜lorg.
+14www.computing.dcu.ie/lorg.
 This software
 should be freely available for academic research by the time
 of the conference.
@@ -488,7 +488,7 @@ of the conference.
 Figure 2: Screenshot of the MACAON visualization inter-
 face (for French models). It allows to input a text and see
 the n-best results of the annotation.
-ﬁnd all the word sequences that are compatible with
+nd all the word sequences that are compatible with
 this analysis.
 Figure 2 shows the interface that can be used to
 see the output of the pipeline.
