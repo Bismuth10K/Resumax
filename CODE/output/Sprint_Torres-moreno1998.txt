@@ -13,7 +13,7 @@ Abstract :
 LETTER Communicated by Scott Fahlman  Efﬁcient Adaptive Learning for Classiﬁcation Tasks with Binary Units  J. Manuel Torres Moreno Mirta B. Gordon D´epartement de Recherche Fondamentale sur la Mati`ere Condens´ee, CEA Grenoble, 38054 Grenoble Cedex 9, France  This article presents a new incremental learning algorithm for classi- ﬁcation tasks, called NetLines, which is well adapted for both binary and real-valued input patterns. It generates small, compact feedforward neural networks with one hidden layer of binary units and binary output units. A convergence theorem ensures that solutions with a ﬁnite num- ber of hidden units exist for both binary and real-valued input patterns. An implementation for problems with more than two classes, valid for any binary classiﬁer, is proposed. The generalization error and the size of the resulting networks are compared to the best published resultsonwell-knownclassiﬁcationbenchmarks.Earlystoppingisshown to decrease overﬁtting, without improving the generalization perfor- mance.  1 Introduction  Feedforward neural networks have been successfully applied to the prob- lem of learning pattern classiﬁcation from examples. The relationship of the number of weights to the learning capacity and the network’s generalization ability is well understood only for the simple perceptron, a single binary unit whose output is a sigmoidal function of the weighted sum of its inputs. In this case, efﬁcient learning algorithms based on theoretical results allow the determination of the optimal weights. However, simple perceptrons can generalize only those (very few) problems in which the input patterns are linearly separable (LS). In many actual classiﬁcation tasks, multilayered per- ceptrons with hidden units are needed. However, neither the architecture (number of units, number of layers) nor the functions that hidden units have to learn are known a priori, and the theoretical understanding of these networks is not enough to provide useful hints. Although pattern classiﬁcation is an intrinsically discrete task, it may be cast as a problem of function approximation or regression by assigning real values to the targets. This is the approach used by backpropagation and  Neural Computation 10, 1007–1030 (1998) c⃝ 1998 Massachusetts Institute of Technology  
 
 Intro : 
-Intro : 1 Introduction
+1 Introduction
 Feedforward neural networks have been successfully applied to the prob-
 lem of learning pattern classiﬁcation from examples. The relationship of the
 number of weights to the learning capacity and the network’s generalization
@@ -119,7 +119,7 @@ conclusions are set out in section 6.
 
 
 Corps : 
-Corps : 2.1 Deﬁnitions. We are given a training set of P input-output examples
+2.1 Deﬁnitions. We are given a training set of P input-output examples
 {⃗ξµ, τ µ}, where µ = 1, 2, . . . , P. The inputs ⃗ξµ = (1, ξµ
 1 , ξµ
 2 , . . . , ξµ

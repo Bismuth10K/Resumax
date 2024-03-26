@@ -11,7 +11,7 @@ Abstract :
 Abstract  We propose two novel model architectures for computing continuous vector representations of words from very large data sets. The quality of these representations is measured in a word similarity task, and the results are compared to the previously best performing techniques based on different types of neural networks. We observe large improvements in accuracy at much lower computational cost, i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. Furthermore, we show that these vectors provide state-of-the-art performance on our test set for measuring syntactic and semantic word similarities.  
 
 Intro : 
-Intro : 1
+1
 Introduction
 Many current NLP systems and techniques treat words as atomic units - there is no notion of similar-
 ity between words, as these are represented as indices in a vocabulary. This choice has several good
@@ -75,7 +75,7 @@ are used [23].
 
 
 Corps : 
-Corps : Many different types of models were proposed for estimating continuous representations of words,
+Many different types of models were proposed for estimating continuous representations of words,
 including the well-known Latent Semantic Analysis (LSA) and Latent Dirichlet Allocation (LDA).
 In this paper, we focus on distributed representations of words learned by neural networks, as it was
 previously shown that they perform signiﬁcantly better than LSA for preserving linear regularities

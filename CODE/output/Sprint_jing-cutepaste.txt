@@ -12,7 +12,7 @@ Abstract :
 Abstract   We present a cut and paste based text summarizer, which uses operations derived from an analysis of human written abstracts.  The summarizer   edits extracted sentences, using reduction to remove  inessential phrases and combination to merge resuiting phrases together as coherent sentences. Our  work includes a statistically based sentence decomposition program that identifies where the phrases of  a summary originate in the original document, producing an aligned corpus of summaries and articles  which we used to develop the summarizer.   
 
 Intro : 
-Intro : 1 
+1 
 Introduction 
 There is a big gap between the summaries produced 
 by current automatic summarizers and the abstracts 
@@ -39,7 +39,7 @@ summary once key sentences have been extracted.
 
 
 Corps : 
-Corps : is to reuse the text in an article to generate the 
+is to reuse the text in an article to generate the 
 summary. 
 However, instead of simply extracting 
 sentences as current summarizers do, the cut and 

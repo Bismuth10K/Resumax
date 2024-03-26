@@ -87,5 +87,6 @@ def output_xml(pdf, dict_results: dict):
 
 	indent(tree, space="\t")
 
-	with open("../output/Sprint_" + pdf.split("/")[-1][:-4] + '.xml', 'w') as f:
-		tree.write(f, encoding='unicode')
+#	with open("../output/Sprint2_" + pdf.split("/")[-1] + '.xml', 'w') as f:
+#		tree.write(f, encoding="UTF-8")
+	tree.write("../output/Sprint2_" + pdf.split("/")[-1] + '.xml', encoding="UTF-8", xml_declaration=True)

@@ -10,7 +10,7 @@ Abstract :
 Abstract  The increasing availability of online information has necessitated intensive research in the area of automatic text summarization within the Natural Language Processing (NLP) community. Over the past half a century, the problem has been addressed from many diﬀerent perspectives, in varying domains and using various paradigms. This survey intends to investigate some of the most relevant approaches both in the areas of single-document and multipledocument summarization, giving special emphasis to empirical methods and extractive techniques. Some promising approaches that concentrate on speciﬁc details of the summarization problem are also discussed. Special attention is devoted to automatic evaluation of summarization systems, as future research on summarization is strongly dependent on progress in this area.  
 
 Intro : 
-Intro : 1
+1
 Introduction
 The subﬁeld of summarization has been investigated by the NLP community for
 nearly the last half century. Radev et al. (2002) deﬁne a summary as “a text that
@@ -269,7 +269,7 @@ Z(s) exp
 
 
 Corps : 
-Corps : i
+i
 λifi(c, s)
 !
 ,

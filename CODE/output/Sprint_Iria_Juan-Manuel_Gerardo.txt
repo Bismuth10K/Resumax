@@ -10,7 +10,7 @@ Abstract :
 Abstract   In this article we present the RST Spanish  Treebank, the first corpus annotated with  rhetorical relations for this language. We  describe the characteristics of the corpus,  the annotation criteria, the annotation  procedure, the inter-annotator agreement,  and other related aspects. Moreover, we  show the interface that we have developed  to carry out searches over the corpus’  annotated texts.   
 
 Intro : 
-Intro : 1 
+1 
 Introduction 
 The Rhetorical Structure Theory (RST) (Mann and 
 Thompson, 1988) is a language independent theory 
@@ -95,7 +95,7 @@ establish some conclusions and future work.
 
 
 Corps : 
-Corps : The most known RST corpus is the RST Discourse 
+The most known RST corpus is the RST Discourse 
 Treebank, for English (Carlson et al., 2002a, 
 2002b). It includes 385 texts of the journalistic 
 domain, extracted from the Penn Treebank 

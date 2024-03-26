@@ -12,30 +12,31 @@ def find_body(pdf: str):
 	corps = ""
 	for page in doc:
 		for block in page.get_text("blocks"):
+			# Si le bloc est un texte, on fait le truc, sinon (c'est une image), on ne fait rien
+			if block[6] == 0:
+				# deuxieme partie : stocker l'intro jusqu'a la partie suivante
+				if found_intro:
 
-			# deuxieme partie : stocker l'intro jusqu'a la partie suivante
-			if found_intro:
+					if not re.fullmatch(r"\A( )*(2|ii|)(?:.|-|)(?: |)(?:\n|)([a-z](?: |))+(?:\n|)", block[4].lower()):
+						intro += block[4]
+					else:
+						# print("do_body")
+						do_body = True
+						found_intro = False
 
-				if not re.fullmatch(r"\A( )*(2|ii|)(?:.|-|)(?: |)(?:\n|)([a-z](?: |))+(?:\n|)", block[4].lower()):
-					intro += block[4]
+				# troisième partie : stocker le reste du corps jusqu'aux références
+				elif do_body:
+					if not re.match(r"references(?: |\n|)+", block[4].lower()):
+						corps += block[4]
+					else:
+						return intro, corps
+
+				# premiere partie : trouver l'intro
 				else:
-					# print("do_body")
-					do_body = True
-					found_intro = False
-
-			# troisième partie : stocker le reste du corps jusqu'aux références
-			elif do_body:
-				if not re.match(r"references(?: |\n|)+", block[4].lower()):
-					corps += block[4]
-				else:
-					return intro, corps
-
-			# premiere partie : trouver l'intro
-			else:
-				if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", block[4].lower()):
-					# print("found_intro")
-					found_intro = True
-					intro += block[4]
+					if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", block[4].lower()):
+						# print("found_intro")
+						found_intro = True
+						intro += block[4]
 	return intro, corps
 
 
