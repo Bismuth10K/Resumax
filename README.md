@@ -30,6 +30,11 @@ Voici un récapitulatif de nos sprints jusqu'à là :
     Puis ajouter l'introduction, le corps, la conclusion et la discussion.
 
     Et enfin, ajouter le menu textuel.
+
+- **Sprint 5 - Évaluation de la qualité** : (25/03/2024 - 31/03/2024)
+
+    Le but de ce sprint est d'évaluer la qualité et la précision des rendus du parser à l'aide du site développé par le client.
+
 	 
 À chaque nouveau sprint, une nouvelle branche sera créée selon le numéro de sprint. À chaque fin de sprint, on merge la branche de main et on créé un release. Ce release contiendra l'exécutable de fin de sprint et le code source à l'heure de la fin.
 

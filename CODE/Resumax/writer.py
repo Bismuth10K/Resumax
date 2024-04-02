@@ -1,5 +1,5 @@
 from xml.etree.ElementTree import Element, SubElement, ElementTree, indent  # Pour générer des xml
-
+import string
 
 def output_txt(pdf, dict_results: dict):
 	"""
@@ -7,7 +7,7 @@ def output_txt(pdf, dict_results: dict):
 	:param pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
 	:param dict_results: Le dictionnaire des informations parsées.
 	"""
-	with open("../output/Sprint2_" + pdf.split("/")[-1] + '.txt',
+	with open("../output/" + pdf.split("/")[-1][:-4] + '.txt',
 				'w') as f:  # On les sauvegarde dans le dossier output.
 		f.write("Nom fichier : " + pdf + "\n\n")
 
@@ -41,7 +41,7 @@ def output_xml(pdf, dict_results: dict):
 	preamble.text = pdf
 
 	titre = SubElement(article, 'titre')
-	titre.text = dict_results.get("titre")
+	titre.text = "".join(x for x in dict_results.get("titre") if x in string.printable)
 
 	auteurs = SubElement(article, 'auteurs')
 	list_auteurs = dict_results.get("auteur")
@@ -52,28 +52,33 @@ def output_xml(pdf, dict_results: dict):
 		auteur = SubElement(auteurs, 'auteur')
 
 		name = SubElement(auteur, 'name')
-		name.text = list_auteurs[i]
+		name.text = "".join(x for x in list_auteurs[i] if x in string.printable)
+
+		affi = SubElement(auteur, 'affiliation')
+		affi.text = "".join(x for x in list_auteurs[i] if x in string.printable)
 
 		mail = SubElement(auteur, 'mail')
 		try:
-			print(list_mails[i])
-			mail.text = list_mails[i]
+			mail.text = "".join(x for x in list_mails[i] if x in string.printable)
 		except:
-			auteur.remove(mail)
+			mail.text = "N/A"
 
 		i += 1
 
 	abstract = SubElement(article, 'abstract')
-	abstract.text = dict_results.get("abstract")
+	abstract.text = "".join(x for x in dict_results.get("abstract") if x in string.printable)
 
-	intro = SubElement(article, 'intro')
-	intro.text = dict_results.get("intro")
+	intro = SubElement(article, 'introduction')
+	intro.text = "".join(x for x in dict_results.get("intro") if x in string.printable)
 
-	body = SubElement(article, 'body')
-	body.text = dict_results.get("body")
+	body = SubElement(article, 'corps')
+	body.text = "".join(x for x in dict_results.get("body") if x in string.printable)
 
 	discu = SubElement(article, 'discussion')
-	discu.text = dict_results.get("discussion")
+	discu.text = "".join(x for x in dict_results.get("discussion") if x in string.printable)
+
+	conc = SubElement(article, 'conclusion')
+	conc.text = "N/A"
 
 	biblio = SubElement(article, 'biblio')
 	biblio.text = "\n".join(str(elem) for elem in dict_results.get("biblio"))
@@ -82,5 +87,7 @@ def output_xml(pdf, dict_results: dict):
 
 	indent(tree, space="\t")
 
-	with open("../output/Sprint2_" + pdf.split("/")[-1] + '.xml', 'w') as f:
-		tree.write(f, encoding='unicode')
+#	with open("../output/Sprint2_" + pdf.split("/")[-1] + '.xml', 'w') as f:
+#		tree.write(f, encoding="UTF-8")
+	tree.write("../output/" + pdf.split("/")[-1][:-4] + '.xml', encoding="utf8", xml_declaration=True)
+
