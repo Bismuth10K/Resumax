@@ -1,6 +1,7 @@
 from xml.etree.ElementTree import Element, SubElement, ElementTree, indent  # Pour générer des xml
 import string
 
+
 def output_txt(pdf, dict_results: dict):
 	"""
 	Récupère les outputs et les inscrit dans un txt.

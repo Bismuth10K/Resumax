@@ -1,5 +1,5 @@
 import re
-
+from autre import replacator
 import fitz
 
 
@@ -17,7 +17,8 @@ def find_body(pdf: str):
 				# deuxieme partie : stocker l'intro jusqu'a la partie suivante
 				if found_intro:
 
-					if not re.fullmatch(r"\A( )*(2|ii|)(?:.|-|)(?: |)(?:\n|)([a-z](?: |))+(?:\n|)", block[4].lower()):
+					if not re.fullmatch(r"\A( )*(2|ii|)(?:.|-|)(?: |)(?:\n|)([a-z](?: |))+(?:\n|)",
+										block[4].lower()):  # Regex pour deuxième partie
 						intro += block[4]
 					else:
 						# print("do_body")
@@ -26,14 +27,15 @@ def find_body(pdf: str):
 
 				# troisième partie : stocker le reste du corps jusqu'aux références
 				elif do_body:
-					if not re.match(r"references(?: |\n|)+", block[4].lower()):
+					if not re.match(r"references(?: |\n|)+", block[4].lower()):  # Regex pour references
 						corps += block[4]
 					else:
 						return intro, corps
 
 				# premiere partie : trouver l'intro
 				else:
-					if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", block[4].lower()):
+					if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)",
+								block[4].lower()):  # Regex pour Intro
 						# print("found_intro")
 						found_intro = True
 						intro += block[4]
@@ -51,7 +53,7 @@ def extract_discuss(body: str):
 			decompo.remove(line)
 			discussed += line + "\n"
 		else:
-			if re.match(r"[0-9]*(?: *|)(?:- |)discussion(?:s|)", line.lower()):
+			if re.match(r"[0-9]*(?: *|)(?:- |)discussion(?:s|)", line.lower()):  # Regex pour Discussion
 				# print("Discussion found")
 				found_discuss = True
 			else:
@@ -59,7 +61,8 @@ def extract_discuss(body: str):
 
 	return discussed, recompo
 
-def extract_conclusion(discussion:str, body:str):
+
+def extract_conclusion(discussion: str, body: str):
 	found_conclu = False
 	conclu = ""
 	discu = ""
@@ -76,7 +79,7 @@ def extract_conclusion(discussion:str, body:str):
 					discu += element + "\n"
 		return (discussion != ""), autre, conclu
 	# sinon la conclusion est dans la discussion
-	else :
+	else:
 		for element in discussion.split("\n"):
 			if found_conclu:
 				conclu += element + "\n"
@@ -87,14 +90,12 @@ def extract_conclusion(discussion:str, body:str):
 					discu += element + "\n"
 		return (discussion != ""), discu, conclu
 
+
 if __name__ == "__main__":
-	intro, body = find_body("../ressources/Nasr.pdf")
+	intro, body = find_body("..\\ressources\\acl2012.pdf")
 	discussion, body = extract_discuss(body)
 	print(intro)
-	print(type(intro))
 	print("-------------------------")
 	print(body)
-	print(type(body))
 	print("-------------------------")
 	print(discussion)
-	print(type(discussion))
