@@ -22,7 +22,7 @@ def check_if_abstract(bloc: str):
 		return -1  # Pas un abstract.
 
 
-def find_abstract(page: fitz.Page, blknum: int, toc=None):
+def find_abstract(doc: fitz.Document, blknum: int, toc=None):
 	"""
 	Détermine si un texte un est un abstract ou pas.
 	:param page: Une page du document.
@@ -32,14 +32,15 @@ def find_abstract(page: fitz.Page, blknum: int, toc=None):
 	"""
 
 	abstract = ""
-	for block in page.get_text("blocks"):
-		if block[5] < blknum:
-			continue
-		if re.search(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n)[Ii]ntroduction(?: |)(?:\n|)", block[4].lower()):
-			abstract = replacator(abstract)
-			blknum = block[5]
-			break
-		else:
-			abstract += block[4] + " "
+	for page in doc.pages(0):
+		for i in range(blknum, len(page.get_text("blocks"))):
+			block = page.get_text("blocks")[i]
+			if re.search(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n)[Ii]ntroduction(?: |)(?:\n|)", block[4].lower()):
+				abstract = replacator(abstract)
+				blknum = block[5]
+				page_num = page.number
+				break
+			else:
+				abstract += block[4] + " "
 
-	return abstract, blknum
+	return abstract, blknum, page_num

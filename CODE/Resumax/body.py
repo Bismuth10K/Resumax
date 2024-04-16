@@ -3,42 +3,21 @@ from autre import replacator
 import fitz
 
 
-def find_body(pdf: str):
-	doc = fitz.open(pdf)
+def find_intro(doc:fitz.Document, page_num:int, blknum:int):
 	found_intro = False
 	do_body = False
 
 	intro = ""
 	corps = ""
-	for page in doc:
-		for block in page.get_text("blocks"):
-			# Si le bloc est un texte, on fait le truc, sinon (c'est une image), on ne fait rien
-			if block[6] == 0:
-				# deuxieme partie : stocker l'intro jusqu'a la partie suivante
-				if found_intro:
+	for page in range(page_num, len(doc)):
+		for i in range(blknum, len(doc[page].get_text("blocks"))):
+			block = page.get_text("blocks")[i]
+			text = block[4]
+			if found_intro == False:
+				if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", text.lower()):
+					found_intro = True
+					intro += text
 
-					if not re.fullmatch(r"\A( )*(2|ii|)(?:.|-|)(?: |)(?:\n|)([a-z](?: |))+(?:\n|)",
-										block[4].lower()):  # Regex pour deuxième partie
-						intro += block[4]
-					else:
-						# print("do_body")
-						do_body = True
-						found_intro = False
-
-				# troisième partie : stocker le reste du corps jusqu'aux références
-				elif do_body:
-					if not re.match(r"references(?: |\n|)+", block[4].lower()):  # Regex pour references
-						corps += block[4]
-					else:
-						return intro, corps
-
-				# premiere partie : trouver l'intro
-				else:
-					if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)",
-								block[4].lower()):  # Regex pour Intro
-						# print("found_intro")
-						found_intro = True
-						intro += block[4]
 	return intro, corps
 
 
@@ -58,11 +37,11 @@ def extract_discuss(body: str):
 				found_discuss = True
 			else:
 				recompo += line + "\n"
-
 	return discussed, recompo
 
 
-def extract_conclusion(discussion: str, body: str):
+
+def find_conclusion(discussion: str, body: str):
 	found_conclu = False
 	conclu = ""
 	discu = ""

@@ -91,7 +91,7 @@ def parser_new(pdf):
 	page = doc[0]
 
 	# finding title
-	temp = titre.find_title(page, 0)
+	temp = titre.find_title(doc,0, 0)
 	titleStr = temp[0]
 	blknum = temp[1]
 
@@ -105,9 +105,10 @@ def parser_new(pdf):
 	temp = abstract.find_abstract(page, blknum)
 	abstractStr = temp[0]
 	blknum = temp[1]
+	page_num = temp[2]
 
 	# finding introduction and body
-	intro, bodyText = body.find_body(pdf)
+	intro, bodyText = body.find_body(page_num, blknum, )
 
 	# extracting discussions and conclusions
 	discussion, bodyText = body.extract_discuss(bodyText)
