@@ -5,18 +5,30 @@ import fitz
 
 def find_intro(doc:fitz.Document, page_num:int, blknum:int):
 	found_intro = False
+	finish_intro = False
 	do_body = False
+
 
 	intro = ""
 	corps = ""
 	for page in range(page_num, len(doc)):
 		for i in range(blknum, len(doc[page].get_text("blocks"))):
-			block = page.get_text("blocks")[i]
+			block = doc[page].get_text("blocks")[i]
 			text = block[4]
-			if found_intro == False:
-				if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", text.lower()):
+			if found_intro == False: # on a pas encore trouvé l'intro
+				if re.match(r"\A( )*(?:[0-9]|i|)(?:\.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", text.lower()):
 					found_intro = True
 					intro += text
+			else : # on a trouvé le début de l'intro
+				if finish_intro == False:
+					#print("ALED\n" + text.lower())
+					if not re.match(r"\A( *)(?:([0-9]|\.)|i+)( *)(\n|-|\.)", text.lower()):
+						intro += "##################\n#BLOCK SEPARATION#\n##################\n" + text
+					else:
+						finish_intro = True
+						corps += "##################\n#BLOCK SEPARATION#\n##################\n" + text
+				else :
+					corps += "##################\n#BLOCK SEPARATION#\n##################\n" + text
 
 	return intro, corps
 
@@ -71,10 +83,10 @@ def find_conclusion(discussion: str, body: str):
 
 
 if __name__ == "__main__":
-	intro, body = find_body("..\\ressources\\acl2012.pdf")
-	discussion, body = extract_discuss(body)
+	intro, body = find_intro(fitz.open("../ressources/On_the_Morality_of_Artificial_Intelligence.pdf"), 0,0)
+	print("-----------INTRO-------------")
 	print(intro)
-	print("-------------------------")
+	print("-----------BODY--------------")
 	print(body)
-	print("-------------------------")
-	print(discussion)
+
+#TODO : sur On the morality machinmachin y'a pas d'intro :/
