@@ -108,10 +108,10 @@ def parser_new(pdf):
 	page_num = temp[2]
 
 	# finding introduction and body
-	intro, bodyText = body.find_body(page_num, blknum, )
+
 
 	# extracting discussions and conclusions
-	discussion, bodyText = body.extract_discuss(bodyText)
+
 
 	# finding references
 	refs = references.find_references(pdf)

@@ -15,15 +15,17 @@ def find_intro(doc:fitz.Document, page_num:int, blknum:int):
 	for page in range(page_num, len(doc)):
 		for i in range(blknum, len(doc[page].get_text("blocks"))):
 			block = doc[page].get_text("blocks")[i]
+			if block[-1] == 1:
+				continue
 			text = block[4]
 			if found_intro == False: # on a pas encore trouvé l'intro
 				if re.match(r"\A( )*(?:[0-9]|i|)(?:\.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", text.lower()):
 					found_intro = True
-					intro += text
+
 			else : # on a trouvé le début de l'intro
 				if finish_intro == False :
 					#print("ALED\n" + text.lower())
-					if not re.match(r"\A( *)(?:([0-9]|\.)|i+)( *)(\n|-|\.)", text.lower()):
+					if not re.match(r"\A( *)(?:([0-9]|\.)|i+)( *)(\n|-|\.)", text.lower()) and not isBold(block):
 						intro += text
 					else:
 						finish_intro = True
@@ -51,11 +53,13 @@ def find_discuss(doc : fitz.Document, page_num:int, blknum:int):
 	for page in range(page_num, len(doc)-1):
 		for i in range(blknum, len(doc[page].get_text("blocks"))-1):
 			block = doc[page].get_text("blocks")[i]
+			if block[-1] == 1:
+				continue
 			text = block[4]
 			if not found_discuss:
 				if re.match(r"(?:[0-9]|\.)+(?: *|)(?:- |)discussion(?:s|)", text.lower()):  # Regex pour Discussion
 					found_discuss = True
-					discussed += text
+
 			else: #on a trouvé le début de la discussion
 				if finished_discuss == False :
 					if re.fullmatch(r"[0-9]*[ .\-)/]*conclusion(?:s|)", text.lower()): #On s'arrete quand on tombe sur la conclusion
@@ -85,19 +89,21 @@ def find_conclusion(doc:fitz.Document, page_num:int, blknum:int):
 	for page in range(page_num, len(doc)-1):
 		for i in range(blknum, len(doc[page].get_text("blocks"))-1):
 			block = doc[page].get_text("blocks")[i]
+			if block[-1] == 1:
+				continue
 			text = block[4]
 			if not found_conclu:
-				if re.match(r"(?:[0-9]|\.)+(?: *|)(?:- |)conclusion(?:s|)", text.lower()):  # Regex pour Discussion
+
+				if re.match(r"(?:[0-9]|\.)+(?: *|)(?:- |)conclusion(?:s|)", text.lower()):  # Regex pour Conclusion(s)
 					found_conclu = True
-					conclu += text
-			else: #on a trouvé le début de la discussion
+			else: #on a trouvé le début de la conclusion
 				if finished_conclu == False :
-					if re.fullmatch(r"\Areferences(?: |\n|)+", text.lower()): #On s'arrete quand on tombe sur la conclusion
+					if re.fullmatch(r"\Areferences(?: |\n|)+", text.lower()): #On s'arrete quand on tombe sur la bibliographie
 						finished_conclu = True
 						break
-					conclu += "###########BLOCK DELIMITER###########" + text
+					conclu += "\n###########BLOCK DELIMITER###########\n" + text
 
-		if not finished_conclu :
+		if finished_conclu :
 			break
 		newblk += 1
 	newpage += 1
@@ -110,9 +116,42 @@ def find_conclusion(doc:fitz.Document, page_num:int, blknum:int):
 
 
 
+def extract_body(doc:fitz.Document, page_num:int, blknum:int):
+	newpage = 0
+	newblk = 0
+
+	#on fit un premier tour du document pour choper les parties spécifiques
+	intro, newpage, newblk = find_intro(doc, page_num, blknum)
+	discuss, newpage, newblk = find_discuss(doc, newpage, newblk)
+	conclusion, newpage, newblk = find_conclusion(doc, newpage, newblk)
+	body = ""
+
+	# On repart du début pour extraire le corps parmi le reste du texte déja traité
+	for page in range(page_num, len(doc)-1):
+		for i in range(blknum, len(doc[page].get_text("blocks"))-1):
+			block = doc[page].get_text("blocks")[i]
+			if block[-1] == 1:
+				continue
+			text = block[4]
+			if not(text in intro or text in discuss or text in conclusion):
+				body += text
+	return intro, body, discuss, conclusion
+
+
+def isBold(block:list):
+	for line in block['lines']:
+		for span in line['spans']:
+			if "bold" in span['font'].lower():
+				return True
+	return False
+
 if __name__ == "__main__":
-	intro = find_conclusion(fitz.open("../ressources/surveyTermExtraction.pdf"), 0,0)[0]
+	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/IPM1481.pdf"), 1,0)
 	print("-----------INTRO-------------")
 	print(intro)
-	print("-----------BODY--------------")
-
+	print("------------BODY-------------")
+	print(body)
+	print("----------DISCUSS------------")
+	print(discuss)
+	print("---------CONCLUSION----------")
+	print(conclusion)
