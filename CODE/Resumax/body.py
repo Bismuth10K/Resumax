@@ -52,8 +52,8 @@ def find_discuss(doc: fitz.Document, page_num: int, blknum: int):
 	newpage = page_num
 	newblk = blknum
 
-	for page in range(page_num, len(doc) - 1):
-		for i in range(blknum, len(doc[page].get_text("blocks")) - 1):
+	for page in range(page_num, len(doc)):
+		for i in range(blknum, len(doc[page].get_text("blocks"))):
 			block = doc[page].get_text("blocks")[i]
 			if block[-1] == 1:
 				continue
@@ -86,8 +86,8 @@ def find_conclusion(doc: fitz.Document, page_num: int, blknum: int):
 	newpage = page_num
 	newblk = blknum
 
-	for page in range(page_num, len(doc) - 1):
-		for i in range(blknum, len(doc[page].get_text("blocks")) - 1):
+	for page in range(page_num, len(doc)):
+		for i in range(blknum, len(doc[page].get_text("blocks"))):
 			block = doc[page].get_text("blocks")[i]
 			if block[-1] == 1:
 				continue

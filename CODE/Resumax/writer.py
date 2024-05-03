@@ -41,7 +41,7 @@ def output_xml(pdf, dict_results: dict):
 	"""
 	article = Element('article')
 	preamble = SubElement(article, 'preamble')
-	preamble.text = pdf
+	preamble.text = pdf.split("/")[-1]
 
 	titre = SubElement(article, 'titre')
 	titre.text = "".join(x for x in dict_results.get("titre") if x in string.printable)
@@ -50,7 +50,7 @@ def output_xml(pdf, dict_results: dict):
 	list_auteurs = dict_results.get("auteur")
 	list_mails = dict_results.get("mail")
 
-	i = 0
+	i = 1
 	while i < len(list_auteurs):
 		auteur = SubElement(auteurs, 'auteur')
 
@@ -62,7 +62,7 @@ def output_xml(pdf, dict_results: dict):
 
 		mail = SubElement(auteur, 'mail')
 		try:
-			mail.text = "".join(x for x in list_mails[i] if x in string.printable)
+			mail.text = list_mails[i]
 		except:
 			mail.text = "N/A"
 
