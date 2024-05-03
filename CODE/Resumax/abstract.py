@@ -43,4 +43,4 @@ def find_abstract(doc: fitz.Document, blknum: int, toc=None):
 			else:
 				abstract += block[4] + " "
 
-	return abstract, blknum, page_num
+	return abstract, page_num, blknum

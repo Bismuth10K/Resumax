@@ -93,24 +93,29 @@ def parser_new(pdf):
 	# finding title
 	temp = titre.find_title(doc,0, 0)
 	titleStr = temp[0]
-	blknum = temp[1]
+	page_num = temp[1]
+	blknum = temp[2]
 
 	# finding authors
-	temp = author.find_authors(page, blknum)
+	temp = author.find_authors(doc, page, blknum)
 	authors = temp[0]
 	mails = temp[1]
-	blknum = temp[2]
+	page_num = temp[2]
+	blknum = temp[3]
 
 	# finding abstract
 	temp = abstract.find_abstract(page, blknum)
 	abstractStr = temp[0]
-	blknum = temp[1]
-	page_num = temp[2]
+	page_num = temp[1]
+	blknum = temp[2]
+
 
 	# finding introduction and body
-
-
-	# extracting discussions and conclusions
+	temp = body.extract_body(doc, page_num, blknum)
+	intro = temp[0]
+	bodyText = temp[1]
+	discussion = temp[2]
+	conclu = temp[3]
 
 
 	# finding references
@@ -131,9 +136,11 @@ def parser_new(pdf):
 	# print("---")
 	# print(discussion)
 	# print("---")
+	# print(conclu)
+	# print("---")
 	# print(refs)
 	parsed_results = {"titre": titleStr, "auteur": authors, "mails": mails, "abstract": abstractStr.replace("\n", " "),
-						"intro": intro, "body": bodyText, "discussion": discussion, "biblio": refs}
+						"intro": intro, "body": bodyText, "discussion": discussion, "conlusion":conclu, "biblio": refs}
 	return parsed_results
 
 

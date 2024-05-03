@@ -3,10 +3,10 @@ import fitz
 from autre import replacator
 
 
-def find_authors(doc: fitz.Document, blknum: int):
+def find_authors(doc: fitz.Document, page_num: int, blknum: int):
 	mails = []
 	names = []
-	for block in range(blknum, len(doc[0].get_text("blocks"))):
+	for block in range(blknum, len(doc[page_num].get_text("blocks"))):
 		# les auteurs se trouvent pratiquement toujours juste au-dessus de l'abstract
 		if "abstract" in block[4].lower():
 			blknum = block[5]
@@ -22,7 +22,7 @@ def find_authors(doc: fitz.Document, blknum: int):
 
 			# pour les noms, on ajoute ce qui reste du texte du bloc
 			names.append(replacator(tmp_auteur))
-	return names, mails, blknum
+	return names, mails, page_num, blknum
 
 
 def email(strings: list):

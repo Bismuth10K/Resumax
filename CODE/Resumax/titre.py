@@ -3,7 +3,7 @@ import fitz
 from autre import replacator
 
 
-def find_title(doc: fitz.Document, blknum: int):
+def find_title(doc: fitz.Document, page_num:int, blknum: int):
 	"""
 	Trouve le titre parmi deux blocs, l'un des deux pouvant être un footer, on le détermine donc grâce à la position.
 	:param page: Une page du document.
@@ -12,8 +12,8 @@ def find_title(doc: fitz.Document, blknum: int):
 	"""
 
 
-	cur_block = doc[0].get_text("blocks")[blknum]
-	next_block = doc[0].get_text("blocks")[blknum + 1]
+	cur_block = doc[page_num].get_text("blocks")[blknum]
+	next_block = doc[page_num].get_text("blocks")[blknum + 1]
 
 	if cur_block[1] > next_block[1]:  # si la position de cur_bloc sur l'axe y (descendant) est supérieur next_block,
 		# c'est probablement un footer. PyMuPDF affiche les footers en premier.
@@ -23,4 +23,4 @@ def find_title(doc: fitz.Document, blknum: int):
 		titre = cur_block[4]
 		bloc = cur_block[5]
 	titre = replacator(titre)
-	return titre, bloc
+	return titre, page_num, blknum

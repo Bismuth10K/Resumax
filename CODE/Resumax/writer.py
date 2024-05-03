@@ -24,7 +24,9 @@ def output_txt(pdf, dict_results: dict):
 
 		f.write("Corps : \n" + dict_results.get("body") + "\n\n")
 
-		f.write("Discussion et Conclusion : \n" + dict_results.get("discussion") + "\n\n")
+		f.write("Discussion : \n" + dict_results.get("discussion") + "\n\n")
+
+		f.write("Conclusion : \n" + dict_results.get("conclusion") + "\n\n")
 
 		f.write("Bibliographie : \n")
 		for element in dict_results.get("biblio"):
@@ -79,7 +81,7 @@ def output_xml(pdf, dict_results: dict):
 	discu.text = "".join(x for x in dict_results.get("discussion") if x in string.printable)
 
 	conc = SubElement(article, 'conclusion')
-	conc.text = "N/A"
+	conc.text = "".join(x for x in dict_results.get("conclusion") if x in string.printable)
 
 	biblio = SubElement(article, 'biblio')
 	biblio.text = "\n".join(str(elem) for elem in dict_results.get("biblio"))

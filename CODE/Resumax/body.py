@@ -25,7 +25,7 @@ def find_intro(doc:fitz.Document, page_num:int, blknum:int):
 			else : # on a trouvé le début de l'intro
 				if finish_intro == False :
 					#print("ALED\n" + text.lower())
-					if not re.match(r"\A( *)(?:([0-9]|\.)|i+)( *)(\n|-|\.)", text.lower()) and not isBold(block):
+					if not re.match(r"\A( *)(?:([0-9]|\.)|i+)( *)(\n|-|\.)", text.lower()):
 						intro += text
 					else:
 						finish_intro = True
@@ -138,12 +138,15 @@ def extract_body(doc:fitz.Document, page_num:int, blknum:int):
 	return intro, body, discuss, conclusion
 
 
-def isBold(block:list):
-	for line in block['lines']:
-		for span in line['spans']:
-			if "bold" in span['font'].lower():
-				return True
-	return False
+
+
+
+#def isBold(block:list):
+#	for line in block['lines']:
+#		for span in line['spans']:
+#			if "bold" in span['font'].lower():
+#				return True
+#	return False
 
 if __name__ == "__main__":
 	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/IPM1481.pdf"), 1,0)
