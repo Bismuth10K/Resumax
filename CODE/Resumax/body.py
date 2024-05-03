@@ -156,8 +156,6 @@ def findAllBold(page):
 							bold_texts.append(text.lower)
 	return bold_texts
 
-
-	page_num += 1  # Increase the page value by 1
 if __name__ == "__main__":
 	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/IPM1481.pdf"), 1, 0)
 	print("-----------INTRO-------------")
