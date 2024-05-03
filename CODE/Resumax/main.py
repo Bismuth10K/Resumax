@@ -76,8 +76,13 @@ def parser_old(pdf):
 def parser_new(pdf):
 	"""
 
-	:param pdf: le chemin du fichier pdf à parser
-	:return: void
+	Parameters
+	----------
+	pdf (str) : Le chemin relatif du fichier à ouvrir.
+
+	Returns
+	-------
+	parsed_results (dict) : Dictionnaire des morceaux de pdf sous forme de strings
 	"""
 
 	# Document opening
@@ -97,14 +102,14 @@ def parser_new(pdf):
 	blknum = temp[2]
 
 	# finding authors
-	temp = author.find_authors(doc, page, blknum)
+	temp = author.find_authors(doc, 0, blknum)
 	authors = temp[0]
 	mails = temp[1]
 	page_num = temp[2]
 	blknum = temp[3]
 
 	# finding abstract
-	temp = abstract.find_abstract(page, blknum)
+	temp = abstract.find_abstract(doc, 0, blknum)
 	abstractStr = temp[0]
 	page_num = temp[1]
 	blknum = temp[2]
@@ -140,7 +145,7 @@ def parser_new(pdf):
 	# print("---")
 	# print(refs)
 	parsed_results = {"titre": titleStr, "auteur": authors, "mails": mails, "abstract": abstractStr.replace("\n", " "),
-						"intro": intro, "body": bodyText, "discussion": discussion, "conlusion":conclu, "biblio": refs}
+						"intro": intro, "body": bodyText, "discussion": discussion, "conclusion":conclu, "biblio": refs}
 	return parsed_results
 
 

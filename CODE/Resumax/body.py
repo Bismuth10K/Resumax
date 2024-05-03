@@ -1,4 +1,6 @@
 import re
+
+from CODE.Resumax import autre
 from autre import replacator
 import fitz
 
@@ -19,13 +21,13 @@ def find_intro(doc: fitz.Document, page_num: int, blknum: int):
 				continue
 			text = block[4]
 			if found_intro == False:  # on a pas encore trouvé l'intro
-				if re.match(r"\A( )*(?:[0-9]|i|)(?:\.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", text.lower()):
+				if autre.is_section("introduction", text.lower()):
 					found_intro = True
 
 			else:  # on a trouvé le début de l'intro
 				if finish_intro == False:
 					# print("ALED\n" + text.lower())
-					if not re.match(r"\A( *)(?:([0-9]|\.)|i+)( *)(\n|-|\.)", text.lower()) and text.lower not in bold_texts_page:
+					if not autre.is_section("", text.lower()) and text.lower not in bold_texts_page:
 						intro += text
 					else:
 						finish_intro = True
@@ -57,16 +59,15 @@ def find_discuss(doc: fitz.Document, page_num: int, blknum: int):
 				continue
 			text = block[4]
 			if not found_discuss:
-				if re.match(r"(?:[0-9]|\.)+(?: *|)(?:- |)discussion(?:s|)", text.lower()):  # Regex pour Discussion
+				if autre.is_section("discussion", text.lower()):  # Regex pour Discussion
 					found_discuss = True
 
 			else:  # on a trouvé le début de la discussion
 				if finished_discuss == False:
-					if re.fullmatch(r"[0-9]*[ .\-)/]*conclusion(?:s|)",
-									text.lower()):  # On s'arrete quand on tombe sur la conclusion
+					if autre.is_section("conclusion", text.lower()):  # On s'arrete quand on tombe sur la conclusion
 						finished_discuss = True
 						break
-					discussed += "###########BLOCK DELIMITER###########" + text  # print("Discussion found")
+					discussed += text  # print("Discussion found")
 		if not finished_discuss:
 			break
 		newblk += 1
@@ -93,15 +94,15 @@ def find_conclusion(doc: fitz.Document, page_num: int, blknum: int):
 			text = block[4]
 			if not found_conclu:
 
-				if re.match(r"(?:[0-9]|\.)+(?: *|)(?:- |)conclusion(?:s|)", text.lower()):  # Regex pour Conclusion(s)
+				if autre.is_section("conclusion", text.lower()):
 					found_conclu = True
+					print("###"+text)
 			else:  # on a trouvé le début de la conclusion
 				if finished_conclu == False:
-					if re.fullmatch(r"\Areferences(?: |\n|)+",
-									text.lower()):  # On s'arrete quand on tombe sur la bibliographie
+					if re.fullmatch(r"(?:[0-9]|\.)+ *\n*(?:- |)reference(?:s|)", text.lower()):  # On s'arrete quand on tombe sur la bibliographie
 						finished_conclu = True
 						break
-					conclu += "\n###########BLOCK DELIMITER###########\n" + text
+					conclu += text
 
 		if finished_conclu:
 			break
@@ -110,6 +111,7 @@ def find_conclusion(doc: fitz.Document, page_num: int, blknum: int):
 
 	if conclu == "":
 		conclu = "N/A"
+		print("HAHA non")
 		return conclu, page_num, blknum
 	return conclu, newpage, newblk
 
@@ -157,7 +159,7 @@ def findAllBold(page):
 	return bold_texts
 
 if __name__ == "__main__":
-	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/IPM1481.pdf"), 1, 0)
+	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/surveyTermExtraction.pdf"), 1, 0)
 	print("-----------INTRO-------------")
 	print(intro)
 	print("------------BODY-------------")
@@ -166,3 +168,4 @@ if __name__ == "__main__":
 	print(discuss)
 	print("---------CONCLUSION----------")
 	print(conclusion)
+# TODO ckecker la position des blocs: si c'est au dessus du titre, ca dégage
