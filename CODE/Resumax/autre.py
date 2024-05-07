@@ -62,7 +62,8 @@ def replacator(text_to_clean: str):
 
 
 def is_section(name:str, text:str):
-	return re.match(r"\A(?:[xvi]|[0-9]|\.|\n| )+(?:- |)"+name+r"(?:s|)", text)
+	#print(re.match(r"\A(?:[xvi]|[0-9]|\.|\n| )+(?:- |){}(?:s|)".format(name), replacator(text)))
+	return re.match(rf"\A(?:[xvi]|[0-9]|\.|\n| )+(?:- |){name}(?:s|)", text)
 
 if __name__ == '__main__':
 	txt_reco_patterns()
