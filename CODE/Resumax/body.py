@@ -152,15 +152,16 @@ def findAllBold(page):
 			if block['type'] == 0:
 				for line in block['lines']:
 					for span in line['spans']:
-						span_font = span['font']
 						text = span['text']
-						if "bold" in span_font.lower():
-							bold_texts.append(text.lower)
+						flags = int(span['flags'])
+						if flags & 2**4:
+							bold_texts.append(text.lower())
 	return bold_texts
+
 
 if __name__ == "__main__":
 	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/BLESS.pdf"), 0, 0)
 	print("-----------INTRO-------------")
-	print(intro)
+	# print(intro)
 
 # TODO ckecker la position des blocs: si c'est au dessus du titre, ca dégage
