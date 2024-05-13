@@ -15,11 +15,13 @@ def find_intro(doc: fitz.Document, page_num: int, blknum: int):
 
 	for page in range(page_num, len(doc)):
 		bold_texts_page = findAllBold(doc[page])
-		for i in range(blknum, len(doc[page].get_text("blocks"))):
+		for i in range(0, len(doc[page].get_text("blocks"))):
 			block = doc[page].get_text("blocks")[i]
 			if block[-1] == 1:
 				continue
 			text = block[4]
+			print("###########BLOCK DELIMITER##############\n", text.lower())
+			print(re.match(r"\A(?:[xvi]|[0-9]|\.|\n| )+(?:- |)introduction(?:s|)", text.lower()))
 			if found_intro == False:  # on a pas encore trouvé l'intro
 				if autre.is_section("introduction", text.lower()):
 
@@ -27,10 +29,14 @@ def find_intro(doc: fitz.Document, page_num: int, blknum: int):
 
 			else:  # on a trouvé le début de l'intro
 				if finish_intro == False:
-
-					if not autre.is_section("", text.lower()) or len(text) > 40:
+					if not autre.is_section("[a-z]", text.lower()) and text.lower() not in bold_texts_page:
+						print("AAAAAAAAAAAA")
+						intro += text
+					elif re.match(r"\A([0-9]\.){2,}", text.lower()):
+						print("Subsection")
 						intro += text
 					else:
+						print("FIN", text.lower())
 						finish_intro = True
 						break
 		if finish_intro:
@@ -54,7 +60,7 @@ def find_discuss(doc: fitz.Document, page_num: int, blknum: int):
 	newblk = blknum
 
 	for page in range(page_num, len(doc)):
-		for i in range(blknum, len(doc[page].get_text("blocks"))):
+		for i in range(0, len(doc[page].get_text("blocks"))):
 			block = doc[page].get_text("blocks")[i]
 			if block[-1] == 1:
 				continue
@@ -65,10 +71,11 @@ def find_discuss(doc: fitz.Document, page_num: int, blknum: int):
 
 			else:  # on a trouvé le début de la discussion
 				if finished_discuss == False:
-					if autre.is_section("conclusion", text.lower()):  # On s'arrete quand on tombe sur la conclusion
+					if not autre.is_section("conclusion", text.lower()):
+						discussed += text
+					else:
 						finished_discuss = True
 						break
-					discussed += text
 		if not finished_discuss:
 			break
 		newblk += 1
@@ -88,21 +95,21 @@ def find_conclusion(doc: fitz.Document, page_num: int, blknum: int):
 	newblk = blknum
 
 	for page in range(page_num, len(doc)):
-		for i in range(blknum, len(doc[page].get_text("blocks"))):
+		for i in range(0, len(doc[page].get_text("blocks"))):
 			block = doc[page].get_text("blocks")[i]
 			if block[-1] == 1:
 				continue
 			text = block[4]
-			if not found_conclu:
-
+			if found_conclu == False:
 				if autre.is_section("conclusion", text.lower()):
 					found_conclu = True
 			else:  # on a trouvé le début de la conclusion
 				if finished_conclu == False:
-					if re.match(r"(?:[0-9]|\.)+ *\n*(?:- |)reference(?:s|)", text.lower()):  # On s'arrete quand on tombe sur la bibliographie
+					if not autre.is_section("reference", text.lower()):
+						conclu += text
+					else:
 						finished_conclu = True
 						break
-					conclu += text
 
 		if finished_conclu:
 			break
@@ -127,8 +134,8 @@ def extract_body(doc: fitz.Document, page_num: int, blknum: int):
 	body = ""
 
 	# On repart du début pour extraire le corps parmi le reste du texte déja traité
-	for page in range(page_num, len(doc) - 1):
-		for i in range(blknum, len(doc[page].get_text("blocks")) - 1):
+	for page in range(page_num, len(doc)):
+		for i in range(blknum, len(doc[page].get_text("blocks"))):
 			block = doc[page].get_text("blocks")[i]
 			if block[-1] == 1:
 				continue
@@ -160,7 +167,7 @@ def findAllBold(page):
 
 
 if __name__ == "__main__":
-	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/BLESS.pdf"), 0, 0)
+	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/infoEmbeddings.pdf"), 0, 0)
 	print("-----------INTRO-------------")
 	# print(intro)
 
