@@ -14,7 +14,7 @@ def find_references(pdf: str) -> list:
 	found = False
 	for i in range(len(doc)):
 		for block in doc[i].get_text("blocks"):
-			if re.match(r"\Areferences(?: |\n|)+", block[4].lower()):
+			if re.match(r"\A(?: |\n|[a-z0-9.]|)+references(?: |)*", block[4].lower()):
 				found = True
 			elif found:
 				if not re.match(r"\A[0-9]+(?:\n|)$", block[4]):

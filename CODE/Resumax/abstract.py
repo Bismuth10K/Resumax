@@ -5,23 +5,6 @@ import fitz
 from autre import replacator,is_section
 
 
-def check_if_abstract(bloc: str):
-	"""
-	Détermine si un texte contient le terme "abstract" (et donc en est un) ou pas.
-	:param bloc: Un texte.
-	:return: Int → 	+1 : "abstract" + texte abstract dans le même bloc.
-					+0 : "abstract" seul.
-					-1 : pas de "abstract".
-	"""
-	if "abstract" in bloc.lower():
-		if len(bloc) > len("abstract") * 2:
-			return 1  # Texte abstract dans le bloc actuel.
-		else:
-			return 0  # Texte abstract dans le bloc suivant.
-	else:
-		return -1  # Pas un abstract.
-
-
 def find_abstract(doc: fitz.Document, page_num: int, blknum: int, toc=None):
 
 	"""
@@ -44,7 +27,7 @@ def find_abstract(doc: fitz.Document, page_num: int, blknum: int, toc=None):
 			text = block[4]
 
 			if not found_abstract:
-				if re.match(r"\A(?: |\n|)+abstract", text.lower()):
+				if re.match(r"\A(?: |\n|)+abstract", text.lower()) or "a b s t r a c t" in text.lower():
 					found_abstract = True
 					abstract += text
 				else :
