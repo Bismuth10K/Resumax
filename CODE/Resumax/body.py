@@ -1,100 +1,206 @@
 import re
 
+from CODE.Resumax import autre
+from autre import replacator
 import fitz
 
 
-def find_body(pdf: str):
-	doc = fitz.open(pdf)
+def find_intro(doc: fitz.Document, page_num: int, blknum: int):
 	found_intro = False
-	do_body = False
+	finish_intro = False
 
+	newblk = blknum
+	newpage = page_num
 	intro = ""
-	corps = ""
-	for page in doc:
-		for block in page.get_text("blocks"):
-			# Si le bloc est un texte, on fait le truc, sinon (c'est une image), on ne fait rien
-			if block[6] == 0:
-				# deuxieme partie : stocker l'intro jusqu'a la partie suivante
-				if found_intro:
 
-					if not re.fullmatch(r"\A( )*(2|ii|)(?:.|-|)(?: |)(?:\n|)([a-z](?: |))+(?:\n|)", block[4].lower()):
-						intro += block[4]
+	for page in range(page_num, len(doc)):
+		bold_texts_page = findAllBold(doc[page])
+		print("---\n", bold_texts_page, "\n---")
+		for i in range(0, len(doc[page].get_text("blocks"))):
+			block = doc[page].get_text("blocks")[i]
+			if block[-1] == 1:
+				continue
+			text = block[4]
+			#print("###########BLOCK DELIMITER##############\n", text.lower())
+			#print(re.match(r"\A(?:[xvi]|[0-9]|\.|\n| )+(?:- |)introduction(?:s|)", text.lower()))
+			if found_intro == False:  # on a pas encore trouvé l'intro
+				if autre.is_section("introduction", text.lower()):
+					found_intro = True
+					page_pos = page
+					pos = block[1]
+					posx = block[2]
+			else:  # on a trouvé le début de l'intro
+				if finish_intro == False:
+					if not autre.is_section("[a-z]", text.lower()) and text.lower() not in bold_texts_page:
+						if page == page_pos:
+							if block[1] > pos:
+								if block[0] < posx:
+									intro += text
+							else:
+								intro += text
+						else:
+							intro += text
+					elif re.match(r"\A(1\.[0-9](?: |\n|)+)", text.lower()):
+						print("Subsection")
+						intro += text
 					else:
-						# print("do_body")
-						do_body = True
-						found_intro = False
+						print("FIN", text.lower())
+						finish_intro = True
+						break
+		if finish_intro:
+			break
+		newblk += 1
+	newpage += 1
 
-				# troisième partie : stocker le reste du corps jusqu'aux références
-				elif do_body:
-					if not re.match(r"references(?: |\n|)+", block[4].lower()):
-						corps += block[4]
-					else:
-						return intro, corps
+	if intro == "":
+		intro = "N/A"
+		return intro, page_num, blknum
 
-				# premiere partie : trouver l'intro
-				else:
-					if re.match(r"\A( )*(?:[0-9]|i|)(?:.|-|)(?: |)(?:\n|)introduction(?: |)(?:\n|)", block[4].lower()):
-						# print("found_intro")
-						found_intro = True
-						intro += block[4]
-	return intro, corps
+	return intro, newpage, newblk
 
 
-def extract_discuss(body: str):
-	decompo = body.split("\n")
-	recompo = ""
-	discussed = ""
-
+def find_discuss(doc: fitz.Document, page_num: int, blknum: int):
 	found_discuss = False
-	for line in decompo:
-		if found_discuss:
-			decompo.remove(line)
-			discussed += line + "\n"
-		else:
-			if re.match(r"[0-9]*(?: *|)(?:- |)discussion(?:s|)", line.lower()):
-				# print("Discussion found")
-				found_discuss = True
-			else:
-				recompo += line + "\n"
+	finished_discuss = False
 
-	return discussed, recompo
+	discussed = ""
+	newpage = page_num
+	newblk = blknum
 
-def extract_conclusion(discussion:str, body:str):
+	for page in range(page_num, len(doc)):
+		for i in range(0, len(doc[page].get_text("blocks"))):
+			block = doc[page].get_text("blocks")[i]
+			if block[-1] == 1:
+				continue
+			text = block[4]
+			if not found_discuss:
+				if autre.is_section("discussion", text.lower()):  # Regex pour Discussion
+					found_discuss = True
+					pos = block[1]
+					posx = block[2]
+					page_pos = page
+			else:  # on a trouvé le début de la discussion
+				if finished_discuss == False:
+					if not autre.is_section("conclusion", text.lower()):
+						if page == page_pos:
+							if block[1] > pos:
+								if block[0] < posx:
+									discussed += text
+							else:
+								discussed += text
+						else:
+							discussed += text
+					else:
+						finished_discuss = True
+						break
+		if not finished_discuss:
+			break
+		newblk += 1
+	newpage += 1
+
+	if discussed == "":
+		discussed = "N/A"
+		return discussed, page_num, blknum
+	return discussed, newpage, newblk
+
+
+def find_conclusion(doc: fitz.Document, page_num: int, blknum: int):
 	found_conclu = False
+	finished_conclu = False
 	conclu = ""
-	discu = ""
-	autre = ""
-	# si la discussion est vide, la conclusion se trouve dans le body
-	if discussion == "":
-		for element in body.split("\n"):
-			if found_conclu:
-				conclu += element + "\n"
-			else:
-				if re.fullmatch(r"[0-9]*[ .\-)/]*conclusion(?:s|)", element.lower()):
+	newpage = page_num
+	newblk = blknum
+
+	for page in range(page_num, len(doc)):
+		for i in range(0, len(doc[page].get_text("blocks"))):
+			block = doc[page].get_text("blocks")[i]
+			if block[-1] == 1:
+				continue
+			text = block[4]
+			print("###########BLOCK DELIMITER###########" + text)
+			if found_conclu == False:
+				if autre.is_section("conclusion", text.lower()):
+					print("found")
+					pos = block[1]
+					posx = block[2]
+					page_pos = page
 					found_conclu = True
-				else:
-					discu += element + "\n"
-		return (discussion != ""), autre, conclu
-	# sinon la conclusion est dans la discussion
-	else :
-		for element in discussion.split("\n"):
-			if found_conclu:
-				conclu += element + "\n"
-			else:
-				if re.fullmatch(r"[0-9]*[ .\-)/]*conclusion(?:s|)", element.lower()):
-					found_conclu = True
-				else:
-					discu += element + "\n"
-		return (discussion != ""), discu, conclu
+			else:  # on a trouvé le début de la conclusion
+				if finished_conclu == False:
+					print("PUTAIN")
+					print(re.match(r"\A(?: |\n|[a-z0-9.]|)+reference(?:[a-z]| |)*", text.lower()))
+					if not re.match(r"\A(?: |\n|[a-z0-9.]|)+reference(?:[a-z]| |)*", text.lower()) and not re.match(r"\A(?: |\n|[a-z0-9.]|)+acknowledg(?:e|)ment(?:[a-z]| |)*", text.lower()):
+						if page == page_pos:
+							if block[1] > pos:
+								if block[0] < posx :
+									conclu += text
+							else :
+								conclu += text
+						else:
+							conclu += text
+					else:
+						print("finished")
+						finished_conclu = True
+						break
+
+		if finished_conclu:
+			break
+		newblk += 1
+	newpage += 1
+
+	if conclu == "":
+		conclu = "N/A"
+		print("HAHA non")
+		return conclu, page_num, blknum
+	return conclu, newpage, newblk
+
+
+def extract_body(doc: fitz.Document, page_num: int, blknum: int):
+	newpage = 0
+	newblk = 0
+
+	# on fit un premier tour du document pour choper les parties spécifiques
+	intro, newpage, newblk = find_intro(doc, page_num, blknum)
+	discuss, newpage, newblk = find_discuss(doc, newpage, newblk)
+	conclusion, newpage, newblk = find_conclusion(doc, newpage, newblk)
+	body = ""
+
+	# On repart du début pour extraire le corps parmi le reste du texte déja traité
+	for page in range(page_num, len(doc)):
+		for i in range(blknum, len(doc[page].get_text("blocks"))):
+			block = doc[page].get_text("blocks")[i]
+			if block[-1] == 1:
+				continue
+			text = block[4]
+			if not (text in intro or text in discuss or text in conclusion):
+				body += text
+	return intro, body, discuss, conclusion
+
+
+def findAllBold(page):
+	block_dict = {}
+	bold_texts = []
+	page_num = 1
+
+	file_dict = page.get_text('dict')  # Get the page dictionary
+	block = file_dict['blocks']  # Get the block information
+	block_dict[page_num] = block  # Store in block dictionary
+
+	for page_num, blocks in block_dict.items():
+		for block in blocks:
+			if block['type'] == 0:
+				for line in block['lines']:
+					for span in line['spans']:
+						text = span['text']
+						flags = int(span['flags'])
+						if flags & 2**4:
+							bold_texts.append(text.lower())
+	return bold_texts
+
 
 if __name__ == "__main__":
-	intro, body = find_body("../ressources/Nasr.pdf")
-	discussion, body = extract_discuss(body)
+	intro, body, discuss, conclusion = extract_body(fitz.open("../ressources/infoEmbeddings.pdf"), 0, 0)
+	print("-----------I-------------")
 	print(intro)
-	print(type(intro))
-	print("-------------------------")
-	print(body)
-	print(type(body))
-	print("-------------------------")
-	print(discussion)
-	print(type(discussion))
+
+# TODO ckecker la position des blocs: si c'est au dessus du titre, ca dégage

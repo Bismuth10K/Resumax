@@ -35,7 +35,12 @@ Voici un récapitulatif de nos sprints jusqu'à là :
 
     Le but de ce sprint est d'évaluer la qualité et la précision des rendus du parser à l'aide du site développé par le client.
 
-	 
+- **Sprint 6 - Dernier sprint** : (02/04/24 - 14/05/24, point intermédiaire le 29/04)
+
+    Dernier sprint, nous avons un nouveau jeu de 10 pdf.
+    Nous devons *fine-tune* notre parseur afin d'avoir le meilleur score possible.
+    Ensuite, nous devons rédiger un rapport dans le style d'un article scientifique où nous expliquons la façon dont nous avons procédé.
+
 À chaque nouveau sprint, une nouvelle branche sera créée selon le numéro de sprint. À chaque fin de sprint, on merge la branche de main et on créé un release. Ce release contiendra l'exécutable de fin de sprint et le code source à l'heure de la fin.
 
 ## Lancement

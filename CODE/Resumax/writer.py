@@ -1,6 +1,7 @@
 from xml.etree.ElementTree import Element, SubElement, ElementTree, indent  # Pour générer des xml
 import string
 
+
 def output_txt(pdf, dict_results: dict):
 	"""
 	Récupère les outputs et les inscrit dans un txt.
@@ -23,7 +24,9 @@ def output_txt(pdf, dict_results: dict):
 
 		f.write("Corps : \n" + dict_results.get("body") + "\n\n")
 
-		f.write("Discussion et Conclusion : \n" + dict_results.get("discussion") + "\n\n")
+		f.write("Discussion : \n" + dict_results.get("discussion") + "\n\n")
+
+		f.write("Conclusion : \n" + dict_results.get("conclusion") + "\n\n")
 
 		f.write("Bibliographie : \n")
 		for element in dict_results.get("biblio"):
@@ -38,7 +41,7 @@ def output_xml(pdf, dict_results: dict):
 	"""
 	article = Element('article')
 	preamble = SubElement(article, 'preamble')
-	preamble.text = pdf
+	preamble.text = pdf.split("/")[-1]
 
 	titre = SubElement(article, 'titre')
 	titre.text = "".join(x for x in dict_results.get("titre") if x in string.printable)
@@ -47,7 +50,7 @@ def output_xml(pdf, dict_results: dict):
 	list_auteurs = dict_results.get("auteur")
 	list_mails = dict_results.get("mail")
 
-	i = 0
+	i = 1
 	while i < len(list_auteurs):
 		auteur = SubElement(auteurs, 'auteur')
 
@@ -59,7 +62,7 @@ def output_xml(pdf, dict_results: dict):
 
 		mail = SubElement(auteur, 'mail')
 		try:
-			mail.text = "".join(x for x in list_mails[i] if x in string.printable)
+			mail.text = list_mails[i]
 		except:
 			mail.text = "N/A"
 
@@ -78,7 +81,7 @@ def output_xml(pdf, dict_results: dict):
 	discu.text = "".join(x for x in dict_results.get("discussion") if x in string.printable)
 
 	conc = SubElement(article, 'conclusion')
-	conc.text = "N/A"
+	conc.text = "".join(x for x in dict_results.get("conclusion") if x in string.printable)
 
 	biblio = SubElement(article, 'biblio')
 	biblio.text = "\n".join(str(elem) for elem in dict_results.get("biblio"))

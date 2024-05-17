@@ -2,7 +2,7 @@ import os
 
 import fitz
 from dateutil.parser import parse  # Pour détecter une date, ---pip install python-dateutil---
-
+import re
 
 def txt_reco_patterns():
 	"""
@@ -60,6 +60,10 @@ def is_date(string: str):
 def replacator(text_to_clean: str):
 	return text_to_clean.replace("-\n", "").replace("- \n", "").replace("\n", " ")
 
+
+def is_section(name:str, text:str):
+	#print(re.match(r"\A(?:[xvi]|[0-9]|\.|\n| )+(?:- |){}(?:s|)".format(name), replacator(text)))
+	return re.match(rf"\A(?:[xvi]|[0-9])*(?:\.|\n| |-)+{name}(?:s|)", text)
 
 if __name__ == '__main__':
 	txt_reco_patterns()
