@@ -31,7 +31,7 @@ def find_intro(doc: fitz.Document, page_num: int, blknum: int):
 					posx = block[2]
 			else:  # on a trouvé le début de l'intro
 				if finish_intro == False:
-					if not autre.is_section("[a-z]", text.lower()) or text.lower() not in bold_texts_page:
+					if not autre.is_section("[a-z]", text.lower()) and text.lower() not in bold_texts_page:
 						if page == page_pos:
 							if block[1] > pos:
 								if block[0] < posx:
@@ -44,7 +44,7 @@ def find_intro(doc: fitz.Document, page_num: int, blknum: int):
 						print("Subsection")
 						intro += text
 					else:
-						#print("FIN", text.lower())
+						print("FIN", text.lower())
 						finish_intro = True
 						break
 		if finish_intro:
