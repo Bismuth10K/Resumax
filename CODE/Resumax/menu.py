@@ -2,6 +2,14 @@ import os
 
 
 def menu(path_res: str):
+	"""
+	Créé le menu interactif et propose à l'utilisateur de choisir le ou les pdfs à traiter.
+
+	Args:
+		path_res: Chemin vers le dossier contenant les pdfs.
+
+	Returns: Renvoie une liste des chemins vers les pdfs à traiter.
+	"""
 	pdf_files = []
 	i = 0
 	print("Voici tous les pdf dans le dossier " + path_res)

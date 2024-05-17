@@ -39,11 +39,14 @@ def find_authors(doc: fitz.Document, page_num: int, blknum: int):
 
 
 def email(strings: list):
+	"""
+	Détecte s'il y a un mail.
+
+	Args:
+		strings: Liste de strings.
+
+	Returns: Vrai s'il y en a un, faux sinon
+	"""
 	for string in strings:
 		if "@" in string:
 			return string
-
-
-if __name__ == "__main__":
-	d = fitz.open("../ressources/Torres.pdf")
-	tab = find_authors(d[0], 1)

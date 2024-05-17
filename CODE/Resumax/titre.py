@@ -3,7 +3,7 @@ import fitz
 from autre import replacator
 
 
-def find_title(doc: fitz.Document, page_num:int, blknum: int):
+def find_title(doc: fitz.Document, page_num: int, blknum: int):
 	"""
 	Trouve le titre parmi deux blocs, l'un des deux pouvant être un footer, on le détermine donc grâce à la position.
 

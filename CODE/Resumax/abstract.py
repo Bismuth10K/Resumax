@@ -2,10 +2,10 @@ import re
 
 import fitz
 
-from autre import replacator,is_section
+from autre import is_section
 
 
-def find_abstract(doc: fitz.Document, page_num: int, blknum: int, toc=None):
+def find_abstract(doc: fitz.Document, page_num: int, blknum: int):
 	"""
 	Fonction d'extraction de la partie "Abstract" d'un document
 
@@ -13,7 +13,6 @@ def find_abstract(doc: fitz.Document, page_num: int, blknum: int, toc=None):
 		doc: l'objet Document à analyser
 		page_num: le numéro de la page où commencer la recherche
 		blknum: le numéro du bloc sur la page où commencer la recherche
-		toc: la "Table of contents" ou sommaire du Document
 
 	Returns: Une chaine de caractères contenant l'abstract du document.
 	"""
@@ -33,18 +32,18 @@ def find_abstract(doc: fitz.Document, page_num: int, blknum: int, toc=None):
 				if re.match(r"\A(?: |\n|)+abstract", text.lower()) or "a b s t r a c t" in text.lower():
 					found_abstract = True
 					abstract += text
-				else :
+				else:
 					continue
 			else:
 				if not finished_abstract:
 					if is_section("introduction", text.lower()) or is_section("", text.lower()):
 						finished_abstract = True
-					else :
+					else:
 						abstract += text
-				else :
+				else:
 					break
 			newblk = i
-		if finished_abstract :
+		if finished_abstract:
 			break
 		newpage = page
 
@@ -52,11 +51,3 @@ def find_abstract(doc: fitz.Document, page_num: int, blknum: int, toc=None):
 		abstract = "N/A"
 		return abstract, page_num, blknum
 	return abstract, newpage, newblk
-
-
-if __name__ == "__main__":
-	doc = fitz.open("../ressources/BLESS.pdf")
-	abst = find_abstract(doc, 0, 0)[0]
-	print("-------ABSTRACT-------")
-	print(abst)
-

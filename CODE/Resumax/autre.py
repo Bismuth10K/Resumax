@@ -1,11 +1,11 @@
 import os
+import re
 
 import fitz
 from dateutil.parser import parse  # Pour détecter une date, ---pip install python-dateutil---
-import re
+
 
 def txt_reco_patterns():
-
 	"""
 	Cette fonction génère des txt pour chaque pdf.
 	Elle existe pour stocker et comparer les patterns dans les pdf.
@@ -59,12 +59,28 @@ def is_date(string: str):
 
 
 def replacator(text_to_clean: str):
+	"""
+	Corrige le texte pour le rendre plus présentable.
+
+	Args:
+		text_to_clean: Le texte à nettoyer.
+
+	Returns: Le nouveau texte nettoyé
+	"""
 	return text_to_clean.replace("-\n", "").replace("- \n", "").replace("\n", " ")
 
 
-def is_section(name:str, text:str):
-	#print(re.match(r"\A(?:[xvi]|[0-9]|\.|\n| )+(?:- |){}(?:s|)".format(name), replacator(text)))
+def is_section(name: str, text: str):
+	"""
+	Détecte si un texte est un titre de section.
+	Args:
+		name: Nom de la section à repérer (ex: introduction, conclusion...)
+		text: Le texte à analyser
+
+	Returns: Vrai si titre de section, faux sinon.
+	"""
 	return re.match(rf"\A(?:[xvi]|[0-9])*(?:\.|\n| |-)+{name}(?:s|)", text)
+
 
 if __name__ == '__main__':
 	txt_reco_patterns()

@@ -1,5 +1,5 @@
-from xml.etree.ElementTree import Element, SubElement, ElementTree, indent  # Pour générer des xml
 import string
+from xml.etree.ElementTree import Element, SubElement, ElementTree, indent  # Pour générer des xml
 
 
 def output_txt(pdf, dict_results: dict):
@@ -11,8 +11,7 @@ def output_txt(pdf, dict_results: dict):
 		dict_results: Le dictionnaire des informations parsées.
 
 	"""
-	with open("../output/" + pdf.split("/")[-1][:-4] + '.txt',
-				'w') as f:  # On les sauvegarde dans le dossier output.
+	with open("../output/" + pdf.split("/")[-1][:-4] + '.txt', 'w') as f:  # On les sauvegarde dans le dossier output.
 		f.write("Nom fichier : " + pdf + "\n\n")
 
 		f.write("Titre : " + dict_results.get("titre") + "\n\n")
@@ -96,7 +95,4 @@ def output_xml(pdf, dict_results: dict):
 
 	indent(tree, space="\t")
 
-#	with open("../output/Sprint2_" + pdf.split("/")[-1] + '.xml', 'w') as f:
-#		tree.write(f, encoding="UTF-8")
 	tree.write("../output/" + pdf.split("/")[-1][:-4] + '.xml', encoding="utf8", xml_declaration=True)
-
