@@ -15,18 +15,15 @@ from menu import menu
 from writer import *
 
 
-def parser_new(pdf):
+def parser(pdf):
     """
 
-    Parameters
-    ----------
-    pdf (str) : Le chemin relatif du fichier à ouvrir.
+    Args:
+        pdf: le document à parser
 
-    Returns
-    -------
-    parsed_results (dict) : Dictionnaire des morceaux de pdf sous forme de strings
+    Returns: un dictionnaire contenant chaque partie parsée.
+
     """
-
     # Document opening
     doc = fitz.open(pdf)
     authors = []
@@ -97,15 +94,18 @@ def parser_new(pdf):
 
 def parse_all_pdf(pdf_files: list, func_output, func_output_all=None):
     """
-    Code du sprint 2, récupère : le nom du fichier, le titre de l'article, les auteurs, l'abstract.
-    Le code devra être simplifié lors des futurs sprints.
-    :return: Un txt pour chaque pdf contenant le nom du fichier, le titre de l'article, les auteurs, l'abstract.
+
+    Args:
+        pdf_files: la liste des chemins relatifs des fichiers à analyser
+        func_output: la fonction déterminant la sortie du programme (txt, xml, ou les deux)
+        func_output_all: la deuxieme fonction, si nécéssaire
+
     """
     if not os.path.exists("../output/"):
         os.makedirs("../output/")
     for file in pdf_files:
         with (open(file, 'rb') as pdf):
-            dict_res = parser_new(pdf)
+            dict_res = parser(pdf)
             func_output(file, dict_res)
             if func_output_all is not None:
                 func_output_all(file, dict_res)

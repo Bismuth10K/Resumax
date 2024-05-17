@@ -6,11 +6,14 @@ from autre import replacator
 def find_title(doc: fitz.Document, page_num:int, blknum: int):
 	"""
 	Trouve le titre parmi deux blocs, l'un des deux pouvant être un footer, on le détermine donc grâce à la position.
-	:param page: Une page du document.
-	:param blknum: Un bloc de pyMuPDF.
-	:return: titre (str) le vrai titre d'après la position, bloc (int) le numéro du bloc du titre.
-	"""
 
+	Args:
+		doc: Le document à analyser
+		page_num: le numéro de la page où commencer
+		blknum: le numéro de bloc sur la page où commencer
+
+	Returns: un string contenant le titre
+	"""
 
 	cur_block = doc[page_num].get_text("blocks")[blknum]
 	next_block = doc[page_num].get_text("blocks")[blknum + 1]

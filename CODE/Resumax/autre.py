@@ -5,6 +5,7 @@ from dateutil.parser import parse  # Pour détecter une date, ---pip install pyt
 import re
 
 def txt_reco_patterns():
+
 	"""
 	Cette fonction génère des txt pour chaque pdf.
 	Elle existe pour stocker et comparer les patterns dans les pdf.

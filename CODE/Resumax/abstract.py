@@ -6,19 +6,22 @@ from autre import replacator,is_section
 
 
 def find_abstract(doc: fitz.Document, page_num: int, blknum: int, toc=None):
-
 	"""
-	Détermine si un texte un est un abstract ou pas.
-	:param page: Une page du document.
-	:param blknum : Le numéro du bloc courant.
-	:param toc: Une liste, sommaire du document s'il existe.
-	:return: abstract (str) le texte de l'abstract.
+	Fonction d'extraction de la partie "Abstract" d'un document
+
+	Args:
+		doc: l'objet Document à analyser
+		page_num: le numéro de la page où commencer la recherche
+		blknum: le numéro du bloc sur la page où commencer la recherche
+		toc: la "Table of contents" ou sommaire du Document
+
+	Returns: Une chaine de caractères contenant l'abstract du document.
 	"""
 	newpage = page_num
 	newblk = blknum
 
-	found_abstract = False
-	finished_abstract = False
+	found_abstract = False  # S'active quand l'abstract a été trouvé
+	finished_abstract = False  # S'active quand la partie d'apre a été trouvée
 	abstract = ""
 
 	for page in range(page_num, len(doc)):
@@ -56,3 +59,4 @@ if __name__ == "__main__":
 	abst = find_abstract(doc, 0, 0)[0]
 	print("-------ABSTRACT-------")
 	print(abst)
+

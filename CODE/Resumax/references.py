@@ -6,9 +6,13 @@ import fitz
 def find_references(pdf: str) -> list:
 	"""
 	Récupère les références de la bibliographie du document.
-	:param pdf: Le document
-	:return: Une liste contenant le texte de chaque bloc de la bibliographie
+
+	Args:
+		pdf: Le chemin pour le document
+
+	Returns: Une liste contenant le texte de chaque bloc de la bibliographie
 	"""
+
 	doc = fitz.open(pdf)
 	res = []
 	found = False

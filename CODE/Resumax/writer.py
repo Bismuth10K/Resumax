@@ -4,9 +4,12 @@ import string
 
 def output_txt(pdf, dict_results: dict):
 	"""
-	Récupère les outputs et les inscrit dans un txt.
-	:param pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
-	:param dict_results: Le dictionnaire des informations parsées.
+	Ecrit les résultats du parsing dans un fichier .txt
+
+	Args:
+		pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
+		dict_results: Le dictionnaire des informations parsées.
+
 	"""
 	with open("../output/" + pdf.split("/")[-1][:-4] + '.txt',
 				'w') as f:  # On les sauvegarde dans le dossier output.
@@ -35,10 +38,13 @@ def output_txt(pdf, dict_results: dict):
 
 def output_xml(pdf, dict_results: dict):
 	"""
-	Récupère les outputs et les inscrit dans un xml.
-	:param pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
-	:param dict_results: Le dictionnaire des informations parsées.
+	Ecrit les résultats du parsing sur un document .xml
+
+	Args:
+		pdf: Le document traité, il nous sert pour récupérer le nom dans la mémoire.
+		dict_results: Le dictionnaire des informations parsées.
 	"""
+
 	article = Element('article')
 	preamble = SubElement(article, 'preamble')
 	preamble.text = pdf.split("/")[-1]

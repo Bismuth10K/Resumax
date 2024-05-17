@@ -4,6 +4,16 @@ from autre import replacator
 
 
 def find_authors(doc: fitz.Document, page_num: int, blknum: int):
+	"""
+	Extract authors names, affiliations and mails (theorically)
+	Args:
+		doc: L'objet Document à analyser
+		page_num: numéro de la page où commencer la recherche
+		blknum: nuéro du bloc sur la page où commencer la recherche
+
+	Returns: un tuple avec les noms, affiliations, mails dans des listes
+
+	"""
 	mails = []
 	names = []
 	blocks = doc[page_num].get_text("blocks")
