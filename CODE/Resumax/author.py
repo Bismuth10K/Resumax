@@ -5,7 +5,7 @@ from autre import replacator
 
 def find_authors(doc: fitz.Document, page_num: int, blknum: int):
 	"""
-	Extract authors names, affiliations and mails (theorically)
+	Fonction d'extraction des auteurs, de leurs affiliations et de leurs mails (en théorie)
 	Args:
 		doc: L'objet Document à analyser
 		page_num: numéro de la page où commencer la recherche

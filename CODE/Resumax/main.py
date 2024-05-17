@@ -27,7 +27,7 @@ def parser(pdf):
 	# Document opening
 	doc = fitz.open(pdf)
 
-	# On most documents, the first page is where we find titles, authors and abstracts.
+	# On trouve le titre, les auteur, l'abstract et l'intro sur la premiere page pour la plupart des documents.
 	page = doc[0]
 
 	pagenum = 0
@@ -36,33 +36,33 @@ def parser(pdf):
 			pagenum = 1
 			break
 
-	# finding title
+	# titre
 	temp = titre.find_title(doc, pagenum, 0)
 	titleStr = temp[0]
 	page_num = temp[1]
 	blknum = temp[2]
 
-	# finding authors
+	# auteurs
 	temp = author.find_authors(doc, 0, blknum)
 	authors = temp[0]
 	mails = temp[1]
 	page_num = temp[2]
 	blknum = temp[3]
 
-	# finding abstract
+	# abstract
 	temp = abstract.find_abstract(doc, 0, blknum)
 	abstractStr = temp[0]
 	page_num = temp[1]
 	blknum = temp[2]
 
-	# finding introduction and body
+	# introduction, corps, discussion et conclusion
 	temp = body.extract_body(doc, page_num, blknum)
 	intro = temp[0]
 	bodyText = temp[1]
 	discussion = temp[2]
 	conclu = temp[3]
 
-	# finding references
+	# bibliographie
 	refs = references.find_references(pdf)
 
 	parsed_results = {"titre": replacator(titleStr), "auteur": authors, "mails": mails,
